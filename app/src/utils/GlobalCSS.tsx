@@ -36,6 +36,8 @@ function GlobalCSS() {
 
         body: {
           fontFamily: "var(--font-base)",
+          width: "100vw",
+          minHeight: "100vh"
         },
       }}
     />
