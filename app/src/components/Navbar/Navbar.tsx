@@ -11,7 +11,7 @@ const Navbar: React.FC = () => {
         <div>Home</div>
         <div>About us</div>
         <Box>
-          <img src="/logo_variante3.png" alt="" />
+          <img src="/logo.png" alt="" />
         </Box>
         <div>Services</div>
         <div>Contact</div>
