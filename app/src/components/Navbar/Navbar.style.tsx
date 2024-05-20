@@ -1,7 +1,6 @@
 import { styled, Stack } from "@mui/material";
 
 const NavbarContainer = styled(Stack)({
-  gap:"120px",
   background:"var(--white-op-dark)",
   boxShadow:"0px 3px 20px var(--white-op-light)",
   width: "100%",
