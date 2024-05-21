@@ -5,7 +5,7 @@ const Navbar: React.FC = () => {
   return (
     <NavbarContainer sx={{ flexDirection: "row" }}>
       <Stack
-        sx={{ marginLeft: "120px", flexDirection: "row", alignItems: "center" }}
+        sx={{ flexDirection: "row", alignItems: "center" }}
       ></Stack>
       <Stack sx={{ flexDirection: "row", gap: "64px", alignItems: "center" }}>
         <div>Home</div>
