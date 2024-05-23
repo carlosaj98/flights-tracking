@@ -9,6 +9,10 @@ const HomePageContainer = styled(Stack)({
     flexDirection: "row",
     padding: "0 15vw",
   },
+
+  "#canvas-container:hover":{
+    cursor:"pointer"
+  }
 })
 
 export default HomePageContainer

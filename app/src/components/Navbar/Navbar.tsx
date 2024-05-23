@@ -9,11 +9,11 @@ const Navbar: React.FC = () => {
       ></Stack>
       <Stack sx={{ flexDirection: "row", gap: "64px", alignItems: "center" }}>
         <div>Home</div>
-        <div>About us</div>
+        <div>Services</div>
         <Box>
           <img src="/logo.png" alt="" />
         </Box>
-        <div>Services</div>
+        <div>About us</div>
         <div>Contact</div>
       </Stack>
     </NavbarContainer>
