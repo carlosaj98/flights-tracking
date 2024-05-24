@@ -6,6 +6,7 @@ const NavbarContainer = styled(Stack)({
   width: "100%",
   alignItems:"center",
   justifyContent:"center",
+  position:"static",
 
 
   "div > img":{

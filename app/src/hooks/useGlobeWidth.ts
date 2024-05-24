@@ -1,15 +1,17 @@
 import { useState, useEffect } from "react"
 
 function useGlobeWidth() {
-  const [globeWidth, setGlobeWidth] = useState(1040)
+  const [globeWidth, setGlobeWidth] = useState(400)
 
   const updateGlobeWidth = () => {
-    if (innerWidth > 1040) {
-      setGlobeWidth(1040)
-    } else if (innerWidth > 800) {
-      setGlobeWidth(800)
+    if (innerWidth > 1200) {
+      setGlobeWidth(700)
+    } else if (innerWidth > 900) {
+      setGlobeWidth(550)
     } else if (innerWidth > 600) {
-      setGlobeWidth(600)
+      setGlobeWidth(innerWidth / 1.5)
+    } else {
+      setGlobeWidth(innerWidth / 1.5)
     }
   }
 

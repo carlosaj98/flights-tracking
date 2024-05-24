@@ -2,26 +2,40 @@ import Navbar from "../../components/Navbar/Navbar"
 import HeroGlobe from "../../components/HeroGlobe/HeroGlobe"
 import HomePageContainer from "./HomePage.style"
 
-import { Stack, Box } from "@mui/material"
+import { Stack, Box, Container } from "@mui/material"
+
 const HomePage: React.FC = () => {
   return (
     <HomePageContainer sx={{ alignItems: "center" }}>
       <Navbar />
-      <Stack component={"main"} alignItems={"center"} justifyContent={"center"}>
-        <Stack>
-          <h1>
-            Find Your <span>Flight</span>
-          </h1>
-          <h2>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
-            vitae pulvinar est.
-          </h2>
-        </Stack>
+      <Container sx={{ height: "100%" }}>
+        <Stack
+          component={"main"}
+          flexDirection={{ md: "row", sm: "column" }}
+          alignItems={"center"}
+          justifyContent={{ md: "center", sm: "flex-start" }}
+        >
+          <Stack
+            id="hero-text-container"
+            className="animate__animated animate__fadeInLeft"
+          >
+            <h1>
+              ¡Encuentra tu <span>Vuelo</span>!
+            </h1>
+            <h2>
+              Rastrea vuelos en tiempo real con la posibilidad de visualizarlos
+              en 3D.
+            </h2>
+          </Stack>
 
-        <Box id="canvas-container">
-          <HeroGlobe />
-        </Box>
-      </Stack>
+          <Box
+            id="canvas-container"
+            className="animate__animated animate__fadeInRight"
+          >
+            <HeroGlobe />
+          </Box>
+        </Stack>
+      </Container>
     </HomePageContainer>
   )
 }
