@@ -1,6 +1,7 @@
 import Navbar from "../../components/Navbar/Navbar"
 import HeroGlobe from "../../components/HeroGlobe/HeroGlobe"
 import HomePageContainer from "./HomePage.style"
+import HeroForm from "../../components/HeroForm/HeroForm"
 
 import { Stack, Box, Container } from "@mui/material"
 
@@ -26,6 +27,8 @@ const HomePage: React.FC = () => {
               Rastrea vuelos en tiempo real con la posibilidad de visualizarlos
               en 3D.
             </h2>
+
+            <HeroForm />
           </Stack>
 
           <Box

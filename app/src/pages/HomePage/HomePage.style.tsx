@@ -13,7 +13,7 @@ const HomePageContainer = styled(Stack)({
   "#hero-text-container": {},
 
   "#hero-text-container h1": {
-    fontSize: "2.75rem",
+    fontSize: "2.5rem",
     fontWeight: "800",
     color: "var(--primary-color-semidark)",
 
@@ -24,7 +24,7 @@ const HomePageContainer = styled(Stack)({
 
   "#hero-text-container h2": {
     color: "var(--primary-color-dark)",
-    fontWeight: "600",
+    fontWeight: "500",
   },
 
   "#canvas-container:hover": {

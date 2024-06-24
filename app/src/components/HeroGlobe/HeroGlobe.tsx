@@ -29,6 +29,7 @@ const HeroGlobe: React.FC = () => {
         hexPolygonMargin={0.3}
         hexPolygonColor={() => "#1e9bff"}
         animateIn={false}
+        atmosphereColor="#1e9bff"
       />
 
   )
