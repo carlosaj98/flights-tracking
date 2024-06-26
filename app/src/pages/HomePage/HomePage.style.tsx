@@ -10,7 +10,10 @@ const HomePageContainer = styled(Stack)({
     height: "100%",
   },
 
-  "#hero-text-container": {},
+  "#hero-text-container": {
+
+    gap:"24px"
+  },
 
   "#hero-text-container h1": {
     fontSize: "2.5rem",
@@ -20,6 +23,7 @@ const HomePageContainer = styled(Stack)({
     span: {
       color: "var(--secondary-color-base)",
     },
+    
   },
 
   "#hero-text-container h2": {

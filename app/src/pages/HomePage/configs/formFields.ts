@@ -1,11 +1,4 @@
-interface formFieldsInterface {
-  type: "text" | "select"
-  name: string
-  id: string
-  label: string
-  placeholder: string
-  options?: string[]
-}
+import { formFieldsInterface } from "../../../interfaces/formFields.interface"
 
 const formFields: formFieldsInterface[] = [
   {
@@ -35,4 +28,3 @@ const formFields: formFieldsInterface[] = [
 ]
 
 export default formFields
-

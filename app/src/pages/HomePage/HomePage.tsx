@@ -4,6 +4,7 @@ import HomePageContainer from "./HomePage.style"
 import HeroForm from "../../components/HeroForm/HeroForm"
 
 import { Stack, Box, Container } from "@mui/material"
+import formFields from "./configs/formFields"
 
 const HomePage: React.FC = () => {
   return (
@@ -20,15 +21,17 @@ const HomePage: React.FC = () => {
             id="hero-text-container"
             className="animate__animated animate__fadeInLeft"
           >
-            <h1>
-              ¡Encuentra tu <span>Vuelo</span>!
-            </h1>
-            <h2>
-              Rastrea vuelos en tiempo real con la posibilidad de visualizarlos
-              en 3D.
-            </h2>
+            <Stack>
+              <h1>
+                ¡Encuentra tu <span>Vuelo</span>!
+              </h1>
+              <h2>
+                Rastrea vuelos en tiempo real con la posibilidad de
+                visualizarlos en 3D.
+              </h2>
+            </Stack>
 
-            <HeroForm />
+            <HeroForm formFields={formFields} />
           </Stack>
 
           <Box
