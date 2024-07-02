@@ -6,9 +6,9 @@ const CustomForm = styled("form")({
   width:"100%",
   gap:"24px",
   backgroundColor:"var(--secondary-color-base)",
-  padding:"12px",
-  borderRadius:"12px",
-  boxShadow:"0 6px 12px var(--secondary-color-dark)",
+  padding:"18px",
+  borderRadius:"18px",
+  boxShadow:"0 2px 4px var(--black-op-dark)",
 
   ".input-container":{
 
@@ -16,7 +16,8 @@ const CustomForm = styled("form")({
     flexDirection:"column",
     gap:"6px",
     color:"var(--secondary-color-dark)",
-    fontWeight:"600"
+    fontWeight:"600",
+    fontSize:"1.1rem"
   },
 
 })

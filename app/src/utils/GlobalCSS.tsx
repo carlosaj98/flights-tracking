@@ -25,8 +25,6 @@ function GlobalCSS() {
           "--black-op-light": "rgba(0,0,0, 0.25)",
           "--black-op-dark": "rgba(0,0,0, 0.75)",
 
-          "--main-color-bg":"#f3f5f7",
-
           "--font-base": "Poppins, sans-serif",
         },
 

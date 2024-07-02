@@ -1,4 +1,4 @@
-import {  Button } from "@mui/material"
+
 import { useEffect, useState } from "react"
 
 import {
@@ -11,6 +11,7 @@ import {
 import { formFieldsInterface } from "../../interfaces/formFields.interface"
 import { InputText, InputSelect } from "./InputsTemplate"
 import CustomForm from "./HeroForm.style"
+import FormSubmitButton from "../../common/Buttons"
 
 interface FormComponentProps {
   formFields: formFieldsInterface[]
@@ -56,7 +57,7 @@ const HeroForm: React.FC<FormComponentProps> = ({ formFields }) => {
         )
       })}
 
-      <Button type="submit">Submit</Button>
+      <FormSubmitButton text={"SEARCH"} />
     </CustomForm>
   )
 }

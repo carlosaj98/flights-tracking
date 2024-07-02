@@ -13,25 +13,26 @@ const InputText: React.FC<InputProps> = ({ field, rest }) => {
       {...rest}
       InputProps={{
         sx: {
-          borderRadius: "12px",
+          borderRadius: "18px",
           backgroundColor: "white",
           fontFamily: "var(--font-base)",
-          boxShadow: "0 2px 2px var(--black-op-light)",
+          boxShadow: "0 2px 4px var(--secondary-color-dark) inset",
         },
       }}
       sx={{
         ".MuiOutlinedInput-root": {
           "& fieldset": {
             transition: "all 0.2s ease-out",
-            border: "2px solid transparent",
+            border: "1px solid transparent",
           },
           "&:hover fieldset": {
-            border: "2px solid var(--secondary-color-semidark)",
-            boxShadow: "0 5px 10px var(--secondary-color-semidark)",
+            border: "1px solid var(--secondary-color-semidark)",
+            boxShadow: "0 2px 4px var(--secondary-color-semidark) inset",
+            
           },
           "&.Mui-focused fieldset": {
-            boxShadow: "0 5px 10px var(--primary-color-base)",
-            border: "2px solid var(--primary-color-base)",
+            boxShadow: "0 2px 4px var(--primary-color-base) inset",
+            border: "1px solid var(--primary-color-base)",
           },
         },
       }}
@@ -45,23 +46,23 @@ const InputSelect: React.FC<InputProps> = ({ field, rest }) => {
       {...field}
       {...rest}
       sx={{
-        borderRadius: "12px",
+        borderRadius: "18px",
         backgroundColor: "white",
         fontFamily: "var(--font-base)",
-        boxShadow: "0 2px 2px var(--black-op-light)",
+        boxShadow: "0 2px 4px var(--secondary-color-dark) inset",
 
         "&.MuiOutlinedInput-root": {
           "& fieldset": {
             transition: "all 0.2s ease-out",
-            border: "2px solid transparent",
+            border: "1px solid transparent",
           },
           "&:hover fieldset": {
-            border: "2px solid var(--secondary-color-semidark)",
-            boxShadow: "0 5px 10px var(--secondary-color-semidark)",
+            border: "1px solid var(--secondary-color-semidark)",
+            boxShadow: "0 2px 4px var(--secondary-color-semidark) inset",
           },
           "&.Mui-focused fieldset": {
-            boxShadow: "0 5px 10px var(--primary-color-base)",
-            border: "2px solid var(--primary-color-base)",
+            boxShadow: "0 2px 4px var(--primary-color-base) inset",
+            border: "1px solid var(--primary-color-base)",
           },
         },
       }}
@@ -79,7 +80,8 @@ const InputSelect: React.FC<InputProps> = ({ field, rest }) => {
           "& .MuiMenu-paper": {
             marginTop: "12px",
             borderRadius: "12px",
-            backgroundColor: "var(--main-color-bg)",
+            backgroundColor: "var(--white-op-dark)",
+            backdropFilter:"blur(5px)"
           },
         },
       }}
@@ -94,13 +96,13 @@ const InputSelect: React.FC<InputProps> = ({ field, rest }) => {
             padding: "12px 24px",
             color: "black",
             transition: "all 0.2s ease-out",
-            boxShadow: "0 2px 2px var(--black-op-light)",
+            boxShadow: "0 2px 4px var(--black-op-light) ",
             backgroundColor: "white",
             borderRadius: "12px",
             "&:hover, &.MuiMenuItem-root.Mui-selected:hover": {
               color: "white",
               backgroundColor: "var(--primary-color-base)",
-              boxShadow: "0 0px 10px var(--primary-color-base)",
+              boxShadow: "0 0px 6px var(--primary-color-base)",
             },
             fontFamily: "var(--font-base)",
 
