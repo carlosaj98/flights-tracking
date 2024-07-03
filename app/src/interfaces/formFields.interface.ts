@@ -1,3 +1,5 @@
+import { ReactElement } from "react"
+
 export interface formFieldsInterface {
   type: "text" | "select"
   name: string
@@ -5,4 +7,5 @@ export interface formFieldsInterface {
   label: string
   placeholder: string
   options?: string[],
+  icon:ReactElement
 }

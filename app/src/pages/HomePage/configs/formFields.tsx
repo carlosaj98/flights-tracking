@@ -1,4 +1,5 @@
 import { formFieldsInterface } from "../../../interfaces/formFields.interface"
+import { IconAirline, IconCalendar, IconFlightNum } from "../../../common/Icons"
 
 const formFields: formFieldsInterface[] = [
   {
@@ -7,6 +8,7 @@ const formFields: formFieldsInterface[] = [
     id: "airline-input",
     label: "Airline",
     placeholder: "Your Airline",
+    icon: <IconAirline/>,
   },
 
   {
@@ -15,6 +17,7 @@ const formFields: formFieldsInterface[] = [
     id: "flight-input",
     label: "Flight Number",
     placeholder: "Your flight number",
+    icon: <IconFlightNum />,
   },
 
   {
@@ -24,6 +27,7 @@ const formFields: formFieldsInterface[] = [
     label: "Flight Date",
     placeholder: "Your flight date",
     options: ["Today", "Tomorrow"],
+    icon: <IconCalendar />,
   },
 ]
 

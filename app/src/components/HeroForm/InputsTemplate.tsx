@@ -1,4 +1,4 @@
-import { TextField, Select, MenuItem } from "@mui/material"
+import { TextField, Select, MenuItem, Stack } from "@mui/material"
 import { FieldValues } from "react-hook-form"
 
 interface InputProps {
@@ -12,6 +12,11 @@ const InputText: React.FC<InputProps> = ({ field, rest }) => {
       {...field}
       {...rest}
       InputProps={{
+        startAdornment: (
+          <Stack height={"100%"} width={"1rem"} marginRight={"12px"}>
+            {rest.icon}
+          </Stack>
+        ),
         sx: {
           borderRadius: "18px",
           backgroundColor: "white",
@@ -28,7 +33,6 @@ const InputText: React.FC<InputProps> = ({ field, rest }) => {
           "&:hover fieldset": {
             border: "1px solid var(--secondary-color-semidark)",
             boxShadow: "0 2px 4px var(--secondary-color-semidark) inset",
-            
           },
           "&.Mui-focused fieldset": {
             boxShadow: "0 2px 4px var(--primary-color-base) inset",
@@ -45,6 +49,11 @@ const InputSelect: React.FC<InputProps> = ({ field, rest }) => {
     <Select
       {...field}
       {...rest}
+      startAdornment={
+        <Stack height={"100%"} width={"1rem"} marginRight={"12px"}>
+          {rest.icon}
+        </Stack>
+      }
       sx={{
         borderRadius: "18px",
         backgroundColor: "white",
@@ -81,7 +90,7 @@ const InputSelect: React.FC<InputProps> = ({ field, rest }) => {
             marginTop: "12px",
             borderRadius: "12px",
             backgroundColor: "var(--white-op-dark)",
-            backdropFilter:"blur(5px)"
+            backdropFilter: "blur(5px)",
           },
         },
       }}
