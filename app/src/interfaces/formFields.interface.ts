@@ -4,5 +4,5 @@ export interface formFieldsInterface {
   id: string
   label: string
   placeholder: string
-  options?: string[]
+  options?: string[],
 }

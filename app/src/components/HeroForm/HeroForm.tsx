@@ -57,7 +57,7 @@ const HeroForm: React.FC<FormComponentProps> = ({ formFields }) => {
         )
       })}
 
-      <FormSubmitButton text={"SEARCH"} />
+      <FormSubmitButton text={"SEARCH FLIGHT"} />
     </CustomForm>
   )
 }
