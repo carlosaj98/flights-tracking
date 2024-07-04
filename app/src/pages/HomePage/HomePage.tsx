@@ -2,9 +2,11 @@ import Navbar from "../../components/Navbar/Navbar"
 import HeroGlobe from "../../components/HeroGlobe/HeroGlobe"
 import HomePageContainer from "./HomePage.style"
 import HeroForm from "../../components/HeroForm/HeroForm"
+import HeroDetails from "../../components/HeroDetails/HeroDetails"
 
 import { Stack, Box, Container } from "@mui/material"
 import formFields from "./configs/formFields"
+import heroDetailsData from "./configs/heroDetailsData"
 
 const HomePage: React.FC = () => {
   return (
@@ -13,33 +15,36 @@ const HomePage: React.FC = () => {
       <Container sx={{ height: "100%" }}>
         <Stack
           component={"main"}
-          flexDirection={{ md: "row", sm: "column" }}
+          flexDirection={"column"}
           alignItems={"center"}
-          justifyContent={{ md: "center", sm: "flex-start" }}
+          justifyContent={"center"}
         >
-          <Stack
-            id="hero-text-container"
-            className="animate__animated animate__fadeInLeft"
-          >
-            <Stack>
-              <h1>
-                ¡Encuentra tu <span>Vuelo</span>!
-              </h1>
-              <h2>
-                Rastrea vuelos en tiempo real con la posibilidad de
-                visualizarlos en 3D.
-              </h2>
+          <Stack id="hero-container" flexDirection={"row"}>
+            <Stack
+              id="hero-text-container"
+              className="animate__animated animate__fadeInLeft"
+            >
+              <Stack>
+                <h1>
+                  ¡Encuentra tu <span>Vuelo</span>!
+                </h1>
+                <h2>
+                  Rastrea vuelos en tiempo real con la posibilidad de
+                  visualizarlos en 3D.
+                </h2>
+              </Stack>
+
+              <HeroForm formFields={formFields} />
             </Stack>
 
-            <HeroForm formFields={formFields} />
+            <Box
+              id="canvas-container"
+              className="animate__animated animate__fadeInRight"
+            >
+              <HeroGlobe />
+            </Box>
           </Stack>
-
-          <Box
-            id="canvas-container"
-            className="animate__animated animate__fadeInRight"
-          >
-            <HeroGlobe />
-          </Box>
+          <HeroDetails data={heroDetailsData}/>
         </Stack>
       </Container>
     </HomePageContainer>
