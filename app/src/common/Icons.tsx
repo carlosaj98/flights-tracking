@@ -48,7 +48,8 @@ const IconPlane: React.FC = () => {
     <svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 576 512"
-      height={"100%"}
+      height={"30px"}
+      width={"30px"}
     >
       <path
         fill={"var(--black-op-black)"}

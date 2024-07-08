@@ -2,15 +2,29 @@ import { Stack, styled } from "@mui/material"
 
 const HeroDetailsContainer = styled(Stack)({
   width: "100%",
-  height: "100%",
   borderRadius: "18px",
   boxShadow: "0 3px 6px var(--black-op-dark)",
-  backgroundColor: "var(--black-op-light)",
+  backgroundColor: "var(--primary-color-base)",
+
+  overflow: "clip",
 
   "#header-details-container": {
     borderRadius: "18px 18px 0px 0px",
     padding: "18px",
-    color: "black",
+    color: "white",
+  },
+
+  ".header-details-item": {
+    width: "100%",
+    "&:nth-child(1)": {
+      alignItems: "flex-start",
+    },
+    "&:nth-child(2)": {
+      flexDirection: "row",
+    },
+    "&:nth-child(3)": {
+      alignItems: "flex-end",
+    },
   },
 
   ".header-text-title": {
@@ -19,19 +33,26 @@ const HeroDetailsContainer = styled(Stack)({
   },
 
   ".header-text-subtitle": {
-    color:"var(--black-op-dark)"
+    color: "var(--white-op-dark)",
   },
 
-  "#content-details-container":{
-    height:"100%",
-    gap:"3px"
+  "#content-details-container": {
+    height: "100%",
+    gap: "3px",
   },
 
-  "#content-details-departure, #content-details-arrival":{
-    height:"100%",
+  "#content-details-departure, #content-details-arrival": {
+    height: "100%",
     backgroundColor: "white",
     padding: "18px",
-  }
+  },
+
+  "#content-details-departure": {
+    borderRadius: "0 18px 0 0",
+  },
+  "#content-details-arrival": {
+    borderRadius: "18px 0 0 0",
+  },
 })
 
 export default HeroDetailsContainer
