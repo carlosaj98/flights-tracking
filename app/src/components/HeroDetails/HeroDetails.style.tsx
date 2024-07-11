@@ -46,13 +46,6 @@ const HeroDetailsContainer = styled(Stack)({
     backgroundColor: "white",
     padding: "18px",
   },
-
-  "#content-details-departure": {
-    borderRadius: "0 18px 0 0",
-  },
-  "#content-details-arrival": {
-    borderRadius: "18px 0 0 0",
-  },
 })
 
 export default HeroDetailsContainer

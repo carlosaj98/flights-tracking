@@ -1,8 +1,8 @@
 export interface FlightData {
   flight_date: string
   flight_status: string
-  departure: Arrival
-  arrival: Arrival
+  departure: Direction
+  arrival: Direction
   airline: Airline
   flight: Flight
   aircraft: Aircraft
@@ -22,7 +22,7 @@ export interface Airline {
   icao: string
 }
 
-export interface Arrival {
+export interface Direction {
   airport: string
   timezone: string
   iata: string

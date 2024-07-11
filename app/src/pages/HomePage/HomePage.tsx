@@ -44,7 +44,7 @@ const HomePage: React.FC = () => {
               <HeroGlobe />
             </Box>
           </Stack>
-          <HeroDetails data={heroDetailsData}/>
+          <HeroDetails data={heroDetailsData[0]}/>
         </Stack>
       </Container>
     </HomePageContainer>
