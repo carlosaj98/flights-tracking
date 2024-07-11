@@ -3,8 +3,8 @@ import { Stack, styled } from "@mui/material"
 const HeroDetailsContainer = styled(Stack)({
   width: "100%",
   borderRadius: "18px",
-  boxShadow: "0 3px 6px var(--black-op-dark)",
-  backgroundColor: "var(--gray-dark)",
+  boxShadow: "0 3px 6px var(--gray-base)",
+  backgroundColor: "var(--primary-color-base)",
 
   overflow: "clip",
 
@@ -33,19 +33,29 @@ const HeroDetailsContainer = styled(Stack)({
   },
 
   ".header-text-subtitle": {
-    color: "var(--gray-light)",
+    color: "var(--white-op-dark)",
   },
 
   ".content-details-container": {
     height: "100%",
     gap: "3px",
+    flexDirection:"row"
   },
 
   ".card-container": {
     height: "100%",
+    width:"100%",
+    alignItems:"center",
     backgroundColor: "white",
-    padding: "18px",
+    padding: "24px 48px",
   },
+
+  ".direction-title":{
+    backgroundColor:"var(--gray-semilight)",
+    padding:"6px 18px",
+    borderRadius:"18px",
+    fontWeight:"500"
+  }
 })
 
 export default HeroDetailsContainer

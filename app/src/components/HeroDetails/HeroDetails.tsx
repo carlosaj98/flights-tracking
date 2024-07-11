@@ -12,7 +12,7 @@ const HeroDetails: React.FC<HeroDetailsProps> = ({ data }) => {
   return (
     <HeroDetailsContainer>
       <HeroDetailsHeader />
-      <Stack flexDirection={"row"} gap={"3px"}>
+      <Stack className="content-details-container">
         <HeroDetailsContent data={data.departure} title={"Departure"}/>
         <HeroDetailsContent data={data.arrival}  title={"Arrival"} />
       </Stack>

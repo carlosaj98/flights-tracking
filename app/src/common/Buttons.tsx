@@ -14,18 +14,21 @@ const FormSubmitButton: React.FC<ButtonsProp> = ({ text }) => {
         fontFamily: "var(--font-base)",
         fontSize: "1.1rem",
         borderRadius: "18px",
-        backgroundColor: "var(--primary-color-base)",
+        backgroundColor: "var(--secondary-color-base)",
         padding: "12px",
-        boxShadow: "0 2px 4px var(--primary-color-semilight) inset",
+        boxShadow: "0 2px 4px var(--secondary-color-light) inset",
+        color:"var(--secondary-color-extradark)",
         transition: "all 0.2s ease",
         "&:hover": {
-          backgroundColor: "var(--primary-color-semidark)",
-          boxShadow: "0 2px 4px var(--primary-color-extradark) inset",
+          backgroundColor: "var(--secondary-color-dark)",
+          boxShadow: "0 2px 4px var(--secondary-color-extradark) inset",
+          color:"var(--secondary-color-extralight)"
         },
 
         "&:focus": {
           backgroundColor: "var(--gray-semilight)",
           boxShadow: "0 2px 4px var(--gray-semidark) inset",
+          color:"var(--gray-dark)"
         },
       }}
     >

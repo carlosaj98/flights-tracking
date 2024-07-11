@@ -15,7 +15,7 @@ const HeroGlobe: React.FC = () => {
       backgroundColor="rgba(0,0,0,0)"
       globeMaterial={newMaterial}
       arcsData={arcsData}
-      arcColor={["#91c2ff", "#357af9", "#1a48db"]}
+      arcColor={["#fce28b", "#fabc34", "#d87007"]}
       arcStroke={1}
       arcDashLength={1}
       arcDashGap={() => Math.random() * 3}
@@ -23,7 +23,7 @@ const HeroGlobe: React.FC = () => {
       hexPolygonsData={data.features}
       hexPolygonResolution={3}
       hexPolygonMargin={0.3}
-      hexPolygonColor={() => "white"}
+      hexPolygonColor={() => "#357af9"}
       animateIn={false}
       atmosphereColor="#357af9"
     />

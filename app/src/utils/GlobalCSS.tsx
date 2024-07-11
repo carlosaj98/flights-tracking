@@ -5,13 +5,17 @@ function GlobalCSS() {
     <GlobalStyles
       styles={{
         ":root": {
-          "--primary-color-extralight": "#dae9ff",
+          "--primary-color-extralight": "#bed9ff",
           "--primary-color-light": "#91c2ff",
-          "--primary-color-semilight": "#5da1fd",
           "--primary-color-base": "#357af9",
-          "--primary-color-semidark": "#225cee",
           "--primary-color-dark": "#1a48db",
-          "--primary-color-extradark": "#1c368c",
+          "--primary-color-extradark": "#162255",
+
+          "--secondary-color-extralight": "#fef1c7",
+          "--secondary-color-light": "#fce28b",
+          "--secondary-color-base": "#fabc34",
+          "--secondary-color-dark": "#d87007",
+          "--secondary-color-extradark": "#773110",
 
           "--gray-light": "#efefef",
           "--gray-semilight": "#bdbdbd",
