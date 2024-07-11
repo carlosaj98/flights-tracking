@@ -4,7 +4,7 @@ const HomePageContainer = styled(Stack)({
   width: "100%",
   height: "100vh",
   overflowX: "hidden",
-  backgroundColor:"white",
+  backgroundColor: "var(--background-color)",
 
   main: {
     width: "100%",
@@ -12,23 +12,21 @@ const HomePageContainer = styled(Stack)({
   },
 
   "#hero-text-container": {
-
-    gap:"24px"
+    gap: "24px",
   },
 
   "#hero-text-container h1": {
     fontSize: "2.5rem",
     fontWeight: "800",
-    color: "var(--primary-color-semidark)",
+    color: "black",
 
     span: {
-      color: "var(--secondary-color-base)",
+      color: "var(--primary-color-base)",
     },
-    
   },
 
   "#hero-text-container h2": {
-    color: "var(--primary-color-dark)",
+    color: "var(--gray-semidark)",
     fontWeight: "500",
   },
 

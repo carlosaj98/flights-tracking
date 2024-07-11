@@ -14,7 +14,7 @@ function HeroGlobeData() {
   }))
 
   const newMaterial = new THREE.MeshBasicMaterial()
-  newMaterial.color = new THREE.Color("#0e2b5d")
+  newMaterial.color = new THREE.Color("black")
 
   useEffect(() => {
     if (globeRef.current) {

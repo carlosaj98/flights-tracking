@@ -28,13 +28,9 @@ const HeroDetailsContent: React.FC<HeroDetailsProps> = ({ data, title }) => {
       justifyContent={"space-between"}
       width={"100%"}
     >
-      <Stack
-        id="content-details-departure"
-        alignItems={"center"}
-        width={"100%"}
-      >
-        <p>{title}</p>
-        <Stack>
+      <Stack className="card-container" alignItems={"center"} width={"100%"}>
+        <p className="direction-title">{title}</p>
+        <Stack className="card-airport-container">
           <p>{data.airport}</p>
           <Stack flexDirection={"row"} justifyContent={"space-between"}>
             <p>IATA: {data.iata}</p>
@@ -47,6 +43,7 @@ const HeroDetailsContent: React.FC<HeroDetailsProps> = ({ data, title }) => {
           justifyContent={"center"}
           width={"100%"}
           gap={"24px"}
+          className="card-dates-container"
         >
           <Box textAlign={"center"}>
             <p>Scheduled</p>
@@ -57,7 +54,11 @@ const HeroDetailsContent: React.FC<HeroDetailsProps> = ({ data, title }) => {
             <p>{transformDate(data.estimated)}</p>
           </Box>
         </Stack>
-        <Stack flexDirection={"row"} gap={"48px"}>
+        <Stack
+          flexDirection={"row"}
+          gap={"48px"}
+          className="card-place-container"
+        >
           <Stack flexDirection={"row"} gap={"12px"}>
             <p>Terminal</p>
             <p>{data.terminal}</p>

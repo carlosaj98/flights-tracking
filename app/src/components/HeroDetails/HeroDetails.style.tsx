@@ -4,7 +4,7 @@ const HeroDetailsContainer = styled(Stack)({
   width: "100%",
   borderRadius: "18px",
   boxShadow: "0 3px 6px var(--black-op-dark)",
-  backgroundColor: "var(--primary-color-base)",
+  backgroundColor: "var(--gray-dark)",
 
   overflow: "clip",
 
@@ -33,15 +33,15 @@ const HeroDetailsContainer = styled(Stack)({
   },
 
   ".header-text-subtitle": {
-    color: "var(--white-op-dark)",
+    color: "var(--gray-light)",
   },
 
-  "#content-details-container": {
+  ".content-details-container": {
     height: "100%",
     gap: "3px",
   },
 
-  "#content-details-departure, #content-details-arrival": {
+  ".card-container": {
     height: "100%",
     backgroundColor: "white",
     padding: "18px",

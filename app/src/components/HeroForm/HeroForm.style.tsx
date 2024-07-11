@@ -5,17 +5,17 @@ const CustomForm = styled("form")({
   flexDirection:"column",
   width:"100%",
   gap:"24px",
-  backgroundColor:"var(--secondary-color-base)",
+  backgroundColor:"white",
   padding:"18px",
   borderRadius:"18px",
-  boxShadow:"0 2px 4px var(--black-op-dark)",
+  boxShadow:"0px 3px 6px var(--gray-semilight)",
 
   ".input-container":{
 
     display:"flex",
     flexDirection:"column",
     gap:"6px",
-    color:"var(--secondary-color-dark)",
+    color:"black",
     fontWeight:"600",
     fontSize:"1.1rem"
   },

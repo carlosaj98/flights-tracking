@@ -5,17 +5,19 @@ function GlobalCSS() {
     <GlobalStyles
       styles={{
         ":root": {
-          "--primary-color-light": "#b5e4ff",
-          "--primary-color-semilight": "#1e9bff",
-          "--primary-color-base": "#0067ff",
-          "--primary-color-semidark": "#0d469b",
-          "--primary-color-dark": "#0e2b5d",
+          "--primary-color-extralight": "#dae9ff",
+          "--primary-color-light": "#91c2ff",
+          "--primary-color-semilight": "#5da1fd",
+          "--primary-color-base": "#357af9",
+          "--primary-color-semidark": "#225cee",
+          "--primary-color-dark": "#1a48db",
+          "--primary-color-extradark": "#1c368c",
 
-          "--secondary-color-light": "#fff6c5",
-          "--secondary-color-semilight": "#ffde46",
-          "--secondary-color-base": "#ffaa00",
-          "--secondary-color-semidark": "#bb5902",
-          "--secondary-color-dark": "#7c380b",
+          "--gray-light": "#efefef",
+          "--gray-semilight": "#bdbdbd",
+          "--gray-base": "#7c7c7c",
+          "--gray-semidark": "#525252",
+          "--gray-dark": "#3d3d3d",
 
           "--white-op-semi": "rgba(255,255,255, 0.5)",
           "--white-op-light": "rgba(255,255,255, 0.25)",
@@ -24,6 +26,8 @@ function GlobalCSS() {
           "--black-op-semi": "rgba(0,0,0, 0.5)",
           "--black-op-light": "rgba(0,0,0, 0.25)",
           "--black-op-dark": "rgba(0,0,0, 0.75)",
+
+          "--background-color": "#f5f5f7",
 
           "--font-base": "Poppins, sans-serif",
         },
@@ -37,7 +41,7 @@ function GlobalCSS() {
         body: {
           fontFamily: "var(--font-base)",
           width: "100vw",
-          minHeight: "100vh"
+          minHeight: "100vh",
         },
       }}
     />
