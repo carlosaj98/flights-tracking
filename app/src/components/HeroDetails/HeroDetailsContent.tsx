@@ -1,4 +1,4 @@
-import { Box, Stack } from "@mui/material"
+import { Stack } from "@mui/material"
 import { Direction } from "../../interfaces/flightData.interface"
 
 interface HeroDetailsProps {
@@ -19,48 +19,43 @@ const HeroDetailsContent: React.FC<HeroDetailsProps> = ({ data, title }) => {
     const seconds = String(newDate.getUTCSeconds()).padStart(2, "0")
     const formattedTime = `${hours}:${minutes}:${seconds}`
 
-    return `${formattedDate} ${formattedTime}`
+    return `${formattedDate} - ${formattedTime}`
   }
   return (
-    <Stack className="card-container">
+    <Stack className="card-container" gap={"6px"}>
       <p className="direction-title">{title}</p>
-      <Stack className="card-airport-container">
-        <p>{data.airport}</p>
-        <Stack flexDirection={"row"} justifyContent={"space-between"} width={"100%"}>
+      <Stack className="airport-container">
+        <p className="airport-name">{data.airport}</p>
+        <Stack className="airport-code-container">
           <p>IATA: {data.iata}</p>
           <p>ICAO: {data.icao}</p>
         </Stack>
       </Stack>
-      <Stack
-        flexDirection={"row"}
-        textAlign={"center"}
-        justifyContent={"center"}
-        width={"100%"}
-        gap={"24px"}
-        className="card-dates-container"
-      >
-        <Box>
-          <p>Scheduled</p>
-          <p>{transformDate(data.scheduled)}</p>
-        </Box>
-        <Box>
-          <p>Estimated</p>
-          <p>{transformDate(data.estimated)}</p>
-        </Box>
-      </Stack>
-      <Stack
-        flexDirection={"row"}
-        gap={"48px"}
-        className="card-place-container"
-      >
-        <Stack flexDirection={"row"} gap={"12px"}>
-          <p>Terminal</p>
-          <p>{data.terminal}</p>
-        </Stack>
 
-        <Stack flexDirection={"row"} gap={"12px"}>
-          <p>Gate</p>
-          <p>{data.gate}</p>
+      <Stack
+        flexDirection={"row"}
+        width={"100%"}
+        justifyContent={"space-evenly"}
+      >
+        <Stack textAlign={"center"} gap={"6px"} width={"100%"}>
+          <Stack className="date-container" borderRadius={"18px 0px 0px 18px"}>
+            <p>Scheduled</p>
+            <p>{transformDate(data.scheduled)}</p>
+          </Stack>
+          <Stack className="site-container">
+            <p>Terminal</p>
+            <p>{data.terminal}</p>
+          </Stack>
+        </Stack>
+        <Stack textAlign={"center"} gap={"6px"} width={"100%"} >
+          <Stack className="date-container" borderRadius={"0px 18px 18px 0px"}>
+            <p>Estimated</p>
+            <p>{transformDate(data.estimated)}</p>
+          </Stack>
+          <Stack className="site-container">
+            <p>Gate</p>
+            <p>{data.gate}</p>
+          </Stack>
         </Stack>
       </Stack>
     </Stack>

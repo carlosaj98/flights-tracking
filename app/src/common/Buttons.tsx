@@ -12,6 +12,7 @@ const FormSubmitButton: React.FC<ButtonsProp> = ({ text }) => {
       sx={{
         textTransform: "none",
         fontFamily: "var(--font-base)",
+        fontWeight:"600",
         fontSize: "1.1rem",
         borderRadius: "18px",
         backgroundColor: "var(--secondary-color-base)",
