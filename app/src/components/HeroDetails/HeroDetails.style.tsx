@@ -93,7 +93,7 @@ const HeroDetailsContainer = styled(Stack)({
     alignSelf: "center",
     gap: "12px",
     backgroundColor: "var(--gray-semidark)",
-    padding: "6px 12px",
+    padding: "6px 8px",
     borderRadius: "18px",
     color: "white",
     fontWeight: "500",

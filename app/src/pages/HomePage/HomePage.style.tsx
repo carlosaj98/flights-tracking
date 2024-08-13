@@ -6,7 +6,7 @@ const HomePageContainer = styled(Stack)({
   overflowX: "hidden",
   backgroundColor: "var(--background-color)",
 
-  main: {
+  section: {
     width: "100%",
     height: "100%",
   },
