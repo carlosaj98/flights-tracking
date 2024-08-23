@@ -5,8 +5,11 @@ const HeroDetailsContainer = styled(Stack)({
   borderRadius: "18px",
   boxShadow: "0 3px 6px var(--gray-semilight)",
   backgroundColor: "var(--primary-color-base)",
-
   overflow: "clip",
+
+  p: {
+    fontFamily: "var(--font-base)",
+  },
 
   "#header-details-container": {
     borderRadius: "18px 18px 0px 0px",
@@ -16,19 +19,9 @@ const HeroDetailsContainer = styled(Stack)({
 
   ".header-details-item": {
     width: "100%",
-    "&:nth-child(1)": {
-      alignItems: "flex-start",
-    },
-    "&:nth-child(2)": {
-      flexDirection: "row",
-    },
-    "&:nth-child(3)": {
-      alignItems: "flex-end",
-    },
   },
 
   ".header-text-title": {
-    fontSize: "1.3rem",
     fontWeight: "500",
   },
 
@@ -39,7 +32,6 @@ const HeroDetailsContainer = styled(Stack)({
   ".content-details-container": {
     height: "100%",
     gap: "3px",
-    flexDirection: "row",
   },
 
   ".card-container": {
@@ -47,7 +39,6 @@ const HeroDetailsContainer = styled(Stack)({
     width: "100%",
     alignItems: "center",
     backgroundColor: "white",
-    padding: "24px 48px",
   },
 
   ".direction-title": {
@@ -66,7 +57,7 @@ const HeroDetailsContainer = styled(Stack)({
   },
 
   ".airport-name": {
-    fontSize: "1.15rem",
+    fontWeight: "500",
   },
 
   ".airport-code-container": {
