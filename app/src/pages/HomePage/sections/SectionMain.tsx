@@ -1,4 +1,4 @@
-import { Box, Stack } from "@mui/material"
+import { Stack } from "@mui/material"
 import HeroGlobe from "../../../components/HeroGlobe/HeroGlobe"
 import HeroDetails from "../../../components/HeroDetails/HeroDetails"
 import HeroForm from "../../../components/HeroForm/HeroForm"
@@ -12,13 +12,18 @@ const SectionMain: React.FC = () => {
       flexDirection={"column"}
       alignItems={"center"}
       justifyContent={"center"}
+      gap={"32px"}
     >
-      <Stack id="hero-container" flexDirection={"row"}>
+      <Stack
+        id="hero-container"
+        flexDirection={{ lg: "row", xs: "column" }}
+        alignItems={"center"}
+      >
         <Stack
           id="hero-text-container"
           className="animate__animated animate__fadeInLeft"
         >
-          <Stack>
+          <Stack textAlign={{ lg: "left", xs: "center" }}>
             <h1>
               Find your <span>Flight</span>!
             </h1>
@@ -31,12 +36,13 @@ const SectionMain: React.FC = () => {
           <HeroForm formFields={formFields} />
         </Stack>
 
-        <Box
+        <Stack
           id="canvas-container"
           className="animate__animated animate__fadeInRight"
+          alignItems={"center"}
         >
           <HeroGlobe />
-        </Box>
+        </Stack>
       </Stack>
       <HeroDetails data={heroDetailsData[0]} />
     </Stack>

@@ -6,11 +6,6 @@ const HomePageContainer = styled(Stack)({
   overflowX: "hidden",
   backgroundColor: "var(--background-color)",
 
-  section: {
-    width: "100%",
-    height: "100%",
-  },
-
   "#hero-text-container": {
     gap: "24px",
   },
@@ -19,6 +14,7 @@ const HomePageContainer = styled(Stack)({
     fontSize: "2.5rem",
     fontWeight: "800",
     color: "black",
+    heigth:"100%",
 
     span: {
       color: "var(--primary-color-base)",

@@ -91,6 +91,7 @@ const InputSelect: React.FC<InputProps> = ({ field, rest }) => {
             borderRadius: "12px",
             backgroundColor: "var(--gray-semilight)",
             backdropFilter: "blur(5px)",
+            boxShadow: "0 2px 4px var(--gray-semidark)",
           },
         },
       }}
@@ -106,19 +107,19 @@ const InputSelect: React.FC<InputProps> = ({ field, rest }) => {
             color: "black",
             transition: "all 0.2s ease-out",
             backgroundColor: "white",
-            border:"1px solid var(--gray-base)",
             boxShadow: "0 2px 4px var(--gray-base)",
             borderRadius: "12px",
             "&:hover, &.MuiMenuItem-root.Mui-selected:hover": {
               color: "white",
-              backgroundColor: "var(--gray-semidark)",
-              border:"1px solid var(--gray-semidark)",
+              backgroundColor: "var(--gray-dark)",
+      
               boxShadow: "0 2px 4px var(--gray-semidark)",
             },
             fontFamily: "var(--font-base)",
 
             "&.MuiMenuItem-root.Mui-selected": {
-              backgroundColor: "var(--primary-color-extralight)",
+              color:"white",
+              backgroundColor: "var(--primary-color-base)",
             },
           }}
         >
