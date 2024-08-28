@@ -1,7 +1,12 @@
 import { Stack, Typography } from "@mui/material"
 import { IconPlane } from "../../common/Icons"
+import { FlightData } from "../../interfaces/flightData.interface"
 
-const HeroDetailsHeader: React.FC = () => {
+interface HeroDetailsProps {
+  data: FlightData
+}
+
+const HeroDetailsHeader: React.FC<HeroDetailsProps> = ({data}) => {
   return (
     <Stack
       flexDirection={{ sm: "row", xs: "column" }}
@@ -19,13 +24,13 @@ const HeroDetailsHeader: React.FC = () => {
           className="header-text-title"
           fontSize={{ md: "1.25rem", xs: "1.1rem" }}
         >
-          UA2402
+          {data.flight.iata}
         </Typography>
         <Typography
           className="header-text-subtitle"
           fontSize={{ md: "1rem", xs: "0.85rem" }}
         >
-          United Airlines (UA)
+          {data.airline.name} ({data.airline.iata})
         </Typography>
       </Stack>
       <Stack
@@ -42,13 +47,13 @@ const HeroDetailsHeader: React.FC = () => {
             className="header-text-title"
             fontSize={{ md: "1.25rem", xs: "1.1rem" }}
           >
-            LAX
+            {data.departure.iata}
           </Typography>
           <Typography
             className="header-text-subtitle"
             fontSize={{ md: "1rem", xs: "0.85rem" }}
           >
-            Los Angeles Int.
+            {data.departure.airport}
           </Typography>
         </Stack>
         <Stack
@@ -64,13 +69,13 @@ const HeroDetailsHeader: React.FC = () => {
             className="header-text-title"
             fontSize={{ md: "1.25rem", xs: "1.1rem" }}
           >
-            BOS
+            {data.arrival.iata}
           </Typography>
           <Typography
             className="header-text-subtitle"
             fontSize={{ md: "1rem", xs: "0.85rem" }}
           >
-            Logan Int.
+           {data.arrival.airport}
           </Typography>
         </Stack>
       </Stack>

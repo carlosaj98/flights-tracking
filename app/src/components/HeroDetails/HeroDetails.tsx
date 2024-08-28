@@ -11,7 +11,7 @@ interface HeroDetailsProps {
 const HeroDetails: React.FC<HeroDetailsProps> = ({ data }) => {
   return (
     <HeroDetailsContainer>
-      <HeroDetailsHeader />
+      <HeroDetailsHeader data={data}/>
       <Stack
         className="content-details-container"
         flexDirection={{ lg: "row", xs: "column" }}
