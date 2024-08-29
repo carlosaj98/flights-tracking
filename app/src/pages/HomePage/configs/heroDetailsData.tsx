@@ -1,6 +1,6 @@
 import { FlightData } from "../../../interfaces/flightData.interface"
 
-const heroDetailsData: FlightData[] = [
+const heroDetailsData: FlightData = 
   {
     flight_date: "2019-12-12",
     flight_status: "active",
@@ -60,7 +60,6 @@ const heroDetailsData: FlightData[] = [
       speed_vertical: 1.188,
       is_ground: false,
     },
-  },
-]
+  }
 
 export default heroDetailsData

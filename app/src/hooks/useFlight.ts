@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react"
 
 import httpService from "../services/httpService"
+import heroDetailsData from "../pages/HomePage/configs/heroDetailsData"
 
 import { FieldValues } from "react-hook-form"
 
@@ -11,7 +12,7 @@ interface paramsInterface {
 }
 
 function useFlight(aux: FieldValues, params: paramsInterface) {
-  const [flight, setFlight] = useState({})
+  const [flight, setFlight] = useState(heroDetailsData)
   const [isLoading, setIsLoading] = useState(false)
 
   useEffect(() => {

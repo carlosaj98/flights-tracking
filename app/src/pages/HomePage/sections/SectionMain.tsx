@@ -47,7 +47,11 @@ const SectionMain: React.FC = () => {
             </h2>
           </Stack>
 
-          <HeroForm formFields={formFields} actionForm={setFormData} actionLoading={setIsLoading} />
+          <HeroForm
+            formFields={formFields}
+            actionForm={setFormData}
+            actionLoading={setIsLoading}
+          />
         </Stack>
 
         <Stack
@@ -58,8 +62,7 @@ const SectionMain: React.FC = () => {
           <HeroGlobe />
         </Stack>
       </Stack>
-      {flight.flight_date && <HeroDetails data={flight} />}
-      
+      <HeroDetails data={flight} />
     </Stack>
   )
 }
