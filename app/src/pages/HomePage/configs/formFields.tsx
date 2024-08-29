@@ -1,6 +1,21 @@
 import { formFieldsInterface } from "../../../interfaces/formFields.interface"
 import { IconAirline, IconCalendar, IconFlightNum } from "../../../common/Icons"
 
+const today = new Date()
+
+const yesterday = new Date(today)
+yesterday.setDate(today.getDate() - 1)
+
+const tomorrow = new Date(today)
+tomorrow.setDate(today.getDate() + 1)
+
+function formatDate(date: Date) {
+  const year = date.getFullYear()
+  const month = String(date.getMonth() + 1).padStart(2, "0")
+  const day = String(date.getDate()).padStart(2, "0")
+  return `${year}-${month}-${day}`
+}
+
 const formFields: formFieldsInterface[] = [
   {
     type: "text",
@@ -8,7 +23,7 @@ const formFields: formFieldsInterface[] = [
     id: "airline-input",
     label: "Airline",
     placeholder: "Your Airline",
-    icon: <IconAirline/>,
+    icon: <IconAirline />,
   },
 
   {
@@ -26,7 +41,20 @@ const formFields: formFieldsInterface[] = [
     id: "date-input",
     label: "Flight Date",
     placeholder: "Your flight date",
-    options: ["Today", "Tomorrow"],
+    options: [
+      {
+        dateTitle: "Yesterday",
+        dateValue: formatDate(yesterday),
+      },
+      {
+        dateTitle: "Today",
+        dateValue: formatDate(today),
+      },
+      {
+        dateTitle: "Tomorrow",
+        dateValue: formatDate(tomorrow),
+      },
+    ],
     icon: <IconCalendar />,
   },
 ]

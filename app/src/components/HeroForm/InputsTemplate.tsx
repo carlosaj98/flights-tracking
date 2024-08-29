@@ -1,5 +1,6 @@
 import { TextField, Select, MenuItem, Stack } from "@mui/material"
 import { FieldValues } from "react-hook-form"
+import { optionsSelectInterface } from "../../interfaces/formFields.interface"
 
 interface InputProps {
   field: FieldValues
@@ -96,10 +97,10 @@ const InputSelect: React.FC<InputProps> = ({ field, rest }) => {
         },
       }}
     >
-      {rest.options?.map((option: string) => (
+      {rest.options?.map((option: optionsSelectInterface) => (
         <MenuItem
-          key={option}
-          value={option}
+          key={option.dateTitle}
+          value={option.dateValue}
           selected={false}
           divider
           sx={{
@@ -112,18 +113,18 @@ const InputSelect: React.FC<InputProps> = ({ field, rest }) => {
             "&:hover, &.MuiMenuItem-root.Mui-selected:hover": {
               color: "white",
               backgroundColor: "var(--gray-dark)",
-      
+
               boxShadow: "0 2px 4px var(--gray-semidark)",
             },
             fontFamily: "var(--font-base)",
 
             "&.MuiMenuItem-root.Mui-selected": {
-              color:"white",
+              color: "white",
               backgroundColor: "var(--primary-color-base)",
             },
           }}
         >
-          {option}
+          {option.dateValue} ({option.dateTitle})
         </MenuItem>
       ))}
     </Select>

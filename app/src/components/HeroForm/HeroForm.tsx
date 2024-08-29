@@ -28,26 +28,27 @@ const HeroForm: React.FC<FormComponentProps> = ({ formFields }) => {
   const onSubmit: SubmitHandler<FieldValues> = (data) => {
     setFormData(data)
     setIsLoading(true)
-
   }
 
   useEffect(() => {
-    if(isLoading) {
+    if (isLoading) {
       console.log(formData)
 
       httpService("/flights")
-      .getFlightsOne({
-        access_key: API_KEY,
-        airline_name: formData.airline,
-        flight_iata: formData.flight,
-      })
-      .then(({ data }) => {
-        setFlight(data)
-        console.log(data)
-      })
-    
+        .getFlightsOne({
+          access_key: API_KEY,
+          airline_name: formData.airline,
+          flight_iata: formData.flight,
+        })
+        .then(({ data }) => {
+          const transformData = data.data.filter(
+            ({ flight_date }: { flight_date: string }) =>
+              flight_date === formData.date
+          )
+          setFlight(transformData[0])
+          console.log(transformData[0])
+        })
     }
-    
   }, [formData])
 
   return (
@@ -71,7 +72,7 @@ const HeroForm: React.FC<FormComponentProps> = ({ formFields }) => {
               key={name}
               name={name}
               control={control}
-              defaultValue={rest.options![0]}
+              defaultValue={rest.options![1].dateValue}
               render={({ field }) => <InputSelect field={field} rest={rest} />}
             />
           </div>
