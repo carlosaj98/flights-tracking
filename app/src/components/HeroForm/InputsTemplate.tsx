@@ -10,6 +10,7 @@ interface InputProps {
 const InputText: React.FC<InputProps> = ({ field, rest }) => {
   return (
     <TextField
+      required
       {...field}
       {...rest}
       InputProps={{
