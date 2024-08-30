@@ -12,7 +12,7 @@ interface paramsInterface {
 }
 
 function useFlight(aux: FieldValues, params: paramsInterface) {
-  const [flight, setFlight] = useState(heroDetailsData)
+  const [flight, setFlight] = useState({})
   const [isLoading, setIsLoading] = useState(false)
 
   useEffect(() => {
