@@ -5,10 +5,12 @@ import HeroDetailsContent from "./HeroDetailsContent"
 import { Stack } from "@mui/material"
 
 interface HeroDetailsProps {
-  data: FlightData
+  data: FlightData,
+  isLoading: boolean
 }
 
-const HeroDetails: React.FC<HeroDetailsProps> = ({ data }) => {
+const HeroDetails: React.FC<HeroDetailsProps> = ({ data, isLoading }) => {
+  if(isLoading) return <p>Cargando ...</p>
   return (
     <HeroDetailsContainer>
       <HeroDetailsHeader data={data}/>

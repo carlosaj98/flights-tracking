@@ -12,7 +12,7 @@ import { FieldValues } from "react-hook-form"
 
 const SectionMain: React.FC = () => {
   const [formData, setFormData] = useState<FieldValues>({})
-  const { flight, setIsLoading } = useFlight(formData, {
+  const { flight, isLoading, setIsLoading } = useFlight(formData, {
     access_key: import.meta.env.VITE_API_KEY,
     airline_name: formData.airline,
     flight_iata: formData.flight,
@@ -62,7 +62,7 @@ const SectionMain: React.FC = () => {
           <HeroGlobe />
         </Stack>
       </Stack>
-      <HeroDetails data={flight} />
+      <HeroDetails data={flight} isLoading={isLoading} />
     </Stack>
   )
 }

@@ -73,7 +73,7 @@ const HeroDetailsContainer = styled(Stack)({
     gap: "6px",
     justifyContent: "center",
     padding: "6px 0px",
-    "& p:nth-child(1)": {
+    "& p:nth-of-type(1)": {
       borderBottom: "2px solid black",
       fontWeight: "500",
     },
@@ -88,7 +88,7 @@ const HeroDetailsContainer = styled(Stack)({
     borderRadius: "18px",
     color: "white",
     fontWeight: "500",
-    "& p:nth-child(2)": {
+    "& p:nth-of-type(2)": {
       backgroundColor: "white",
       width: "60px",
       color: "black",
