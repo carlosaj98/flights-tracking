@@ -9,7 +9,7 @@ import {
 import { formFieldsInterface } from "../../interfaces/formFields.interface"
 import { InputText, InputSelect } from "./InputsTemplate"
 import CustomForm from "./HeroForm.style"
-import FormSubmitButton from "../../common/Buttons"
+import {FormSubmitButton} from "../../common/Buttons"
 
 interface FormComponentProps {
   formFields: formFieldsInterface[]
