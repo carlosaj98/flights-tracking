@@ -43,9 +43,9 @@ function GlobalCSS() {
         },
 
         body: {
+          backgroundColor:"white",
           fontFamily: "var(--font-base)",
-          width: "100vw",
-          minHeight: "100vh",
+          overflowX: "hidden",
         },
       }}
     />

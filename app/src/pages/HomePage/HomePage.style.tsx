@@ -2,9 +2,12 @@ import { styled, Stack } from "@mui/material"
 
 const HomePageContainer = styled(Stack)({
   width: "100%",
-  height: "100vh",
-  overflowX: "hidden",
+  minHeight: "100vh",
   backgroundColor: "var(--background-color)",
+
+  section:{
+    padding:"48px 0px"
+  },
 
   "#hero-text-container": {
     gap: "24px",

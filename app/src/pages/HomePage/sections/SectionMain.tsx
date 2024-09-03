@@ -26,7 +26,6 @@ const SectionMain: React.FC = () => {
       justifyContent={"center"}
       minHeight={"100%"}
       gap={"32px"}
-      padding={{ lg: "0px", xs: "48px 0px" }}
     >
       <Stack
         id="hero-container"
