@@ -4,8 +4,8 @@ import ServiceCard from "../../../components/ServiceCard/ServiceCard"
 
 const SectionServices = () => {
   return (
-    <Stack component={"section"} minHeight={"100%"} gap={"32px"}>
-      <Stack id="services-header" alignItems={"center"}>
+    <Stack component={"section"} gap={"32px"} >
+      <Stack id="services-header" alignItems={"center"} textAlign={"center"}>
         <Typography
           variant={"h3"}
           fontFamily={"var(--font-base)"}
@@ -23,7 +23,7 @@ const SectionServices = () => {
           Explore our services designed to make your travel experience seamless
         </Typography>
       </Stack>
-      <Stack flexDirection={"row"} justifyContent={"space-between"}>
+      <Stack flexDirection={{lg:"row", xs:"column"}} justifyContent={"space-between"} gap={"24px"}>
         {serviceFields.map((field) => {
           return <ServiceCard key={field.title} serviceField={field} />
         })}

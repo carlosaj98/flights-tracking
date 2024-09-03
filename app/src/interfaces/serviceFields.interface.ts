@@ -1,5 +1,6 @@
 export interface serviceFieldInterface {
   title: string
   desc: string
-  image: string
+  image: string,
+  link:string
 }

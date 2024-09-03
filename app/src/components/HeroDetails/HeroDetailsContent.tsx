@@ -45,7 +45,7 @@ const HeroDetailsContent: React.FC<HeroDetailsProps> = ({ data, title }) => {
       >
         {!isMobileScreen ? (
           <>
-            <Stack textAlign={"center"} gap={"6px"} width={"100%"}>
+            <Stack textAlign={"center"} gap={"12px"} width={"100%"}>
               <Stack
                 className="date-container"
                 borderRadius={"18px 0px 0px 18px"}
@@ -58,7 +58,7 @@ const HeroDetailsContent: React.FC<HeroDetailsProps> = ({ data, title }) => {
                 <Typography>{data.terminal}</Typography>
               </Stack>
             </Stack>
-            <Stack textAlign={"center"} gap={"6px"} width={"100%"}>
+            <Stack textAlign={"center"} gap={"12px"} width={"100%"}>
               <Stack
                 className="date-container"
                 borderRadius={"0px 18px 18px 0px"}

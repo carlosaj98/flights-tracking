@@ -1,6 +1,6 @@
 import { Stack, Box, Typography } from "@mui/material"
+import { Link } from "react-router-dom"
 import ServiceCardContainer from "./ServiceCard.style"
-import { ServiceButton } from "../../common/Buttons"
 import { serviceFieldInterface } from "../../interfaces/serviceFields.interface"
 
 interface ServiceCardProps {
@@ -21,7 +21,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ serviceField }) => {
           {serviceField.desc}
         </Typography>
       </Stack>
-      <ServiceButton text="SEARCH" />
+      <Link to={serviceField.link}>SEARCH</Link>
     </ServiceCardContainer>
   )
 }
