@@ -1,4 +1,5 @@
 import { Stack, Box, Typography } from "@mui/material"
+import SocialLinks from "../../../components/SocialLinks/SocialLinks"
 
 const SectionContact: React.FC = () => {
   return (
@@ -52,10 +53,8 @@ const SectionContact: React.FC = () => {
             If you have any questions, inquiries, or suggestions, feel free to
             contact me through the form. I'm here to help!
           </p>
+          <SocialLinks />
         </Stack>
-      </Stack>
-      <Stack id="contact-form-container" width={"100%"} maxWidth={"50%"}>
-        
       </Stack>
     </Stack>
   )
