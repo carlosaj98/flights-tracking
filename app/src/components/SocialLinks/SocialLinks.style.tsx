@@ -1,7 +1,7 @@
 import { Stack, styled } from "@mui/material"
 
 const SocialLinksContainer = styled(Stack)({
-  flexDirection: "row",
+  flexDirection:"row",
   gap: "24px",
   marginTop:"12px",
 
@@ -12,7 +12,7 @@ const SocialLinksContainer = styled(Stack)({
     transition: "scale 0.15s ease-out, fill 0.15s ease-out",
     fill: "var(--gray-base)",
     "&:hover": {
-      scale: "1.1",
+      scale: "1.2",
       fill: "var(--gray-dark)",
     },
   },

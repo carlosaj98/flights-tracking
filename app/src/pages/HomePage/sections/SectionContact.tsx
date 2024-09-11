@@ -3,7 +3,7 @@ import SocialLinks from "../../../components/SocialLinks/SocialLinks"
 
 const SectionContact: React.FC = () => {
   return (
-    <Stack component={"section"} alignItems={"center"} gap={"64px"}>
+    <Stack component={"section"} alignItems={"center"} gap={"32px"}>
       <Stack id="contact-header" alignItems={"center"} textAlign={"center"}>
         <Typography
           variant={"h3"}
@@ -25,17 +25,25 @@ const SectionContact: React.FC = () => {
       <Stack
         id="contact-info-container"
         width={"100%"}
-        flexDirection={"row"}
-        justifyContent={"space-between"}
+        flexDirection={{ lg: "row", xs: "column" }}
+        justifyContent={{ lg: "space-between", xs: "center" }}
+        alignItems={"center"}
+        gap={{ lg: "0px", xs: "24px" }}
       >
-        <Box id="contact-image" width={"400px"} height={"400px"}>
+        <Box
+          id="contact-image"
+          width={{ lg: "400px", xs: "250px" }}
+          height={{ lg: "400px", xs: "250px" }}
+        >
           <img src="/contact_image.png" width={"100%"} height={"100%"} />
         </Box>
         <Stack
-          maxWidth={"50%"}
+          maxWidth={{ lg: "50%", xs: "100%" }}
+          textAlign={{ lg: "start", xs: "center" }}
           justifyContent={"center"}
           gap={"24px"}
-          flexDirection={"column"}
+          id="contact-text"
+          color={"var(--gray-dark)"}
         >
           <p>
             I am Carlos, the creator of this website dedicated to real-time
@@ -45,9 +53,10 @@ const SectionContact: React.FC = () => {
           </p>
           <p>
             This project has been built using a combination of technologies,
-            including HTML, CSS, TypeScript, React, and Three.js. I also use a
-            flight tracking API to provide real-time data called AviationStack,
-            using its free tier (https://aviationstack.com).
+            including <span>HTML, CSS, TypeScript, React, and Three.js</span>. I
+            also use a flight tracking API to provide real-time data called
+            <a href="https://aviationstack.com"> AviationStack</a>, using its
+            free tier.
           </p>
           <p>
             If you have any questions, inquiries, or suggestions, feel free to
