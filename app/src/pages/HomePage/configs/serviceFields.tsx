@@ -12,7 +12,7 @@ const serviceFields: serviceFieldInterface[] = [
     title: "Find various flights",
     desc: "Find multiple flights by filtering through advanced options tailored to your needs.",
     image: "/ticketMult_blue.png",
-    link:"/#",
+    link:"/flights",
   },
 
   {

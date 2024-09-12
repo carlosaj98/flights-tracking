@@ -1,6 +1,6 @@
 import { createBrowserRouter } from "react-router-dom"
 
-import { HomePage } from "./pages"
+import { HomePage, FlightsPage } from "./pages"
 
 interface routesInterface {
   path: string
@@ -12,6 +12,10 @@ const routes: routesInterface[] = [
   {
     path: "/",
     element: <HomePage />,
+  },
+  {
+    path: "/flights",
+    element: <FlightsPage />,
   },
 ]
 
