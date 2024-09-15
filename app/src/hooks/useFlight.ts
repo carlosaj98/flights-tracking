@@ -7,20 +7,16 @@ import heroDetailsData from "../pages/HomePage/configs/heroDetailsData"
 import { FieldValues } from "react-hook-form"
 import { FlightData } from "../interfaces/flightData.interface"
 
-interface paramsInterface {
-  access_key: string
-  airline_name: string
-  flight_iata: string
-}
+import { apiParams } from "../interfaces/apiParams.interface"
 
-function useFlight(aux: FieldValues, params: paramsInterface) {
+function useFlight(aux: FieldValues, params: apiParams) {
   const [flight, setFlight] = useState<FlightData>(heroDetailsData)
   const [isLoading, setIsLoading] = useState(false)
 
   useEffect(() => {
     if (isLoading) {
       httpService("/flights")
-        .getFlightsOne(params)
+        .getFlights(params)
         .then(({ data }) => {
           const transformData = data.data.filter(
             ({ flight_date }: { flight_date: string }) =>
