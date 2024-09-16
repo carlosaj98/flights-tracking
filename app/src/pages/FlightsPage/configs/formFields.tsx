@@ -8,6 +8,10 @@ const formFields: formFieldsInterface[] = [
     label: "Flight direction",
     id: "flight-direction",
     name: "flight-direction",
+    options: [
+      { directionTitle: "Arrival", directionValue: "arrival" },
+      { directionTitle: "Departure", directionValue: "departure" },
+    ],
   },
 
   {

@@ -1,6 +1,16 @@
-import { TextField, Select, MenuItem, Stack } from "@mui/material"
+import {
+  TextField,
+  Select,
+  MenuItem,
+  Stack,
+  FormControl,
+  FormControlLabel,
+  FormLabel,
+  Radio,
+  RadioGroup,
+} from "@mui/material"
 import { FieldValues } from "react-hook-form"
-import { optionsSelectInterface } from "../interfaces/formFields.interface"
+import { optionsInputInterface } from "../interfaces/formFields.interface"
 
 interface InputProps {
   field: FieldValues
@@ -98,7 +108,7 @@ const InputSelect: React.FC<InputProps> = ({ field, rest }) => {
         },
       }}
     >
-      {rest.options?.map((option: optionsSelectInterface) => (
+      {rest.options?.map((option: optionsInputInterface) => (
         <MenuItem
           key={option.dateTitle}
           value={option.dateValue}
@@ -132,4 +142,36 @@ const InputSelect: React.FC<InputProps> = ({ field, rest }) => {
   )
 }
 
-export { InputText, InputSelect }
+const InputRadio: React.FC<InputProps> = ({ field, rest }) => {
+  return (
+    <FormControl
+      {...field}
+      {...rest}
+      sx={{
+        span: { fontFamily: "var(--font-base)" },
+      }}
+    >
+      <FormLabel id="demo-controlled-radio-buttons-group">
+        {rest.label}
+      </FormLabel>
+      <RadioGroup
+        aria-labelledby="demo-controlled-radio-buttons-group"
+        name="controlled-radio-buttons-group"
+        // value={field.value}
+        // onChange={field.handleChange}
+        row
+      >
+        {rest.options?.map((option: optionsInputInterface) => (
+          <FormControlLabel
+            key={option.directionValue}
+            value={option.directionValue}
+            control={<Radio />}
+            label={option.directionTitle}
+          />
+        ))}
+      </RadioGroup>
+    </FormControl>
+  )
+}
+
+export { InputText, InputSelect, InputRadio }

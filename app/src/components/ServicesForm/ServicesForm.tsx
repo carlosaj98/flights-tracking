@@ -1,32 +1,67 @@
 import ServicesFormContainer from "./ServicesForm.style"
-import { FormControl, RadioGroup, FormControlLabel, Radio, FormLabel } from "@mui/material"
-import { useState, useEffect } from "react"
+import { useForm, Controller, FieldValues } from "react-hook-form"
+import { formFieldsInterface } from "../../interfaces/formFields.interface"
+import { InputRadio, InputSelect, InputText } from "../../common/InputsTemplate"
+import { Stack } from "@mui/material"
 
-const ServicesForm: React.FC = () => {
-  const [value, setValue] = useState('female');
+interface FormComponentProps {
+  formFields: formFieldsInterface[]
+}
 
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setValue((event.target).value);
-  };
-
-  useEffect(()=>{
-    console.log(value)
-  },[value])
+const ServicesForm: React.FC<FormComponentProps> = ({ formFields }) => {
+  const { control } = useForm<FieldValues>()
   return (
     <ServicesFormContainer>
-      <FormControl>
-        <FormLabel id="demo-controlled-radio-buttons-group">Gender</FormLabel>
-        <RadioGroup
-          aria-labelledby="demo-controlled-radio-buttons-group"
-          name="controlled-radio-buttons-group"
-          value={value}
-          onChange={handleChange}
-          row
-        >
-          <FormControlLabel value="female" control={<Radio />} label="Female" />
-          <FormControlLabel value="male" control={<Radio />} label="Male" />
-        </RadioGroup>
-      </FormControl>
+      {formFields.map(({ name, id, label, type, ...rest }) => {
+        return (
+          <Stack key={id}>
+            {type === "radio" && (
+              <div key={id} className="input-container">
+                <label htmlFor={id}>{label}</label>
+                <Controller
+                  key={name}
+                  name={name}
+                  control={control}
+                  defaultValue=""
+                  render={({ field }) => (
+                    <InputRadio field={field} rest={rest} />
+                  )}
+                />
+              </div>
+            )}
+
+            {type === "text" && (
+              <div key={id} className="input-container">
+                <label htmlFor={id}>{label}</label>
+                <Controller
+                  key={name}
+                  name={name}
+                  control={control}
+                  defaultValue=""
+                  render={({ field }) => (
+                    <InputText field={field} rest={rest} />
+                  )}
+                />
+              </div>
+            )}
+
+            {type === "select" && (
+              <div key={id} className="input-container">
+                <label htmlFor={id}>{label}</label>
+                <Controller
+                  key={name}
+                  name={name}
+                  control={control}
+                  defaultValue={rest.options![1].dateValue}
+                  render={({ field }) => (
+                    <InputSelect field={field} rest={rest} />
+                  )}
+                />
+              </div>
+            )}
+          </Stack>
+        )
+      })}
     </ServicesFormContainer>
   )
 }
