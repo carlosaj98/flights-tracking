@@ -1,6 +1,6 @@
 import { TextField, Select, MenuItem, Stack } from "@mui/material"
 import { FieldValues } from "react-hook-form"
-import { optionsSelectInterface } from "../../interfaces/formFields.interface"
+import { optionsSelectInterface } from "../interfaces/formFields.interface"
 
 interface InputProps {
   field: FieldValues

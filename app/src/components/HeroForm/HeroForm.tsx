@@ -7,7 +7,7 @@ import {
 } from "react-hook-form"
 
 import { formFieldsInterface } from "../../interfaces/formFields.interface"
-import { InputText, InputSelect } from "./InputsTemplate"
+import { InputText, InputSelect } from "../../common/InputsTemplate"
 import CustomForm from "./HeroForm.style"
 import {FormSubmitButton} from "../../common/Buttons"
 

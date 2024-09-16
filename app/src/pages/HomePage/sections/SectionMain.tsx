@@ -6,7 +6,7 @@ import HeroDetails from "../../../components/HeroDetails/HeroDetails"
 import HeroForm from "../../../components/HeroForm/HeroForm"
 import formFields from "../configs/formFields"
 
-import useFlight from "../../../hooks/useFlight"
+import {useFlight} from "../../../hooks/useFlight"
 
 import { FieldValues } from "react-hook-form"
 

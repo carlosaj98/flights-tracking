@@ -43,6 +43,8 @@ export interface Flight {
   iata: string
   icao: string
   codeshared: null
+  lat?: number
+  lng?: number
 }
 
 export interface Live {

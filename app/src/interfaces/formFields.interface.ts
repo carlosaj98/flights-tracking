@@ -6,11 +6,11 @@ export interface optionsSelectInterface {
 }
 
 export interface formFieldsInterface {
-  type: "text" | "select"
+  type: "text" | "select" | "radio"
   name: string
   id: string
   label: string
-  placeholder: string
+  placeholder?: string
   options?: optionsSelectInterface[],
-  icon:ReactElement
+  icon?:ReactElement
 }

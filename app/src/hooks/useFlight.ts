@@ -33,4 +33,29 @@ function useFlight(aux: FieldValues, params: apiParams) {
 
   return { flight, setFlight, isLoading, setIsLoading }
 }
-export default useFlight
+
+function useFlights(aux: FieldValues, params: apiParams) {
+  const [flights, setFlights] = useState<FlightData[]>([])
+  const [isLoading, setIsLoading] = useState(false)
+
+  useEffect(() => {
+    if (isLoading) {
+      httpService("/flights")
+        .getFlights(params)
+        .then(({ data }) => {
+          const transformData = data.data.filter(
+            ({ flight_date }: { flight_date: string }) =>
+              flight_date === aux.date
+          )
+          setFlights(transformData[0])
+          console.log(transformData[0])
+        })
+        .finally(() => {
+          setIsLoading(false)
+        })
+    }
+  }, [aux])
+
+  return { flights, setFlights, isLoading, setIsLoading }
+}
+export {useFlight, useFlights}
