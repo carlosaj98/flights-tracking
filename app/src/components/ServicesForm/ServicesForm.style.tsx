@@ -4,7 +4,7 @@ const ServicesFormContainer = styled("form")({
   display:"flex",
   flexDirection:"column",
   width:"100%",
-  maxWidth:"30%",
+  maxWidth:"40%",
   gap:"24px",
   backgroundColor:"white",
   padding:"18px",

@@ -1,6 +1,6 @@
 import { formFieldsInterface } from "../../../interfaces/formFields.interface"
 import formatDate from "../../../utils/formatDate"
-import { IconCalendar, IconAirline } from "../../../common/Icons"
+import { IconCalendar, IconAirline, IconAirport } from "../../../common/Icons"
 
 const formFields: formFieldsInterface[] = [
   {
@@ -16,6 +16,15 @@ const formFields: formFieldsInterface[] = [
 
   {
     type: "text",
+    name: "direction-code",
+    id: "direction-code",
+    label: "Airport code",
+    placeholder: "Write the airport code",
+    icon: <IconAirport />,
+  },
+
+  {
+    type: "text",
     name: "airline",
     id: "airline-input",
     label: "Airline (optional)",
@@ -27,7 +36,7 @@ const formFields: formFieldsInterface[] = [
     type: "select",
     name: "date",
     id: "date-input",
-    label: "Flight Date",
+    label: "Flights Date",
     placeholder: "Your flight date",
     options: [
       {

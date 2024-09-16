@@ -98,6 +98,37 @@ const IconWeb: React.FC = () => {
   )
 }
 
+const IconDirection: React.FC = () => {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 512 512"
+      height={"30px"}
+      width={"30px"}
+    >
+      <path
+        fill="black"
+        d="M344 0L488 0c13.3 0 24 10.7 24 24l0 144c0 9.7-5.8 18.5-14.8 22.2s-19.3 1.7-26.2-5.2l-39-39-87 87c-9.4 9.4-24.6 9.4-33.9 0l-32-32c-9.4-9.4-9.4-24.6 0-33.9l87-87L327 41c-6.9-6.9-8.9-17.2-5.2-26.2S334.3 0 344 0zM168 512L24 512c-13.3 0-24-10.7-24-24L0 344c0-9.7 5.8-18.5 14.8-22.2s19.3-1.7 26.2 5.2l39 39 87-87c9.4-9.4 24.6-9.4 33.9 0l32 32c9.4 9.4 9.4 24.6 0 33.9l-87 87 39 39c6.9 6.9 8.9 17.2 5.2 26.2s-12.5 14.8-22.2 14.8z"
+      />
+    </svg>
+  )
+}
+
+const IconAirport: React.FC = () => {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 384 512"
+      height={"100%"}
+    >
+      <path
+        fill={"var(--black-op-semi)"}
+        d="M215.7 499.2C267 435 384 279.4 384 192C384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2c12.3 15.3 35.1 15.3 47.4 0zM192 128a64 64 0 1 1 0 128 64 64 0 1 1 0-128z"
+      />
+    </svg>
+  )
+}
+
 export {
   IconAirline,
   IconFlightNum,
@@ -106,4 +137,6 @@ export {
   IconLinkedin,
   IconGithub,
   IconWeb,
+  IconAirport,
+  IconDirection,
 }

@@ -157,9 +157,7 @@ const InputRadio: React.FC<InputProps> = ({ field, rest }) => {
       <RadioGroup
         aria-labelledby="demo-controlled-radio-buttons-group"
         name="controlled-radio-buttons-group"
-        // value={field.value}
-        // onChange={field.handleChange}
-        row
+        defaultValue={rest.options[0].directionValue}
       >
         {rest.options?.map((option: optionsInputInterface) => (
           <FormControlLabel

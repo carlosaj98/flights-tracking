@@ -2,6 +2,7 @@ import ServicesFormContainer from "./ServicesForm.style"
 import { useForm, Controller, FieldValues } from "react-hook-form"
 import { formFieldsInterface } from "../../interfaces/formFields.interface"
 import { InputRadio, InputSelect, InputText } from "../../common/InputsTemplate"
+import { FormSubmitButton } from "../../common/Buttons"
 import { Stack } from "@mui/material"
 
 interface FormComponentProps {
@@ -9,9 +10,13 @@ interface FormComponentProps {
 }
 
 const ServicesForm: React.FC<FormComponentProps> = ({ formFields }) => {
-  const { control } = useForm<FieldValues>()
+  const { handleSubmit, control } = useForm<FieldValues>()
+
+  const onSubmit = (data) => {
+    console.log(data)
+  }
   return (
-    <ServicesFormContainer>
+    <ServicesFormContainer onSubmit={handleSubmit(onSubmit)}>
       {formFields.map(({ name, id, label, type, ...rest }) => {
         return (
           <Stack key={id}>
@@ -22,7 +27,7 @@ const ServicesForm: React.FC<FormComponentProps> = ({ formFields }) => {
                   key={name}
                   name={name}
                   control={control}
-                  defaultValue=""
+                  defaultValue={rest.options![0].directionValue}
                   render={({ field }) => (
                     <InputRadio field={field} rest={rest} />
                   )}
@@ -62,6 +67,7 @@ const ServicesForm: React.FC<FormComponentProps> = ({ formFields }) => {
           </Stack>
         )
       })}
+      <FormSubmitButton text="SEARCH FLIGHTS" />
     </ServicesFormContainer>
   )
 }
