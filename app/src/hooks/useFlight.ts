@@ -9,6 +9,8 @@ import { FlightData } from "../interfaces/flightData.interface"
 
 import { apiParams } from "../interfaces/apiParams.interface"
 
+import { airports } from "../utils/airportsData.json"
+
 function useFlight(aux: FieldValues, params: apiParams) {
   const [flight, setFlight] = useState<FlightData>(heroDetailsData)
   const [isLoading, setIsLoading] = useState(false)
@@ -36,6 +38,9 @@ function useFlight(aux: FieldValues, params: apiParams) {
 
 function useFlights(aux: FieldValues, params: apiParams) {
   const [flights, setFlights] = useState<FlightData[]>([])
+  const [direction, setDirection] = useState<"arrival" | "departure">(
+    "departure"
+  )
   const [isLoading, setIsLoading] = useState(false)
 
   useEffect(() => {
@@ -47,8 +52,22 @@ function useFlights(aux: FieldValues, params: apiParams) {
             ({ flight_date }: { flight_date: string }) =>
               flight_date === aux.date
           )
-          setFlights(transformData[0])
-          console.log(transformData[0])
+          const updatedFlights = transformData.map((data: FlightData) => {
+            const coordTracked = airports.filter(
+              (airport) => airport.iata_code === data[direction].iata
+            )
+            console.log(coordTracked)
+            if (coordTracked.length > 0) {
+              return {
+                ...data,
+                lat: coordTracked[0].lat,
+                lng: coordTracked[0].lng,
+              }
+            }
+            return data
+          })
+          // setFlights(transformData)
+          console.log(updatedFlights)
         })
         .finally(() => {
           setIsLoading(false)
@@ -56,6 +75,6 @@ function useFlights(aux: FieldValues, params: apiParams) {
     }
   }, [aux])
 
-  return { flights, setFlights, isLoading, setIsLoading }
+  return { flights, setFlights, isLoading, setIsLoading, setDirection }
 }
-export {useFlight, useFlights}
+export { useFlight, useFlights }

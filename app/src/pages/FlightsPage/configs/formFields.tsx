@@ -5,19 +5,19 @@ import { IconCalendar, IconAirline, IconAirport } from "../../../common/Icons"
 const formFields: formFieldsInterface[] = [
   {
     type: "radio",
-    label: "Flight direction",
+    name: "direction",
     id: "flight-direction",
-    name: "flight-direction",
+    label: "Flight direction",
     options: [
-      { directionTitle: "Arrival", directionValue: "arrival" },
-      { directionTitle: "Departure", directionValue: "departure" },
+      { directionTitle: "Arrival", directionValue: "arr_iata" },
+      { directionTitle: "Departure", directionValue: "dep_iata" },
     ],
   },
 
   {
     type: "text",
-    name: "direction-code",
-    id: "direction-code",
+    name: "airportCode",
+    id: "airport-code",
     label: "Airport code",
     placeholder: "Write the airport code",
     icon: <IconAirport />,
