@@ -4,4 +4,5 @@ export interface apiParams {
   arr_iata?: string
   airline_name?: string
   flight_iata?: string
+  limit: number
 }

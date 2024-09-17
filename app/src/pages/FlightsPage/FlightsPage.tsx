@@ -9,14 +9,12 @@ import { FieldValues } from "react-hook-form"
 
 const FlightsPage: React.FC = () => {
   const [formData, setFormData] = useState<FieldValues>({})
-  const { flights, setIsLoading, setDirection } = useFlights(
-    formData,
-    {
-      access_key: import.meta.env.VITE_API_KEY,
-      [formData.direction]: formData.airportCode,
-      airline_name: formData.airline,
-    }
-  )
+  const { flights, setIsLoading, setDirection } = useFlights(formData, {
+    access_key: import.meta.env.VITE_API_KEY,
+    [formData.direction]: formData.airportCode,
+    airline_name: formData.airline,
+    limit: 50,
+  })
 
   return (
     <FlightsPageContainer>
@@ -26,7 +24,12 @@ const FlightsPage: React.FC = () => {
             Find various <span>flights</span>
           </Typography>
         </Stack>
-        <Stack marginTop={"64px"} flexDirection={"row"} alignItems={"center"}>
+        <Stack
+          marginTop={"64px"}
+          flexDirection={"row"}
+          alignItems={"center"}
+          gap={"32px"}
+        >
           <ServicesForm
             formFields={formFields}
             actionForm={setFormData}
