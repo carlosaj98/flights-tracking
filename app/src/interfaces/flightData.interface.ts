@@ -7,6 +7,8 @@ export interface FlightData {
   flight: Flight
   aircraft: Aircraft
   live: Live
+  lat?: number
+  lng?: number
 }
 
 export interface Aircraft {
@@ -43,8 +45,6 @@ export interface Flight {
   iata: string
   icao: string
   codeshared: null
-  lat?: number
-  lng?: number
 }
 
 export interface Live {

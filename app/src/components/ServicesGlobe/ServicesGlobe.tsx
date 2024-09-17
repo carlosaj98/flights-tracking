@@ -1,10 +1,25 @@
 import Globe from "react-globe.gl"
 import data from "../../utils/geoData.json"
-import HeroGlobeData from "./HeroGlobeData"
+import ServicesGlobeData from "./ServicesGlobeData"
 import useGlobeWidth from "../../hooks/useGlobeWidth"
+import { FlightData } from "../../interfaces/flightData.interface"
 
-const HeroGlobe: React.FC = () => {
-  const { arcsData, newMaterial, globeRef } = HeroGlobeData()
+type GlobeProps = {
+  flights: FlightData[]
+  flightsDirection: string
+  airportCode: string
+}
+
+const ServicesGlobe: React.FC<GlobeProps> = ({
+  flights,
+  flightsDirection,
+  airportCode,
+}) => {
+  const { arcsData, newMaterial, globeRef } = ServicesGlobeData(
+    flights,
+    flightsDirection,
+    airportCode
+  )
   const { globeWidth } = useGlobeWidth()
 
   return (
@@ -16,10 +31,10 @@ const HeroGlobe: React.FC = () => {
       globeMaterial={newMaterial}
       arcsData={arcsData}
       arcColor={["#fce28b", "#fabc34", "#d87007"]}
-      arcStroke={1}
+      arcStroke={0.5}
       arcDashLength={1}
-      arcDashGap={() => Math.random() * 3}
-      arcDashAnimateTime={2000}
+      arcDashGap={() => 1}
+      arcDashAnimateTime={1500}
       hexPolygonsData={data.features}
       hexPolygonResolution={3}
       hexPolygonMargin={0.3}
@@ -29,4 +44,4 @@ const HeroGlobe: React.FC = () => {
     />
   )
 }
-export default HeroGlobe
+export default ServicesGlobe

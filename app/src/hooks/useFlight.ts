@@ -39,7 +39,7 @@ function useFlight(aux: FieldValues, params: apiParams) {
 function useFlights(aux: FieldValues, params: apiParams) {
   const [flights, setFlights] = useState<FlightData[]>([])
   const [direction, setDirection] = useState<"arrival" | "departure">(
-    "departure"
+    "arrival"
   )
   const [isLoading, setIsLoading] = useState(false)
 
@@ -56,7 +56,6 @@ function useFlights(aux: FieldValues, params: apiParams) {
             const coordTracked = airports.filter(
               (airport) => airport.iata_code === data[direction].iata
             )
-            console.log(coordTracked)
             if (coordTracked.length > 0) {
               return {
                 ...data,
@@ -66,7 +65,7 @@ function useFlights(aux: FieldValues, params: apiParams) {
             }
             return data
           })
-          // setFlights(transformData)
+          setFlights(updatedFlights)
           console.log(updatedFlights)
         })
         .finally(() => {
@@ -75,6 +74,6 @@ function useFlights(aux: FieldValues, params: apiParams) {
     }
   }, [aux])
 
-  return { flights, setFlights, isLoading, setIsLoading, setDirection }
+  return { flights, setFlights, isLoading, setIsLoading, setDirection, direction }
 }
 export { useFlight, useFlights }
