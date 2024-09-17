@@ -20,9 +20,9 @@ interface InputProps {
 const InputText: React.FC<InputProps> = ({ field, rest }) => {
   return (
     <TextField
-    
       {...field}
       {...rest}
+      autoComplete="off"
       InputProps={{
         startAdornment: (
           <Stack height={"100%"} width={"1rem"} marginRight={"12px"}>

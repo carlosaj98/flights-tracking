@@ -14,7 +14,7 @@ function ServicesGlobeData(
   )
 
   const globeRef = useRef<GlobeMethods>()
-  const arcsData = flights.splice(0, 50).map((flight) => {
+  const arcsData = flights.map((flight) => {
     return flightsDirection === "arr_iata"
       ? {
           startLat: flight.lat,

@@ -19,7 +19,7 @@ const FlightsPage: React.FC = () => {
   return (
     <FlightsPageContainer>
       <Container sx={{ height: "100%" }}>
-        <Stack alignItems={"center"}>
+        <Stack alignItems={"center"} marginTop={"48px"}>
           <Typography variant="h1">
             Find various <span>flights</span>
           </Typography>

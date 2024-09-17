@@ -64,7 +64,7 @@ const ServicesForm: React.FC<FormComponentProps> = ({
                   control={control}
                   defaultValue=""
                   render={({ field }) => (
-                    <InputText field={field} rest={rest} />
+                    <InputText field={field} rest={rest}/>
                   )}
                 />
               </div>
