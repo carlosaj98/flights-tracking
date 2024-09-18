@@ -10,7 +10,6 @@ interface HeroDetailsProps {
 const HeroDetailsContent: React.FC<HeroDetailsProps> = ({ data, title }) => {
   const isMobileScreen: boolean = useMediaQuery("(max-width:600px)")
 
-
   return (
     <Stack
       className="card-container"
@@ -38,8 +37,8 @@ const HeroDetailsContent: React.FC<HeroDetailsProps> = ({ data, title }) => {
                 className="date-container"
                 borderRadius={"18px 0px 0px 18px"}
               >
-                <Typography >Scheduled</Typography>
-                <Typography>{transformDate(data.scheduled)}</Typography>
+                <Typography>Scheduled</Typography>
+                <Typography>{transformDate(data.scheduled, "full")}</Typography>
               </Stack>
               <Stack className="site-container">
                 <Typography>Terminal</Typography>
@@ -52,7 +51,7 @@ const HeroDetailsContent: React.FC<HeroDetailsProps> = ({ data, title }) => {
                 borderRadius={"0px 18px 18px 0px"}
               >
                 <Typography>Estimated</Typography>
-                <Typography>{transformDate(data.estimated)}</Typography>
+                <Typography>{transformDate(data.estimated, "full")}</Typography>
               </Stack>
               <Stack className="site-container">
                 <Typography>Gate</Typography>
@@ -65,11 +64,15 @@ const HeroDetailsContent: React.FC<HeroDetailsProps> = ({ data, title }) => {
             <Stack textAlign={"center"} gap={"12px"} width={"100%"}>
               <Stack className="date-container" borderRadius={"18px"}>
                 <Typography>Scheduled</Typography>
-                <Typography fontSize={"0.85rem"}>{transformDate(data.scheduled)}</Typography>
+                <Typography fontSize={"0.85rem"}>
+                  {transformDate(data.scheduled, "full")}
+                </Typography>
               </Stack>
               <Stack className="date-container" borderRadius={"18px"}>
                 <Typography>Estimated</Typography>
-                <Typography fontSize={"0.85rem"}>{transformDate(data.estimated)}</Typography>
+                <Typography fontSize={"0.85rem"}>
+                  {transformDate(data.estimated, "full")}
+                </Typography>
               </Stack>
             </Stack>
             <Stack

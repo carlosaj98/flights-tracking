@@ -8,39 +8,48 @@ type FlightDetailCardProps = {
   data: FlightData
 }
 
+function upperCaseStatus(status: string) {
+  const result = status.charAt(0).toUpperCase() + status.slice(1)
+  return result
+}
+
 const FlightDetailCard: React.FC<FlightDetailCardProps> = ({ data }) => {
+  let statusColor = ""
+  if(data.flight_status === "scheduled") statusColor = "red"
+  if(data.flight_status === "landed") statusColor = "orange"
+  if(data.flight_status === "active") statusColor = "green"
   return (
     <FlightDetailCardContainer>
       <Stack className="details-container">
-        <Typography>{data.flight.iata}</Typography>
+        <Typography className="flight-num">{data.flight.iata}</Typography>
         <Typography>
           {data.airline.name} ({data.airline.iata})
         </Typography>
+        <Typography>{data.flight_date}</Typography>
       </Stack>
-      <Stack
-        className="details-container"
-        flexDirection={"row"}
-        width={"100%"}
-        justifyContent={"center"}
-        gap={"24px"}
-        alignItems={"center"}
-      >
-        <Stack className="details-arrival" textAlign={"center"} width={"100%"}>
-          <Typography>{data.arrival.airport}</Typography>
-          <Typography>{data.arrival.iata}</Typography>
-          <Typography>{transformDate(data.arrival.scheduled)}</Typography>
+      <Stack className="details-container">
+        <Stack className="details-arrival">
+          <Typography className="airports-code">{data.arrival.iata}</Typography>
+          <Typography className="airports-name">
+            {data.arrival.airport}
+          </Typography>
+          <Typography fontSize={"1.2rem"}>
+            {transformDate(data.arrival.scheduled, "time")}
+          </Typography>
         </Stack>
-        <Stack width={"100px"} justifyContent={"center"} alignItems={"center"}>
+        <Stack>
           <IconPlane />
         </Stack>
-        <Stack
-          className="details-departure"
-          textAlign={"center"}
-          width={"100%"}
-        >
-          <Typography>{data.departure.airport}</Typography>
-          <Typography>{data.departure.iata}</Typography>
-          <Typography>{transformDate(data.departure.scheduled)}</Typography>
+        <Stack className="details-departure">
+          <Typography className="airports-code">
+            {data.departure.iata}
+          </Typography>
+          <Typography className="airports-name">
+            {data.departure.airport}
+          </Typography>
+          <Typography fontSize={"1.2rem"}>
+            {transformDate(data.departure.scheduled, "time")}
+          </Typography>
         </Stack>
       </Stack>
       <Stack className="details-container">
@@ -48,13 +57,15 @@ const FlightDetailCard: React.FC<FlightDetailCardProps> = ({ data }) => {
           borderRadius={"100%"}
           width={"10px"}
           height={"10px"}
-          sx={{ backgroundColor: "red" }}
+          sx={{ backgroundColor: statusColor }}
         ></Box>
-        <Box width={"150px"}>
-          <Typography>{data.flight_status}</Typography>
-        </Box>
+        <Typography fontWeight={"500"}>{upperCaseStatus(data.flight_status)}</Typography>
       </Stack>
-      <Button variant="contained" sx={{height:"100%", width:"200px"}}>More</Button>
+      <Stack width={"300px"} height="100%">
+        <Button variant="contained" sx={{ height: "100%", width: "100%" }}>
+          More
+        </Button>
+      </Stack>
     </FlightDetailCardContainer>
   )
 }
