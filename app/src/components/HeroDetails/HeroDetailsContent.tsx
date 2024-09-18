@@ -1,5 +1,6 @@
 import { Stack, useMediaQuery, Typography } from "@mui/material"
 import { Direction } from "../../interfaces/flightData.interface"
+import transformDate from "../../utils/transformDate"
 
 interface HeroDetailsProps {
   data: Direction
@@ -9,20 +10,7 @@ interface HeroDetailsProps {
 const HeroDetailsContent: React.FC<HeroDetailsProps> = ({ data, title }) => {
   const isMobileScreen: boolean = useMediaQuery("(max-width:600px)")
 
-  function transformDate(date: string) {
-    const newDate = new Date(date)
-    const year = newDate.getUTCFullYear()
-    const month = String(newDate.getUTCMonth() + 1).padStart(2, "0")
-    const day = String(newDate.getUTCDate()).padStart(2, "0")
-    const formattedDate = `${year}-${month}-${day}`
 
-    const hours = String(newDate.getUTCHours()).padStart(2, "0")
-    const minutes = String(newDate.getUTCMinutes()).padStart(2, "0")
-    const seconds = String(newDate.getUTCSeconds()).padStart(2, "0")
-    const formattedTime = `${hours}:${minutes}:${seconds}`
-
-    return `${formattedDate} - ${formattedTime}`
-  }
   return (
     <Stack
       className="card-container"

@@ -6,6 +6,8 @@ import ServicesForm from "../../components/ServicesForm/ServicesForm"
 import ServicesGlobe from "../../components/ServicesGlobe/ServicesGlobe"
 import { useState } from "react"
 import { FieldValues } from "react-hook-form"
+import FlightList from "../../utils/flightsAll.json"
+import FlightDetailCard from "../../components/FlightDetailCard/FlightDetailCard"
 
 const FlightsPage: React.FC = () => {
   const [formData, setFormData] = useState<FieldValues>({})
@@ -21,7 +23,7 @@ const FlightsPage: React.FC = () => {
       <Container sx={{ height: "100%" }}>
         <Stack alignItems={"center"} marginTop={"48px"}>
           <Typography variant="h1">
-            Find various <span>flights</span>
+            Find various <span>Flights</span>
           </Typography>
         </Stack>
         <Stack
@@ -41,6 +43,16 @@ const FlightsPage: React.FC = () => {
             flightsDirection={formData.direction}
             airportCode={formData.airportCode}
           />
+        </Stack>
+        <Stack id="flights-list-container" gap={"24px"}>
+          {FlightList.data.map((flightData) => {
+            return (
+              <FlightDetailCard
+                key={flightData.flight.iata + flightData.flight_date}
+                data={flightData}
+              />
+            )
+          })}
         </Stack>
       </Container>
     </FlightsPageContainer>
