@@ -1,9 +1,7 @@
 import { Stack, styled } from "@mui/material";
 
 const FlightDetailCardContainer = styled(Stack)({
-  flexDirection:"row",
   alignItems:"center",
-  height:"200px",
   borderRadius:"18px",
   boxShadow:"0 2px 5px var(--gray-base)",
   backgroundColor:"white",
@@ -15,19 +13,15 @@ const FlightDetailCardContainer = styled(Stack)({
 
   ".details-container":{
     padding:"32px",
-    height:"100%",
 
     "&:nth-of-type(1)":{
       justifyContent:"center",
-      borderRight:"2px dashed var(--gray-semidark)",
       backgroundColor:"var(--gray-light)",
-      width:"300px",
     },
     "&:nth-of-type(2)":{
       flexDirection:"row",
       justifyContent:"center",
       alignItems:"center",
-      width:"500px"
     },
   },
 

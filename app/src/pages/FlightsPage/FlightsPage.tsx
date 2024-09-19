@@ -23,7 +23,7 @@ const FlightsPage: React.FC = () => {
     <FlightsPageContainer>
       <Container sx={{ height: "100%" }}>
         <Stack component={"section"} id="section-main">
-          <Stack alignItems={"center"} gap={"12px"}>
+          <Stack alignItems={"center"} gap={"12px"} textAlign={"center"}>
             <Typography variant="h1">
               Find various <span>Flights</span>
             </Typography>
@@ -32,8 +32,8 @@ const FlightsPage: React.FC = () => {
             </Typography>
           </Stack>
           <Stack
-            marginTop={"12px"}
-            flexDirection={"row"}
+            marginTop={{lg:"12px", xs:"32px"}}
+            flexDirection={{lg:"row", xs:"column"}}
             alignItems={"center"}
             gap={"32px"}
           >

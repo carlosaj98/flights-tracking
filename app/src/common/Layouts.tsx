@@ -6,7 +6,7 @@ const LinkDetailPage: React.FC = () => {
     height: "100%",
     justifyContent: "center",
     backgroundColor: "var(--primary-color-base)",
-    maxWidth: "100px",
+    alignItems:"center",
 
     a: {
       textDecoration: "none",
@@ -17,12 +17,13 @@ const LinkDetailPage: React.FC = () => {
       height: "100%",
       display:"flex",
       alignItems:"center",
+      justifyContent:"center",
       padding:"12px"
     },
   })
 
   return (
-    <LinkContainer>
+    <LinkContainer width={{lg:"fit-content", xs:"100%"}} maxHeight={{lg:"100%", xs:"50px"}}>
       <Link to={"#"}>More Details</Link>
     </LinkContainer>
   )

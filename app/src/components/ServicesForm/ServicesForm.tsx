@@ -36,7 +36,10 @@ const ServicesForm: React.FC<FormComponentProps> = ({
     console.log(data)
   }
   return (
-    <ServicesFormContainer onSubmit={handleSubmit(onSubmit)}>
+    <ServicesFormContainer
+      onSubmit={handleSubmit(onSubmit)}
+      sx={{ maxWidth: { lg: "40%", xs: "100%" } }}
+    >
       {formFields.map(({ name, id, label, type, ...rest }) => {
         return (
           <Stack key={id}>
@@ -64,7 +67,7 @@ const ServicesForm: React.FC<FormComponentProps> = ({
                   control={control}
                   defaultValue=""
                   render={({ field }) => (
-                    <InputText field={field} rest={rest}/>
+                    <InputText field={field} rest={rest} />
                   )}
                 />
               </div>
