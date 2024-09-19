@@ -21,21 +21,13 @@ const FlightDetailCardContainer = styled(Stack)({
       justifyContent:"center",
       borderRight:"2px dashed var(--gray-semidark)",
       backgroundColor:"var(--gray-light)",
-      width:"500px"
+      width:"300px",
     },
     "&:nth-of-type(2)":{
       flexDirection:"row",
       justifyContent:"center",
       alignItems:"center",
-      width:"100%",
-      gap:"32px",
-      borderRight:"2px solid var(--gray-base)"
-    },
-    "&:nth-of-type(3)":{
-      flexDirection:"row",
-      alignItems:"center",
-      gap:"12px",
-      width:"300px"
+      width:"500px"
     },
   },
 

@@ -44,7 +44,7 @@ const FlightsPage: React.FC = () => {
             airportCode={formData.airportCode}
           />
         </Stack>
-        <Stack id="flights-list-container" gap={"24px"}>
+        <Stack id="flights-list-container" gap={"24px"} alignItems={"center"}>
           {FlightList.data.map((flightData) => {
             return (
               <FlightDetailCard
