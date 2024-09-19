@@ -6,7 +6,7 @@ import HeroDetails from "../../../components/HeroDetails/HeroDetails"
 import HeroForm from "../../../components/HeroForm/HeroForm"
 import formFields from "../configs/formFields"
 
-import {useFlight} from "../../../hooks/useFlight"
+import { useFlight } from "../../../hooks/useFlight"
 
 import { FieldValues } from "react-hook-form"
 
@@ -16,6 +16,7 @@ const SectionMain: React.FC = () => {
     access_key: import.meta.env.VITE_API_KEY,
     airline_name: formData.airline,
     flight_iata: formData.flight,
+    limit: 50,
   })
 
   return (

@@ -18,41 +18,70 @@ const FlightsPage: React.FC = () => {
     limit: 50,
   })
 
+  console.log(flights)
   return (
     <FlightsPageContainer>
       <Container sx={{ height: "100%" }}>
-        <Stack alignItems={"center"} marginTop={"48px"}>
-          <Typography variant="h1">
-            Find various <span>Flights</span>
-          </Typography>
+        <Stack component={"section"} id="section-main">
+          <Stack alignItems={"center"} gap={"12px"}>
+            <Typography variant="h1">
+              Find various <span>Flights</span>
+            </Typography>
+            <Typography variant="h2">
+              Discover and Compare a wide selection of Flights
+            </Typography>
+          </Stack>
+          <Stack
+            marginTop={"12px"}
+            flexDirection={"row"}
+            alignItems={"center"}
+            gap={"32px"}
+          >
+            <ServicesForm
+              formFields={formFields}
+              actionForm={setFormData}
+              actionLoading={setIsLoading}
+              actionDirection={setDirection}
+            />
+            <ServicesGlobe
+              flights={flights}
+              flightsDirection={formData.direction}
+              airportCode={formData.airportCode}
+            />
+          </Stack>
         </Stack>
         <Stack
-          marginTop={"64px"}
-          flexDirection={"row"}
-          alignItems={"center"}
-          gap={"32px"}
+          component={"section"}
+          className="section-flights"
+          gap={"24px"}
+          marginTop={"32px"}
         >
-          <ServicesForm
-            formFields={formFields}
-            actionForm={setFormData}
-            actionLoading={setIsLoading}
-            actionDirection={setDirection}
-          />
-          <ServicesGlobe
-            flights={flights}
-            flightsDirection={formData.direction}
-            airportCode={formData.airportCode}
-          />
-        </Stack>
-        <Stack id="flights-list-container" gap={"24px"} alignItems={"center"}>
-          {FlightList.data.map((flightData) => {
-            return (
-              <FlightDetailCard
-                key={flightData.flight.iata + flightData.flight_date}
-                data={flightData}
-              />
-            )
-          })}
+          <Stack
+            borderTop={"2px solid var(--gray-base)"}
+            padding={"24px"}
+            alignItems={"center"}
+          >
+            <Typography variant="h3">Flights</Typography>
+          </Stack>
+
+          {FlightList.data.length ? (
+            <Stack
+              id="flights-list-container"
+              gap={"32px"}
+              alignItems={"center"}
+            >
+              {FlightList.data.map((flightData) => {
+                return (
+                  <FlightDetailCard
+                    key={flightData.flight.iata + flightData.flight_date}
+                    data={flightData}
+                  />
+                )
+              })}
+            </Stack>
+          ) : (
+            <></>
+          )}
         </Stack>
       </Container>
     </FlightsPageContainer>
