@@ -6,17 +6,20 @@ import ServicesForm from "../../components/ServicesForm/ServicesForm"
 import ServicesGlobe from "../../components/ServicesGlobe/ServicesGlobe"
 import { useState } from "react"
 import { FieldValues } from "react-hook-form"
-import FlightList from "../../utils/flightsAll.json"
+// import FlightList from "../../utils/flightsAll.json"
 import FlightDetailCard from "../../components/FlightDetailCard/FlightDetailCard"
 
 const FlightsPage: React.FC = () => {
   const [formData, setFormData] = useState<FieldValues>({})
-  const { flights, setIsLoading, setDirection } = useFlights(formData, {
-    access_key: import.meta.env.VITE_API_KEY,
-    [formData.direction]: formData.airportCode,
-    airline_name: formData.airline,
-    limit: 50,
-  })
+  const { flights, setIsLoading, setDirection, isLoading } = useFlights(
+    formData,
+    {
+      access_key: import.meta.env.VITE_API_KEY,
+      [formData.direction]: formData.airportCode,
+      airline_name: formData.airline,
+      limit: 50,
+    }
+  )
 
   console.log(flights)
   return (
@@ -32,8 +35,8 @@ const FlightsPage: React.FC = () => {
             </Typography>
           </Stack>
           <Stack
-            marginTop={{lg:"12px", xs:"32px"}}
-            flexDirection={{lg:"row", xs:"column"}}
+            marginTop={{ lg: "12px", xs: "32px" }}
+            flexDirection={{ lg: "row", xs: "column" }}
             alignItems={"center"}
             gap={"32px"}
           >
@@ -50,27 +53,26 @@ const FlightsPage: React.FC = () => {
             />
           </Stack>
         </Stack>
-        <Stack
-          component={"section"}
-          className="section-flights"
-          gap={"24px"}
-          marginTop={"32px"}
-        >
+        {flights.length ? (
           <Stack
-            borderTop={"2px solid var(--gray-base)"}
-            padding={"24px"}
-            alignItems={"center"}
+            component={"section"}
+            className="section-flights"
+            gap={"24px"}
+            marginTop={"32px"}
           >
-            <Typography variant="h3">Flights</Typography>
-          </Stack>
-
-          {FlightList.data.length ? (
+            <Stack
+              borderTop={"2px solid var(--gray-base)"}
+              padding={"24px"}
+              alignItems={"center"}
+            >
+              <Typography variant="h3">Flights</Typography>
+            </Stack>
             <Stack
               id="flights-list-container"
               gap={"32px"}
               alignItems={"center"}
             >
-              {FlightList.data.map((flightData) => {
+              {flights.map((flightData) => {
                 return (
                   <FlightDetailCard
                     key={flightData.flight.iata + flightData.flight_date}
@@ -79,10 +81,10 @@ const FlightsPage: React.FC = () => {
                 )
               })}
             </Stack>
-          ) : (
-            <></>
-          )}
-        </Stack>
+          </Stack>
+        ) : (
+          <p>{isLoading && "Loading flights ..."}</p>
+        )}
       </Container>
     </FlightsPageContainer>
   )

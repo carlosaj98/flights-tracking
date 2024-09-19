@@ -21,6 +21,7 @@ const formFields: formFieldsInterface[] = [
     label: "Airport code",
     placeholder: "Write the airport code",
     icon: <IconAirport />,
+    required: true
   },
 
   {

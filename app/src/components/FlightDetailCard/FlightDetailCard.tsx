@@ -3,7 +3,7 @@ import { Box, Stack, Typography } from "@mui/material"
 import FlightDetailCardContainer from "./FlightDetailCard.style"
 import transformDate from "../../utils/transformDate"
 import { IconPlane } from "../../common/Icons"
-import { LinkDetailPage } from "../../common/Layouts"
+// import { LinkDetailPage } from "../../common/Layouts"
 
 type FlightDetailCardProps = {
   data: FlightData
@@ -106,7 +106,7 @@ const FlightDetailCard: React.FC<FlightDetailCardProps> = ({ data }) => {
         </Stack>
       </Stack>
 
-      <LinkDetailPage />
+      {/* <LinkDetailPage /> */}
     </FlightDetailCardContainer>
   )
 }

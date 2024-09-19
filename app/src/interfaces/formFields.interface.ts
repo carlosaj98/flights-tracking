@@ -14,5 +14,6 @@ export interface formFieldsInterface {
   label: string
   placeholder?: string
   options?: optionsInputInterface[]
-  icon?: ReactElement
+  icon?: ReactElement,
+  required?: boolean
 }
