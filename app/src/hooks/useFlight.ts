@@ -71,7 +71,7 @@ function useFlights(aux: FieldValues, params: apiParams) {
           setIsLoading(false)
         })
     }
-  }, [aux])
+  }, [aux, params])
 
   return {
     flights,

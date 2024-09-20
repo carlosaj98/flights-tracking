@@ -1,5 +1,5 @@
 import FlightsPageContainer from "./FlightsPage.style"
-import { Container, Stack, Typography } from "@mui/material"
+import { Box, Button, Container, Stack, Typography } from "@mui/material"
 import formFields from "./configs/formFields"
 import { useFlights } from "../../hooks/useFlight"
 import ServicesForm from "../../components/ServicesForm/ServicesForm"
@@ -8,20 +8,21 @@ import { useState } from "react"
 import { FieldValues } from "react-hook-form"
 import FlightList from "../../utils/flightsAll.json"
 import FlightDetailCard from "../../components/FlightDetailCard/FlightDetailCard"
+import { IconArrow } from "../../common/Icons"
 
 const FlightsPage: React.FC = () => {
   const [formData, setFormData] = useState<FieldValues>({})
-  const { flights, pagination, setIsLoading, setDirection, isLoading } = useFlights(
-    formData,
-    {
+  const [offset, setOffset] = useState<number>(0)
+  const { flights, pagination, setIsLoading, setDirection, isLoading } =
+    useFlights(formData, {
       access_key: import.meta.env.VITE_API_KEY,
       [formData.direction]: formData.airportCode,
       airline_name: formData.airline,
-      limit: 50,
-    }
-  )
+      limit: formData.limit,
+      offset: offset,
+    })
 
-  console.log(flights)
+  console.log(offset)
   return (
     <FlightsPageContainer>
       <Container sx={{ height: "100%" }}>
@@ -35,7 +36,7 @@ const FlightsPage: React.FC = () => {
             </Typography>
           </Stack>
           <Stack
-            marginTop={{ lg: "12px", xs: "32px" }}
+            marginTop={"32px"}
             flexDirection={{ lg: "row", xs: "column" }}
             alignItems={"center"}
             gap={"32px"}
@@ -72,8 +73,54 @@ const FlightsPage: React.FC = () => {
               gap={"32px"}
               alignItems={"center"}
             >
-              <Stack>
-                <Typography>Found flights: <span>{FlightList.pagination.total}</span></Typography>
+              <Stack alignItems={"center"} width={"100%"} gap={"12px"}>
+                <Typography>
+                  Found flights: <span>{FlightList.pagination!.total}</span>
+                </Typography>
+                <Stack
+                  gap={"24px"}
+                  flexDirection={"row"}
+                  width={"100%"}
+                  justifyContent={"space-between"}
+                >
+                  <Button
+                    className="btn-pages"
+                    variant="contained"
+                    disabled={offset === 0}
+                    sx={{ width: "200px" }}
+                    onClick={() => {
+                      setOffset(offset + FlightList.pagination!.limit),
+                        setIsLoading(true)
+                    }}
+                  >
+                    <Box height={"20px"}>
+                      <IconArrow direction="left" />
+                    </Box>
+                    PREVIOUS PAGE
+                  </Button>
+                  <Typography>
+                    Page: {offset / FlightList.pagination!.limit} /{" "}
+                    {Math.round(
+                      FlightList.pagination!.total /
+                        FlightList.pagination!.limit
+                    )}
+                  </Typography>
+                  <Button
+                    className="btn-pages"
+                    variant="contained"
+                    disabled={offset >= FlightList.pagination!.total}
+                    sx={{ width: "200px" }}
+                    onClick={() => {
+                      setOffset(offset + FlightList.pagination!.limit),
+                        setIsLoading(true)
+                    }}
+                  >
+                    NEXT PAGE
+                    <Box height={"20px"}>
+                      <IconArrow direction="right" />
+                    </Box>
+                  </Button>
+                </Stack>
               </Stack>
               {FlightList.data.map((flightData) => {
                 return (

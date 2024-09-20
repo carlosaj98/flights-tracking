@@ -13,6 +13,17 @@ const formFields: formFieldsInterface[] = [
       { optionTitle: "Departure", optionValue: "dep_iata" },
     ],
   },
+  {
+    type: "radio",
+    name: "limit",
+    id: "flight-limit",
+    label: "Number of flights",
+    options: [
+      { optionTitle: "10 Flights", optionValue: 10 },
+      { optionTitle: "25 Flights", optionValue: 25 },
+      { optionTitle: "50 Flights", optionValue: 50 },
+    ],
+  },
 
   {
     type: "text",
@@ -21,7 +32,7 @@ const formFields: formFieldsInterface[] = [
     label: "Airport code",
     placeholder: "Write the airport code",
     icon: <IconAirport />,
-    required: true
+    required: true,
   },
 
   {
