@@ -29,16 +29,16 @@ const formFields: formFieldsInterface[] = [
     placeholder: "Your flight date",
     options: [
       {
-        dateTitle: "Yesterday",
-        dateValue: formatDate(-1),
+        optionTitle: "Yesterday",
+        optionValue: formatDate(-1),
       },
       {
-        dateTitle: "Today",
-        dateValue: formatDate(0),
+        optionTitle: "Today",
+        optionValue: formatDate(0),
       },
       {
-        dateTitle: "Tomorrow",
-        dateValue: formatDate(1),
+        optionTitle: "Tomorrow",
+        optionValue: formatDate(1),
       },
     ],
     icon: <IconCalendar />,

@@ -44,22 +44,22 @@ const ServicesForm: React.FC<FormComponentProps> = ({
         return (
           <Stack key={id}>
             {type === "radio" && (
-              <div key={id} className="input-container">
+              <Stack key={id} className="input-container">
                 <label htmlFor={id}>{label}</label>
                 <Controller
                   key={name}
                   name={name}
                   control={control}
-                  defaultValue={rest.options![0].directionValue}
+                  defaultValue={rest.options![0].optionValue}
                   render={({ field }) => (
                     <InputRadio field={field} rest={rest} />
                   )}
                 />
-              </div>
+              </Stack>
             )}
 
             {type === "text" && (
-              <div key={id} className="input-container">
+              <Stack key={id} className="input-container">
                 <label htmlFor={id}>{label}</label>
                 <Controller
                   key={name}
@@ -70,22 +70,22 @@ const ServicesForm: React.FC<FormComponentProps> = ({
                     <InputText field={field} rest={rest} />
                   )}
                 />
-              </div>
+              </Stack>
             )}
 
             {type === "select" && (
-              <div key={id} className="input-container">
+              <Stack key={id} className="input-container">
                 <label htmlFor={id}>{label}</label>
                 <Controller
                   key={name}
                   name={name}
                   control={control}
-                  defaultValue={rest.options![1].dateValue}
+                  defaultValue={rest.options![1].optionValue}
                   render={({ field }) => (
                     <InputSelect field={field} rest={rest} />
                   )}
                 />
-              </div>
+              </Stack>
             )}
           </Stack>
         )

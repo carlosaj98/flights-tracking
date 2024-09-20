@@ -50,7 +50,7 @@ const HeroForm: React.FC<FormComponentProps> = ({
               key={name}
               name={name}
               control={control}
-              defaultValue={rest.options![1].dateValue}
+              defaultValue={rest.options![1].optionValue}
               render={({ field }) => <InputSelect field={field} rest={rest} />}
             />
           </div>

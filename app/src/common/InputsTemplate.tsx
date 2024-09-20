@@ -110,8 +110,8 @@ const InputSelect: React.FC<InputProps> = ({ field, rest }) => {
     >
       {rest.options?.map((option: optionsInputInterface) => (
         <MenuItem
-          key={option.dateTitle}
-          value={option.dateValue}
+          key={option.optionTitle}
+          value={option.optionValue}
           selected={false}
           divider
           sx={{
@@ -135,7 +135,7 @@ const InputSelect: React.FC<InputProps> = ({ field, rest }) => {
             },
           }}
         >
-          {option.dateValue} ({option.dateTitle})
+          {option.optionValue} ({option.optionTitle})
         </MenuItem>
       ))}
     </Select>
@@ -157,14 +157,14 @@ const InputRadio: React.FC<InputProps> = ({ field, rest }) => {
       <RadioGroup
         aria-labelledby="demo-controlled-radio-buttons-group"
         name="controlled-radio-buttons-group"
-        defaultValue={rest.options[0].directionValue}
+        defaultValue={rest.options[0].optionValue}
       >
         {rest.options?.map((option: optionsInputInterface) => (
           <FormControlLabel
-            key={option.directionValue}
-            value={option.directionValue}
+            key={option.optionValue}
+            value={option.optionValue}
             control={<Radio />}
-            label={option.directionTitle}
+            label={option.optionTitle}
           />
         ))}
       </RadioGroup>

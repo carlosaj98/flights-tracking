@@ -6,12 +6,12 @@ import ServicesForm from "../../components/ServicesForm/ServicesForm"
 import ServicesGlobe from "../../components/ServicesGlobe/ServicesGlobe"
 import { useState } from "react"
 import { FieldValues } from "react-hook-form"
-// import FlightList from "../../utils/flightsAll.json"
+import FlightList from "../../utils/flightsAll.json"
 import FlightDetailCard from "../../components/FlightDetailCard/FlightDetailCard"
 
 const FlightsPage: React.FC = () => {
   const [formData, setFormData] = useState<FieldValues>({})
-  const { flights, setIsLoading, setDirection, isLoading } = useFlights(
+  const { flights, pagination, setIsLoading, setDirection, isLoading } = useFlights(
     formData,
     {
       access_key: import.meta.env.VITE_API_KEY,
@@ -53,7 +53,7 @@ const FlightsPage: React.FC = () => {
             />
           </Stack>
         </Stack>
-        {flights.length ? (
+        {FlightList.data.length ? (
           <Stack
             component={"section"}
             className="section-flights"
@@ -72,7 +72,10 @@ const FlightsPage: React.FC = () => {
               gap={"32px"}
               alignItems={"center"}
             >
-              {flights.map((flightData) => {
+              <Stack>
+                <Typography>Found flights: <span>{FlightList.pagination.total}</span></Typography>
+              </Stack>
+              {FlightList.data.map((flightData) => {
                 return (
                   <FlightDetailCard
                     key={flightData.flight.iata + flightData.flight_date}

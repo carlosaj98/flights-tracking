@@ -9,8 +9,8 @@ const formFields: formFieldsInterface[] = [
     id: "flight-direction",
     label: "Flight direction",
     options: [
-      { directionTitle: "Arrival", directionValue: "arr_iata" },
-      { directionTitle: "Departure", directionValue: "dep_iata" },
+      { optionTitle: "Arrival", optionValue: "arr_iata" },
+      { optionTitle: "Departure", optionValue: "dep_iata" },
     ],
   },
 
@@ -41,16 +41,16 @@ const formFields: formFieldsInterface[] = [
     placeholder: "Your flight date",
     options: [
       {
-        dateTitle: "Yesterday",
-        dateValue: formatDate(-1),
+        optionTitle: "Yesterday",
+        optionValue: formatDate(-1),
       },
       {
-        dateTitle: "Today",
-        dateValue: formatDate(0),
+        optionTitle: "Today",
+        optionValue: formatDate(0),
       },
       {
-        dateTitle: "Tomorrow",
-        dateValue: formatDate(1),
+        optionTitle: "Tomorrow",
+        optionValue: formatDate(1),
       },
     ],
     icon: <IconCalendar />,

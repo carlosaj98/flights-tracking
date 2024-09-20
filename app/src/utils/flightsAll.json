@@ -1,458 +1,42 @@
 {
+  "pagination": {
+    "limit": 10,
+    "offset": 0,
+    "count": 10,
+    "total": 316
+  },
   "data": [
     {
-      "flight_date": "2024-09-17",
-      "flight_status": "scheduled",
-      "departure": {
-        "airport": "San Pablo",
-        "timezone": "Europe/Madrid",
-        "iata": "SVQ",
-        "icao": "LEZL",
-        "terminal": null,
-        "gate": null,
-        "delay": 7,
-        "scheduled": "2024-09-17T10:40:00+00:00",
-        "estimated": "2024-09-17T10:40:00+00:00",
-        "actual": "2024-09-17T10:46:00+00:00",
-        "estimated_runway": "2024-09-17T10:46:00+00:00",
-        "actual_runway": "2024-09-17T10:46:00+00:00"
-      },
-      "arrival": {
-        "airport": "Lanzarote",
-        "timezone": "Atlantic/Canary",
-        "iata": "ACE",
-        "icao": "GCRR",
-        "terminal": "1",
-        "gate": null,
-        "baggage": "1",
-        "delay": null,
-        "scheduled": "2024-09-17T11:45:00+00:00",
-        "estimated": "2024-09-17T11:45:00+00:00",
-        "actual": null,
-        "estimated_runway": null,
-        "actual_runway": null
-      },
-      "airline": {
-        "name": "Ryanair",
-        "iata": "FR",
-        "icao": "RYR"
-      },
-      "flight": {
-        "number": "1293",
-        "iata": "FR1293",
-        "icao": "RYR1293",
-        "codeshared": null
-      },
-      "aircraft": {
-        "registration": "EI-ESS",
-        "iata": "B738",
-        "icao": "B738",
-        "icao24": "4CA97A"
-      },
-      "live": {
-        "updated": "2024-09-17T09:21:37+00:00",
-        "latitude": 34.1711,
-        "longitude": -9.0499,
-        "altitude": 11277.6,
-        "direction": 218,
-        "speed_horizontal": 875.996,
-        "speed_vertical": 0,
-        "is_ground": false
-      }
-    },
-    {
-      "flight_date": "2024-09-17",
-      "flight_status": "scheduled",
-      "departure": {
-        "airport": "San Pablo",
-        "timezone": "Europe/Madrid",
-        "iata": "SVQ",
-        "icao": "LEZL",
-        "terminal": null,
-        "gate": null,
-        "delay": 9,
-        "scheduled": "2024-09-17T15:15:00+00:00",
-        "estimated": "2024-09-17T15:15:00+00:00",
-        "actual": null,
-        "estimated_runway": null,
-        "actual_runway": null
-      },
-      "arrival": {
-        "airport": "El Prat De Llobregat",
-        "timezone": "Europe/Madrid",
-        "iata": "BCN",
-        "icao": "LEBL",
-        "terminal": "1",
-        "gate": null,
-        "baggage": "01",
-        "delay": null,
-        "scheduled": "2024-09-17T16:55:00+00:00",
-        "estimated": "2024-09-17T16:55:00+00:00",
-        "actual": null,
-        "estimated_runway": null,
-        "actual_runway": null
-      },
-      "airline": {
-        "name": "American Airlines",
-        "iata": "AA",
-        "icao": "AAL"
-      },
-      "flight": {
-        "number": "8859",
-        "iata": "AA8859",
-        "icao": "AAL8859",
-        "codeshared": {
-          "airline_name": "vueling",
-          "airline_iata": "vy",
-          "airline_icao": "vlg",
-          "flight_number": "2219",
-          "flight_iata": "vy2219",
-          "flight_icao": "vlg2219"
-        }
-      },
-      "aircraft": null,
-      "live": null
-    },
-    {
-      "flight_date": "2024-09-17",
-      "flight_status": "scheduled",
-      "departure": {
-        "airport": "San Pablo",
-        "timezone": "Europe/Madrid",
-        "iata": "SVQ",
-        "icao": "LEZL",
-        "terminal": null,
-        "gate": null,
-        "delay": null,
-        "scheduled": "2024-09-17T16:35:00+00:00",
-        "estimated": "2024-09-17T16:35:00+00:00",
-        "actual": null,
-        "estimated_runway": null,
-        "actual_runway": null
-      },
-      "arrival": {
-        "airport": "Alicante El Altet",
-        "timezone": "Europe/Madrid",
-        "iata": "ALC",
-        "icao": "LEAL",
-        "terminal": "N",
-        "gate": null,
-        "baggage": "8A",
-        "delay": null,
-        "scheduled": "2024-09-17T17:50:00+00:00",
-        "estimated": "2024-09-17T17:50:00+00:00",
-        "actual": null,
-        "estimated_runway": null,
-        "actual_runway": null
-      },
-      "airline": {
-        "name": "Ryanair",
-        "iata": "FR",
-        "icao": "RYR"
-      },
-      "flight": {
-        "number": "5065",
-        "iata": "FR5065",
-        "icao": "RYR5065",
-        "codeshared": null
-      },
-      "aircraft": null,
-      "live": null
-    },
-    {
-      "flight_date": "2024-09-17",
-      "flight_status": "scheduled",
-      "departure": {
-        "airport": "San Pablo",
-        "timezone": "Europe/Madrid",
-        "iata": "SVQ",
-        "icao": "LEZL",
-        "terminal": null,
-        "gate": null,
-        "delay": 8,
-        "scheduled": "2024-09-17T15:10:00+00:00",
-        "estimated": "2024-09-17T15:10:00+00:00",
-        "actual": null,
-        "estimated_runway": null,
-        "actual_runway": null
-      },
-      "arrival": {
-        "airport": "El Prat De Llobregat",
-        "timezone": "Europe/Madrid",
-        "iata": "BCN",
-        "icao": "LEBL",
-        "terminal": "2",
-        "gate": null,
-        "baggage": "28",
-        "delay": null,
-        "scheduled": "2024-09-17T16:50:00+00:00",
-        "estimated": "2024-09-17T16:50:00+00:00",
-        "actual": null,
-        "estimated_runway": null,
-        "actual_runway": null
-      },
-      "airline": {
-        "name": "Ryanair",
-        "iata": "FR",
-        "icao": "RYR"
-      },
-      "flight": {
-        "number": "2407",
-        "iata": "FR2407",
-        "icao": "RYR2407",
-        "codeshared": null
-      },
-      "aircraft": null,
-      "live": null
-    },
-    {
-      "flight_date": "2024-09-17",
-      "flight_status": "active",
-      "departure": {
-        "airport": "San Pablo",
-        "timezone": "Europe/Madrid",
-        "iata": "SVQ",
-        "icao": "LEZL",
-        "terminal": null,
-        "gate": null,
-        "delay": 14,
-        "scheduled": "2024-09-17T10:40:00+00:00",
-        "estimated": "2024-09-17T10:40:00+00:00",
-        "actual": "2024-09-17T10:54:00+00:00",
-        "estimated_runway": "2024-09-17T10:54:00+00:00",
-        "actual_runway": "2024-09-17T10:54:00+00:00"
-      },
-      "arrival": {
-        "airport": "Schiphol",
-        "timezone": "Europe/Amsterdam",
-        "iata": "AMS",
-        "icao": "EHAM",
-        "terminal": null,
-        "gate": "C8",
-        "baggage": "016",
-        "delay": null,
-        "scheduled": "2024-09-17T13:30:00+00:00",
-        "estimated": "2024-09-17T13:30:00+00:00",
-        "actual": null,
-        "estimated_runway": null,
-        "actual_runway": null
-      },
-      "airline": {
-        "name": "Delta Air Lines",
-        "iata": "DL",
-        "icao": "DAL"
-      },
-      "flight": {
-        "number": "7516",
-        "iata": "DL7516",
-        "icao": "DAL7516",
-        "codeshared": {
-          "airline_name": "transavia",
-          "airline_iata": "hv",
-          "airline_icao": "tra",
-          "flight_number": "6730",
-          "flight_iata": "hv6730",
-          "flight_icao": "tra6730"
-        }
-      },
-      "aircraft": null,
-      "live": null
-    },
-    {
-      "flight_date": "2024-09-17",
+      "flight_date": "2024-09-20",
       "flight_status": "landed",
       "departure": {
+        "airport": "Barajas",
+        "timezone": "Europe/Madrid",
+        "iata": "MAD",
+        "icao": "LEMD",
+        "terminal": "4",
+        "gate": "H27",
+        "delay": 51,
+        "scheduled": "2024-09-20T07:10:00+00:00",
+        "estimated": "2024-09-20T07:10:00+00:00",
+        "actual": "2024-09-20T08:01:00+00:00",
+        "estimated_runway": "2024-09-20T08:01:00+00:00",
+        "actual_runway": "2024-09-20T08:01:00+00:00"
+      },
+      "arrival": {
         "airport": "San Pablo",
         "timezone": "Europe/Madrid",
         "iata": "SVQ",
         "icao": "LEZL",
         "terminal": "1",
         "gate": null,
-        "delay": 7,
-        "scheduled": "2024-09-17T06:45:00+00:00",
-        "estimated": "2024-09-17T06:45:00+00:00",
-        "actual": "2024-09-17T06:52:00+00:00",
-        "estimated_runway": "2024-09-17T06:52:00+00:00",
-        "actual_runway": "2024-09-17T06:52:00+00:00"
-      },
-      "arrival": {
-        "airport": "El Prat De Llobregat",
-        "timezone": "Europe/Madrid",
-        "iata": "BCN",
-        "icao": "LEBL",
-        "terminal": "2",
-        "gate": "A4",
-        "baggage": "25",
-        "delay": null,
-        "scheduled": "2024-09-17T08:25:00+00:00",
-        "estimated": "2024-09-17T08:25:00+00:00",
-        "actual": "2024-09-17T08:15:00+00:00",
-        "estimated_runway": "2024-09-17T08:15:00+00:00",
-        "actual_runway": "2024-09-17T08:15:00+00:00"
-      },
-      "airline": {
-        "name": "Ryanair",
-        "iata": "FR",
-        "icao": "RYR"
-      },
-      "flight": {
-        "number": "1164",
-        "iata": "FR1164",
-        "icao": "RYR1164",
-        "codeshared": null
-      },
-      "aircraft": {
-        "registration": "EI-DYY",
-        "iata": "B738",
-        "icao": "B738",
-        "icao24": "4CA6FC"
-      },
-      "live": null
-    },
-    {
-      "flight_date": "2024-09-17",
-      "flight_status": "landed",
-      "departure": {
-        "airport": "San Pablo",
-        "timezone": "Europe/Madrid",
-        "iata": "SVQ",
-        "icao": "LEZL",
-        "terminal": "1",
-        "gate": "B11",
-        "delay": 10,
-        "scheduled": "2024-09-17T07:40:00+00:00",
-        "estimated": "2024-09-17T07:40:00+00:00",
-        "actual": "2024-09-17T07:49:00+00:00",
-        "estimated_runway": "2024-09-17T07:49:00+00:00",
-        "actual_runway": "2024-09-17T07:49:00+00:00"
-      },
-      "arrival": {
-        "airport": "El Prat De Llobregat",
-        "timezone": "Europe/Madrid",
-        "iata": "BCN",
-        "icao": "LEBL",
-        "terminal": "1",
-        "gate": null,
-        "baggage": "01",
-        "delay": 16,
-        "scheduled": "2024-09-17T09:20:00+00:00",
-        "estimated": "2024-09-17T09:20:00+00:00",
-        "actual": "2024-09-17T09:36:00+00:00",
-        "estimated_runway": "2024-09-17T09:36:00+00:00",
-        "actual_runway": "2024-09-17T09:36:00+00:00"
-      },
-      "airline": {
-        "name": "American Airlines",
-        "iata": "AA",
-        "icao": "AAL"
-      },
-      "flight": {
-        "number": "8864",
-        "iata": "AA8864",
-        "icao": "AAL8864",
-        "codeshared": {
-          "airline_name": "vueling",
-          "airline_iata": "vy",
-          "airline_icao": "vlg",
-          "flight_number": "2224",
-          "flight_iata": "vy2224",
-          "flight_icao": "vlg2224"
-        }
-      },
-      "aircraft": null,
-      "live": null
-    },
-    {
-      "flight_date": "2024-09-17",
-      "flight_status": "active",
-      "departure": {
-        "airport": "San Pablo",
-        "timezone": "Europe/Madrid",
-        "iata": "SVQ",
-        "icao": "LEZL",
-        "terminal": null,
-        "gate": null,
-        "delay": 14,
-        "scheduled": "2024-09-17T10:40:00+00:00",
-        "estimated": "2024-09-17T10:40:00+00:00",
-        "actual": "2024-09-17T10:54:00+00:00",
-        "estimated_runway": "2024-09-17T10:54:00+00:00",
-        "actual_runway": "2024-09-17T10:54:00+00:00"
-      },
-      "arrival": {
-        "airport": "Schiphol",
-        "timezone": "Europe/Amsterdam",
-        "iata": "AMS",
-        "icao": "EHAM",
-        "terminal": "1",
-        "gate": "C8",
-        "baggage": "016",
-        "delay": null,
-        "scheduled": "2024-09-17T13:30:00+00:00",
-        "estimated": "2024-09-17T13:30:00+00:00",
-        "actual": null,
-        "estimated_runway": null,
-        "actual_runway": null
-      },
-      "airline": {
-        "name": "Transavia",
-        "iata": "HV",
-        "icao": "TRA"
-      },
-      "flight": {
-        "number": "6730",
-        "iata": "HV6730",
-        "icao": "TRA6730",
-        "codeshared": null
-      },
-      "aircraft": {
-        "registration": "PH-HSW",
-        "iata": "B738",
-        "icao": "B738",
-        "icao24": "484AA1"
-      },
-      "live": {
-        "updated": "2024-09-17T09:29:59+00:00",
-        "latitude": 40.2843,
-        "longitude": -4.0503,
-        "altitude": 11308.1,
-        "direction": 21.34,
-        "speed_horizontal": 727.74,
-        "speed_vertical": 8.208,
-        "is_ground": false
-      }
-    },
-    {
-      "flight_date": "2024-09-17",
-      "flight_status": "active",
-      "departure": {
-        "airport": "San Pablo",
-        "timezone": "Europe/Madrid",
-        "iata": "SVQ",
-        "icao": "LEZL",
-        "terminal": "1",
-        "gate": "B18",
+        "baggage": "7",
         "delay": 28,
-        "scheduled": "2024-09-17T09:30:00+00:00",
-        "estimated": "2024-09-17T09:30:00+00:00",
-        "actual": "2024-09-17T09:57:00+00:00",
-        "estimated_runway": "2024-09-17T09:57:00+00:00",
-        "actual_runway": "2024-09-17T09:57:00+00:00"
-      },
-      "arrival": {
-        "airport": "El Prat De Llobregat",
-        "timezone": "Europe/Madrid",
-        "iata": "BCN",
-        "icao": "LEBL",
-        "terminal": "1",
-        "gate": null,
-        "baggage": "10",
-        "delay": 7,
-        "scheduled": "2024-09-17T11:10:00+00:00",
-        "estimated": "2024-09-17T11:10:00+00:00",
-        "actual": null,
-        "estimated_runway": null,
-        "actual_runway": null
+        "scheduled": "2024-09-20T08:20:00+00:00",
+        "estimated": "2024-09-20T08:20:00+00:00",
+        "actual": "2024-09-20T08:47:00+00:00",
+        "estimated_runway": "2024-09-20T08:47:00+00:00",
+        "actual_runway": "2024-09-20T08:47:00+00:00"
       },
       "airline": {
         "name": "American Airlines",
@@ -460,70 +44,492 @@
         "icao": "AAL"
       },
       "flight": {
-        "number": "8851",
-        "iata": "AA8851",
-        "icao": "AAL8851",
+        "number": "8698",
+        "iata": "AA8698",
+        "icao": "AAL8698",
         "codeshared": {
-          "airline_name": "vueling",
-          "airline_iata": "vy",
-          "airline_icao": "vlg",
-          "flight_number": "2211",
-          "flight_iata": "vy2211",
-          "flight_icao": "vlg2211"
+          "airline_name": "iberia express",
+          "airline_iata": "i2",
+          "airline_icao": "ibs",
+          "flight_number": "3954",
+          "flight_iata": "i23954",
+          "flight_icao": "ibs3954"
         }
       },
       "aircraft": null,
       "live": null
     },
     {
-      "flight_date": "2024-09-17",
-      "flight_status": "active",
+      "flight_date": "2024-09-20",
+      "flight_status": "landed",
       "departure": {
+        "airport": "Lisbon Portela",
+        "timezone": "Europe/Lisbon",
+        "iata": "LIS",
+        "icao": "LPPT",
+        "terminal": "1",
+        "gate": null,
+        "delay": 21,
+        "scheduled": "2024-09-20T07:25:00+00:00",
+        "estimated": "2024-09-20T07:25:00+00:00",
+        "actual": "2024-09-20T07:46:00+00:00",
+        "estimated_runway": "2024-09-20T07:46:00+00:00",
+        "actual_runway": "2024-09-20T07:46:00+00:00"
+      },
+      "arrival": {
         "airport": "San Pablo",
         "timezone": "Europe/Madrid",
         "iata": "SVQ",
         "icao": "LEZL",
-        "terminal": null,
+        "terminal": "1",
         "gate": null,
-        "delay": 14,
-        "scheduled": "2024-09-17T10:40:00+00:00",
-        "estimated": "2024-09-17T10:40:00+00:00",
-        "actual": "2024-09-17T10:54:00+00:00",
-        "estimated_runway": "2024-09-17T10:54:00+00:00",
-        "actual_runway": "2024-09-17T10:54:00+00:00"
+        "baggage": "7",
+        "delay": 5,
+        "scheduled": "2024-09-20T09:30:00+00:00",
+        "estimated": "2024-09-20T09:30:00+00:00",
+        "actual": "2024-09-20T09:29:00+00:00",
+        "estimated_runway": "2024-09-20T09:29:00+00:00",
+        "actual_runway": "2024-09-20T09:29:00+00:00"
+      },
+      "airline": {
+        "name": "TAP Air Portugal",
+        "iata": "TP",
+        "icao": "TAP"
+      },
+      "flight": {
+        "number": "1102",
+        "iata": "TP1102",
+        "icao": "TAP1102",
+        "codeshared": null
+      },
+      "aircraft": {
+        "registration": "CS-TPX",
+        "iata": "E190",
+        "icao": "E190",
+        "icao24": "495218"
+      },
+      "live": null
+    },
+    {
+      "flight_date": "2024-09-20",
+      "flight_status": "landed",
+      "departure": {
+        "airport": "Lisbon Portela",
+        "timezone": "Europe/Lisbon",
+        "iata": "LIS",
+        "icao": "LPPT",
+        "terminal": "1",
+        "gate": null,
+        "delay": 21,
+        "scheduled": "2024-09-20T07:25:00+00:00",
+        "estimated": "2024-09-20T07:25:00+00:00",
+        "actual": "2024-09-20T07:46:00+00:00",
+        "estimated_runway": "2024-09-20T07:46:00+00:00",
+        "actual_runway": "2024-09-20T07:46:00+00:00"
       },
       "arrival": {
-        "airport": "Schiphol",
-        "timezone": "Europe/Amsterdam",
-        "iata": "AMS",
-        "icao": "EHAM",
-        "terminal": null,
-        "gate": "C8",
-        "baggage": "016",
+        "airport": "San Pablo",
+        "timezone": "Europe/Madrid",
+        "iata": "SVQ",
+        "icao": "LEZL",
+        "terminal": "1",
+        "gate": null,
+        "baggage": "7",
+        "delay": 5,
+        "scheduled": "2024-09-20T09:30:00+00:00",
+        "estimated": "2024-09-20T09:30:00+00:00",
+        "actual": "2024-09-20T09:29:00+00:00",
+        "estimated_runway": "2024-09-20T09:29:00+00:00",
+        "actual_runway": "2024-09-20T09:29:00+00:00"
+      },
+      "airline": {
+        "name": "Azores Airlines",
+        "iata": "S4",
+        "icao": "RZO"
+      },
+      "flight": {
+        "number": "8704",
+        "iata": "S48704",
+        "icao": "RZO8704",
+        "codeshared": {
+          "airline_name": "tap air portugal",
+          "airline_iata": "tp",
+          "airline_icao": "tap",
+          "flight_number": "1102",
+          "flight_iata": "tp1102",
+          "flight_icao": "tap1102"
+        }
+      },
+      "aircraft": null,
+      "live": null
+    },
+    {
+      "flight_date": "2024-09-20",
+      "flight_status": "landed",
+      "departure": {
+        "airport": "Lisbon Portela",
+        "timezone": "Europe/Lisbon",
+        "iata": "LIS",
+        "icao": "LPPT",
+        "terminal": "1",
+        "gate": null,
+        "delay": 21,
+        "scheduled": "2024-09-20T07:25:00+00:00",
+        "estimated": "2024-09-20T07:25:00+00:00",
+        "actual": "2024-09-20T07:46:00+00:00",
+        "estimated_runway": "2024-09-20T07:46:00+00:00",
+        "actual_runway": "2024-09-20T07:46:00+00:00"
+      },
+      "arrival": {
+        "airport": "San Pablo",
+        "timezone": "Europe/Madrid",
+        "iata": "SVQ",
+        "icao": "LEZL",
+        "terminal": "1",
+        "gate": null,
+        "baggage": "7",
+        "delay": 5,
+        "scheduled": "2024-09-20T09:30:00+00:00",
+        "estimated": "2024-09-20T09:30:00+00:00",
+        "actual": "2024-09-20T09:29:00+00:00",
+        "estimated_runway": "2024-09-20T09:29:00+00:00",
+        "actual_runway": "2024-09-20T09:29:00+00:00"
+      },
+      "airline": {
+        "name": "Azul",
+        "iata": "AD",
+        "icao": "AZU"
+      },
+      "flight": {
+        "number": "7323",
+        "iata": "AD7323",
+        "icao": "AZU7323",
+        "codeshared": {
+          "airline_name": "tap air portugal",
+          "airline_iata": "tp",
+          "airline_icao": "tap",
+          "flight_number": "1102",
+          "flight_iata": "tp1102",
+          "flight_icao": "tap1102"
+        }
+      },
+      "aircraft": null,
+      "live": null
+    },
+    {
+      "flight_date": "2024-09-20",
+      "flight_status": "active",
+      "departure": {
+        "airport": "Norte Los Rodeos",
+        "timezone": "Atlantic/Canary",
+        "iata": "TFN",
+        "icao": "GCXO",
+        "terminal": "1",
+        "gate": "B23",
+        "delay": 17,
+        "scheduled": "2024-09-20T08:00:00+00:00",
+        "estimated": "2024-09-20T08:00:00+00:00",
+        "actual": "2024-09-20T08:16:00+00:00",
+        "estimated_runway": "2024-09-20T08:16:00+00:00",
+        "actual_runway": "2024-09-20T08:16:00+00:00"
+      },
+      "arrival": {
+        "airport": "San Pablo",
+        "timezone": "Europe/Madrid",
+        "iata": "SVQ",
+        "icao": "LEZL",
+        "terminal": "1",
+        "gate": null,
+        "baggage": "7",
         "delay": null,
-        "scheduled": "2024-09-17T13:30:00+00:00",
-        "estimated": "2024-09-17T13:30:00+00:00",
+        "scheduled": "2024-09-20T11:15:00+00:00",
+        "estimated": "2024-09-20T11:15:00+00:00",
         "actual": null,
         "estimated_runway": null,
         "actual_runway": null
       },
       "airline": {
-        "name": "KLM",
-        "iata": "KL",
-        "icao": "KLM"
+        "name": "Vueling",
+        "iata": "VY",
+        "icao": "VLG"
       },
       "flight": {
-        "number": "2688",
-        "iata": "KL2688",
-        "icao": "KLM2688",
+        "number": "3259",
+        "iata": "VY3259",
+        "icao": "VLG3259",
+        "codeshared": null
+      },
+      "aircraft": {
+        "registration": "EC-NDA",
+        "iata": "A20N",
+        "icao": "A20N",
+        "icao24": "346183"
+      },
+      "live": {
+        "updated": "2024-09-20T08:44:51+00:00",
+        "latitude": 35.7115,
+        "longitude": -6.4437,
+        "altitude": 10340.3,
+        "direction": 41.57,
+        "speed_horizontal": 940.644,
+        "speed_vertical": -55.008,
+        "is_ground": false
+      }
+    },
+    {
+      "flight_date": "2024-09-20",
+      "flight_status": "active",
+      "departure": {
+        "airport": "Norte Los Rodeos",
+        "timezone": "Atlantic/Canary",
+        "iata": "TFN",
+        "icao": "GCXO",
+        "terminal": "1",
+        "gate": "B23",
+        "delay": 17,
+        "scheduled": "2024-09-20T08:00:00+00:00",
+        "estimated": "2024-09-20T08:00:00+00:00",
+        "actual": "2024-09-20T08:16:00+00:00",
+        "estimated_runway": "2024-09-20T08:16:00+00:00",
+        "actual_runway": "2024-09-20T08:16:00+00:00"
+      },
+      "arrival": {
+        "airport": "San Pablo",
+        "timezone": "Europe/Madrid",
+        "iata": "SVQ",
+        "icao": "LEZL",
+        "terminal": "1",
+        "gate": null,
+        "baggage": "7",
+        "delay": null,
+        "scheduled": "2024-09-20T11:15:00+00:00",
+        "estimated": "2024-09-20T11:15:00+00:00",
+        "actual": null,
+        "estimated_runway": null,
+        "actual_runway": null
+      },
+      "airline": {
+        "name": "Iberia",
+        "iata": "IB",
+        "icao": "IBE"
+      },
+      "flight": {
+        "number": "5326",
+        "iata": "IB5326",
+        "icao": "IBE5326",
         "codeshared": {
-          "airline_name": "transavia",
-          "airline_iata": "hv",
-          "airline_icao": "tra",
-          "flight_number": "6730",
-          "flight_iata": "hv6730",
-          "flight_icao": "tra6730"
+          "airline_name": "vueling",
+          "airline_iata": "vy",
+          "airline_icao": "vlg",
+          "flight_number": "3259",
+          "flight_iata": "vy3259",
+          "flight_icao": "vlg3259"
         }
+      },
+      "aircraft": null,
+      "live": null
+    },
+    {
+      "flight_date": "2024-09-20",
+      "flight_status": "active",
+      "departure": {
+        "airport": "Norte Los Rodeos",
+        "timezone": "Atlantic/Canary",
+        "iata": "TFN",
+        "icao": "GCXO",
+        "terminal": "1",
+        "gate": "B23",
+        "delay": 19,
+        "scheduled": "2024-09-20T08:50:00+00:00",
+        "estimated": "2024-09-20T08:50:00+00:00",
+        "actual": "2024-09-20T09:09:00+00:00",
+        "estimated_runway": "2024-09-20T09:09:00+00:00",
+        "actual_runway": "2024-09-20T09:09:00+00:00"
+      },
+      "arrival": {
+        "airport": "San Pablo",
+        "timezone": "Europe/Madrid",
+        "iata": "SVQ",
+        "icao": "LEZL",
+        "terminal": "1",
+        "gate": null,
+        "baggage": "8",
+        "delay": 1,
+        "scheduled": "2024-09-20T12:05:00+00:00",
+        "estimated": "2024-09-20T12:05:00+00:00",
+        "actual": null,
+        "estimated_runway": null,
+        "actual_runway": null
+      },
+      "airline": {
+        "name": "Iberia",
+        "iata": "IB",
+        "icao": "IBE"
+      },
+      "flight": {
+        "number": "5322",
+        "iata": "IB5322",
+        "icao": "IBE5322",
+        "codeshared": {
+          "airline_name": "vueling",
+          "airline_iata": "vy",
+          "airline_icao": "vlg",
+          "flight_number": "3255",
+          "flight_iata": "vy3255",
+          "flight_icao": "vlg3255"
+        }
+      },
+      "aircraft": null,
+      "live": null
+    },
+    {
+      "flight_date": "2024-09-20",
+      "flight_status": "landed",
+      "departure": {
+        "airport": "Barajas",
+        "timezone": "Europe/Madrid",
+        "iata": "MAD",
+        "icao": "LEMD",
+        "terminal": "4",
+        "gate": "H27",
+        "delay": 51,
+        "scheduled": "2024-09-20T07:10:00+00:00",
+        "estimated": "2024-09-20T07:10:00+00:00",
+        "actual": "2024-09-20T08:01:00+00:00",
+        "estimated_runway": "2024-09-20T08:01:00+00:00",
+        "actual_runway": "2024-09-20T08:01:00+00:00"
+      },
+      "arrival": {
+        "airport": "San Pablo",
+        "timezone": "Europe/Madrid",
+        "iata": "SVQ",
+        "icao": "LEZL",
+        "terminal": "1",
+        "gate": null,
+        "baggage": "7",
+        "delay": 28,
+        "scheduled": "2024-09-20T08:20:00+00:00",
+        "estimated": "2024-09-20T08:20:00+00:00",
+        "actual": "2024-09-20T08:47:00+00:00",
+        "estimated_runway": "2024-09-20T08:47:00+00:00",
+        "actual_runway": "2024-09-20T08:47:00+00:00"
+      },
+      "airline": {
+        "name": "SA AVIANCA",
+        "iata": "AV",
+        "icao": "AVA"
+      },
+      "flight": {
+        "number": "6070",
+        "iata": "AV6070",
+        "icao": "AVA6070",
+        "codeshared": {
+          "airline_name": "iberia express",
+          "airline_iata": "i2",
+          "airline_icao": "ibs",
+          "flight_number": "3954",
+          "flight_iata": "i23954",
+          "flight_icao": "ibs3954"
+        }
+      },
+      "aircraft": null,
+      "live": null
+    },
+    {
+      "flight_date": "2024-09-20",
+      "flight_status": "landed",
+      "departure": {
+        "airport": "Barajas",
+        "timezone": "Europe/Madrid",
+        "iata": "MAD",
+        "icao": "LEMD",
+        "terminal": "4",
+        "gate": "H27",
+        "delay": 51,
+        "scheduled": "2024-09-20T07:10:00+00:00",
+        "estimated": "2024-09-20T07:10:00+00:00",
+        "actual": "2024-09-20T08:01:00+00:00",
+        "estimated_runway": "2024-09-20T08:01:00+00:00",
+        "actual_runway": "2024-09-20T08:01:00+00:00"
+      },
+      "arrival": {
+        "airport": "San Pablo",
+        "timezone": "Europe/Madrid",
+        "iata": "SVQ",
+        "icao": "LEZL",
+        "terminal": "1",
+        "gate": null,
+        "baggage": "7",
+        "delay": 28,
+        "scheduled": "2024-09-20T08:20:00+00:00",
+        "estimated": "2024-09-20T08:20:00+00:00",
+        "actual": "2024-09-20T08:47:00+00:00",
+        "estimated_runway": "2024-09-20T08:47:00+00:00",
+        "actual_runway": "2024-09-20T08:47:00+00:00"
+      },
+      "airline": {
+        "name": "Vueling",
+        "iata": "VY",
+        "icao": "VLG"
+      },
+      "flight": {
+        "number": "5494",
+        "iata": "VY5494",
+        "icao": "VLG5494",
+        "codeshared": {
+          "airline_name": "iberia express",
+          "airline_iata": "i2",
+          "airline_icao": "ibs",
+          "flight_number": "3954",
+          "flight_iata": "i23954",
+          "flight_icao": "ibs3954"
+        }
+      },
+      "aircraft": null,
+      "live": null
+    },
+    {
+      "flight_date": "2024-09-20",
+      "flight_status": "landed",
+      "departure": {
+        "airport": "Vitoria",
+        "timezone": "Europe/Madrid",
+        "iata": "VIT",
+        "icao": "LEVT",
+        "terminal": null,
+        "gate": null,
+        "delay": 1,
+        "scheduled": "2024-09-20T07:11:00+00:00",
+        "estimated": "2024-09-20T07:11:00+00:00",
+        "actual": "2024-09-20T07:12:00+00:00",
+        "estimated_runway": "2024-09-20T07:12:00+00:00",
+        "actual_runway": "2024-09-20T07:12:00+00:00"
+      },
+      "arrival": {
+        "airport": "San Pablo",
+        "timezone": "Europe/Madrid",
+        "iata": "SVQ",
+        "icao": "LEZL",
+        "terminal": "1",
+        "gate": null,
+        "baggage": null,
+        "delay": null,
+        "scheduled": "2024-09-20T08:30:00+00:00",
+        "estimated": "2024-09-20T08:30:00+00:00",
+        "actual": "2024-09-20T08:15:00+00:00",
+        "estimated_runway": "2024-09-20T08:15:00+00:00",
+        "actual_runway": "2024-09-20T08:15:00+00:00"
+      },
+      "airline": {
+        "name": "ASL Airlines Ireland",
+        "iata": "AG",
+        "icao": "ABR"
+      },
+      "flight": {
+        "number": "4472",
+        "iata": "AG4472",
+        "icao": "ABR4472",
+        "codeshared": null
       },
       "aircraft": null,
       "live": null

@@ -5,7 +5,7 @@ import httpService from "../services/httpService"
 import heroDetailsData from "../pages/HomePage/configs/heroDetailsData"
 
 import { FieldValues } from "react-hook-form"
-import { FlightData } from "../interfaces/flightData.interface"
+import { FlightData, Pagination } from "../interfaces/flightData.interface"
 
 import { apiParams } from "../interfaces/apiParams.interface"
 
@@ -38,9 +38,8 @@ function useFlight(aux: FieldValues, params: apiParams) {
 
 function useFlights(aux: FieldValues, params: apiParams) {
   const [flights, setFlights] = useState<FlightData[]>([])
-  const [direction, setDirection] = useState<"arrival" | "departure">(
-    "arrival"
-  )
+  const [pagination, setPagination] = useState<Pagination | null>(null)
+  const [direction, setDirection] = useState<"arrival" | "departure">("arrival")
   const [isLoading, setIsLoading] = useState(false)
 
   useEffect(() => {
@@ -66,7 +65,7 @@ function useFlights(aux: FieldValues, params: apiParams) {
             return data
           })
           setFlights(updatedFlights)
-          console.log(updatedFlights)
+          setPagination(data.pagination)
         })
         .finally(() => {
           setIsLoading(false)
@@ -74,6 +73,14 @@ function useFlights(aux: FieldValues, params: apiParams) {
     }
   }, [aux])
 
-  return { flights, setFlights, isLoading, setIsLoading, setDirection, direction }
+  return {
+    flights,
+    setFlights,
+    isLoading,
+    setIsLoading,
+    setDirection,
+    direction,
+    pagination,
+  }
 }
 export { useFlight, useFlights }

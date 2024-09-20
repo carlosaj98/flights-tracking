@@ -1,10 +1,8 @@
 import { ReactElement } from "react"
 
 export interface optionsInputInterface {
-  dateTitle?: string
-  dateValue?: string
-  directionTitle?: string
-  directionValue?: string
+  optionTitle: string | number
+  optionValue: string | number
 }
 
 export interface formFieldsInterface {

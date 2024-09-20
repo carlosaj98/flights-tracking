@@ -1,3 +1,11 @@
+
+export interface Pagination  {
+  limit:  number;
+  offset: number;
+  count:  number;
+  total:  number;
+}
+
 export interface FlightData {
   flight_date: string
   flight_status: string
@@ -57,3 +65,4 @@ export interface Live {
   speed_vertical: number
   is_ground: boolean
 }
+
