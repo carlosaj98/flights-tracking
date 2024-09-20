@@ -54,7 +54,7 @@ const FlightsPage: React.FC = () => {
             />
           </Stack>
         </Stack>
-        {FlightList.data.length ? (
+        {flights.length ? (
           <Stack
             component={"section"}
             className="section-flights"
@@ -75,7 +75,7 @@ const FlightsPage: React.FC = () => {
             >
               <Stack alignItems={"center"} width={"100%"} gap={"12px"}>
                 <Typography>
-                  Found flights: <span>{FlightList.pagination!.total}</span>
+                  Found flights: <span>{pagination!.total}</span>
                 </Typography>
                 <Stack
                   gap={"24px"}
@@ -89,8 +89,8 @@ const FlightsPage: React.FC = () => {
                     disabled={offset === 0}
                     sx={{ width: "200px" }}
                     onClick={() => {
-                      setOffset(offset + FlightList.pagination!.limit),
-                        setIsLoading(true)
+                      setOffset(offset - pagination!.limit),
+                      setIsLoading(true)
                     }}
                   >
                     <Box height={"20px"}>
@@ -99,19 +99,19 @@ const FlightsPage: React.FC = () => {
                     PREVIOUS PAGE
                   </Button>
                   <Typography>
-                    Page: {offset / FlightList.pagination!.limit} /{" "}
+                    Page: {offset / pagination!.limit} /{" "}
                     {Math.round(
-                      FlightList.pagination!.total /
-                        FlightList.pagination!.limit
+                      pagination!.total /
+                        pagination!.limit
                     )}
                   </Typography>
                   <Button
                     className="btn-pages"
                     variant="contained"
-                    disabled={offset >= FlightList.pagination!.total}
+                    disabled={offset >= pagination!.total}
                     sx={{ width: "200px" }}
                     onClick={() => {
-                      setOffset(offset + FlightList.pagination!.limit),
+                      setOffset(offset + pagination!.limit),
                         setIsLoading(true)
                     }}
                   >
@@ -122,7 +122,7 @@ const FlightsPage: React.FC = () => {
                   </Button>
                 </Stack>
               </Stack>
-              {FlightList.data.map((flightData) => {
+              {flights.map((flightData) => {
                 return (
                   <FlightDetailCard
                     key={flightData.flight.iata + flightData.flight_date}
