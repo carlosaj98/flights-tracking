@@ -6,7 +6,6 @@ import ServicesForm from "../../components/ServicesForm/ServicesForm"
 import ServicesGlobe from "../../components/ServicesGlobe/ServicesGlobe"
 import { useState } from "react"
 import { FieldValues } from "react-hook-form"
-import FlightList from "../../utils/flightsAll.json"
 import FlightDetailCard from "../../components/FlightDetailCard/FlightDetailCard"
 import { IconArrow } from "../../common/Icons"
 
