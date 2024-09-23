@@ -16,6 +16,11 @@ const FlightsPageContainer = styled(Stack)({
     },
   },
 
+  ".text-loader":{
+    fontSize: "1.5rem",
+    color: "var(--primary-color-extradark)",
+  },
+
   h1: {
     fontSize: "2.5rem",
     fontWeight: "800",

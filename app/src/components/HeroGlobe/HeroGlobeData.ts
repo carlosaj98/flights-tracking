@@ -19,7 +19,7 @@ function HeroGlobeData() {
   useEffect(() => {
     if (globeRef.current) {
       globeRef.current.controls().autoRotate = true
-      globeRef.current.controls().autoRotateSpeed = 3
+      globeRef.current.controls().autoRotateSpeed = 2
       globeRef.current.controls().enableZoom = false
     }
   }, [])

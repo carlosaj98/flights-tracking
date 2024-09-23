@@ -36,7 +36,7 @@ function ServicesGlobeData(
   useEffect(() => {
     if (globeRef.current) {
       globeRef.current.controls().autoRotate = true
-      globeRef.current.controls().autoRotateSpeed = 1.5
+      globeRef.current.controls().autoRotateSpeed = 1
       globeRef.current.controls().enableZoom = true
     }
   }, [])

@@ -5,6 +5,7 @@ import { useState } from "react"
 import { FieldValues } from "react-hook-form"
 import SectionMain from "./sections/SectionMain"
 import SectionFlights from "./sections/SectionFlights"
+import Loader from "../../components/Loader/Loader"
 
 const FlightsPage: React.FC = () => {
   const [formData, setFormData] = useState<FieldValues>({})
@@ -17,8 +18,6 @@ const FlightsPage: React.FC = () => {
       limit: formData.limit,
       offset: offset,
     })
-
-  console.log(offset)
   return (
     <FlightsPageContainer>
       <Container sx={{ height: "100%" }}>
@@ -38,7 +37,7 @@ const FlightsPage: React.FC = () => {
             pagination={pagination!}
           />
         ) : (
-          <p>{isLoading && "Loading flights ..."}</p>
+          <Loader status={isLoading}/>
         )}
       </Container>
     </FlightsPageContainer>
