@@ -38,16 +38,17 @@ const SectionFlights: React.FC<SectionFlightsProps> = ({
             Found flights: <span>{pagination!.total}</span>
           </Typography>
           <Stack
-            gap={"24px"}
+            gap={"48px"}
             flexDirection={"row"}
             width={"100%"}
-            justifyContent={"space-between"}
+            justifyContent={"center"}
+            alignItems={"center"}
           >
             <Button
               className="btn-pages"
               variant="contained"
               disabled={offset === 0}
-              sx={{ width: "200px" }}
+              sx={{ width: "100px" }}
               onClick={() => {
                 setOffset(offset - pagination!.limit), setIsLoading(true)
               }}
@@ -55,7 +56,6 @@ const SectionFlights: React.FC<SectionFlightsProps> = ({
               <Box height={"20px"}>
                 <IconArrow direction="left" />
               </Box>
-              PREVIOUS PAGE
             </Button>
             <Typography>
               Page: {offset / pagination!.limit} /{" "}
@@ -65,12 +65,11 @@ const SectionFlights: React.FC<SectionFlightsProps> = ({
               className="btn-pages"
               variant="contained"
               disabled={offset >= pagination!.total}
-              sx={{ width: "200px" }}
+              sx={{ width: "100px" }}
               onClick={() => {
                 setOffset(offset + pagination!.limit), setIsLoading(true)
               }}
             >
-              NEXT PAGE
               <Box height={"20px"}>
                 <IconArrow direction="right" />
               </Box>

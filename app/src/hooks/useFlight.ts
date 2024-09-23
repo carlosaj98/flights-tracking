@@ -47,11 +47,7 @@ function useFlights(aux: FieldValues, params: apiParams) {
       httpService("/flights")
         .getFlights(params)
         .then(({ data }) => {
-          const transformData = data.data.filter(
-            ({ flight_date }: { flight_date: string }) =>
-              flight_date === aux.date
-          )
-          const updatedFlights = transformData.map((data: FlightData) => {
+          const updatedFlights = data.data.map((data: FlightData) => {
             const coordTracked = airports.filter(
               (airport) => airport.iata_code === data[direction].iata
             )

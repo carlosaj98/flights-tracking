@@ -29,7 +29,7 @@ const FlightsPage: React.FC = () => {
           flights={flights}
           formData={formData}
         />
-        {flights.length ? (
+        {!isLoading && flights.length ? (
           <SectionFlights
             setIsLoading={setIsLoading}
             setOffset={setOffset}
