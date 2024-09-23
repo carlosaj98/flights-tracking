@@ -1,13 +1,10 @@
 import FlightsPageContainer from "./FlightsPage.style"
-import { Box, Button, Container, Stack, Typography } from "@mui/material"
-import formFields from "./configs/formFields"
+import { Container } from "@mui/material"
 import { useFlights } from "../../hooks/useFlight"
-import ServicesForm from "../../components/ServicesForm/ServicesForm"
-import ServicesGlobe from "../../components/ServicesGlobe/ServicesGlobe"
 import { useState } from "react"
 import { FieldValues } from "react-hook-form"
-import FlightDetailCard from "../../components/FlightDetailCard/FlightDetailCard"
-import { IconArrow } from "../../common/Icons"
+import SectionMain from "./sections/SectionMain"
+import SectionFlights from "./sections/SectionFlights"
 
 const FlightsPage: React.FC = () => {
   const [formData, setFormData] = useState<FieldValues>({})
@@ -25,112 +22,21 @@ const FlightsPage: React.FC = () => {
   return (
     <FlightsPageContainer>
       <Container sx={{ height: "100%" }}>
-        <Stack component={"section"} id="section-main">
-          <Stack alignItems={"center"} gap={"12px"} textAlign={"center"}>
-            <Typography variant="h1">
-              Find various <span>Flights</span>
-            </Typography>
-            <Typography variant="h2">
-              Discover and Compare a wide selection of Flights
-            </Typography>
-          </Stack>
-          <Stack
-            marginTop={"32px"}
-            flexDirection={{ lg: "row", xs: "column" }}
-            alignItems={"center"}
-            gap={"32px"}
-          >
-            <ServicesForm
-              formFields={formFields}
-              actionForm={setFormData}
-              actionLoading={setIsLoading}
-              actionDirection={setDirection}
-            />
-            <ServicesGlobe
-              flights={flights}
-              flightsDirection={formData.direction}
-              airportCode={formData.airportCode}
-            />
-          </Stack>
-        </Stack>
+        <SectionMain
+          setFormData={setFormData}
+          setIsLoading={setIsLoading}
+          setDirection={setDirection}
+          flights={flights}
+          formData={formData}
+        />
         {flights.length ? (
-          <Stack
-            component={"section"}
-            className="section-flights"
-            gap={"24px"}
-            marginTop={"32px"}
-          >
-            <Stack
-              borderTop={"2px solid var(--gray-base)"}
-              padding={"24px"}
-              alignItems={"center"}
-            >
-              <Typography variant="h3">Flights</Typography>
-            </Stack>
-            <Stack
-              id="flights-list-container"
-              gap={"32px"}
-              alignItems={"center"}
-            >
-              <Stack alignItems={"center"} width={"100%"} gap={"12px"}>
-                <Typography>
-                  Found flights: <span>{pagination!.total}</span>
-                </Typography>
-                <Stack
-                  gap={"24px"}
-                  flexDirection={"row"}
-                  width={"100%"}
-                  justifyContent={"space-between"}
-                >
-                  <Button
-                    className="btn-pages"
-                    variant="contained"
-                    disabled={offset === 0}
-                    sx={{ width: "200px" }}
-                    onClick={() => {
-                      setOffset(offset - pagination!.limit),
-                      setIsLoading(true)
-                    }}
-                  >
-                    <Box height={"20px"}>
-                      <IconArrow direction="left" />
-                    </Box>
-                    PREVIOUS PAGE
-                  </Button>
-                  <Typography>
-                    Page: {offset / pagination!.limit} /{" "}
-                    {Math.round(
-                      pagination!.total /
-                        pagination!.limit
-                    )}
-                  </Typography>
-                  <Button
-                    className="btn-pages"
-                    variant="contained"
-                    disabled={offset >= pagination!.total}
-                    sx={{ width: "200px" }}
-                    onClick={() => {
-                      setOffset(offset + pagination!.limit),
-                        setIsLoading(true)
-                    }}
-                  >
-                    NEXT PAGE
-                    <Box height={"20px"}>
-                      <IconArrow direction="right" />
-                    </Box>
-                  </Button>
-                </Stack>
-              </Stack>
-              {flights.map((flightData) => {
-                return (
-                  <FlightDetailCard
-                    key={flightData.flight.iata + flightData.flight_date}
-                    data={flightData}
-                  />
-                )
-              })}
-            </Stack>
-          </Stack>
+          <SectionFlights
+            setIsLoading={setIsLoading}
+            setOffset={setOffset}
+            flights={flights}
+            offset={offset}
+            pagination={pagination!}
+          />
         ) : (
           <p>{isLoading && "Loading flights ..."}</p>
         )}
