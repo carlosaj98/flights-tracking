@@ -5,7 +5,7 @@ const serviceFields: serviceFieldInterface[] = [
     title: "Find one flight",
     desc: "Find a specific flight by filtering through various options to view all the details of that flight.",
     image: "/ticketOne_blue.png",
-    link:"/#",
+    link:"/flight",
   },
 
   {
