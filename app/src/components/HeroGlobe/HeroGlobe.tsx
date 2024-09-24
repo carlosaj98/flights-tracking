@@ -26,6 +26,7 @@ const HeroGlobe: React.FC = () => {
       hexPolygonColor={() => "#357af9"}
       animateIn={false}
       atmosphereColor="#357af9"
+      waitForGlobeReady
     />
   )
 }

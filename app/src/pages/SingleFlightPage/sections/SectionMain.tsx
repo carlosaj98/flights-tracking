@@ -1,6 +1,6 @@
-// import ServicesForm from "../../../components/ServicesForm/ServicesForm"
+import ServicesForm from "../../../components/ServicesForm/ServicesForm"
 import { Stack, Typography } from "@mui/material"
-// import formFields from "../configs/formFields"
+import formFields from "../configs/formFields"
 
 const SectionMain: React.FC = () => {
   return (
@@ -12,7 +12,7 @@ const SectionMain: React.FC = () => {
         </Typography>
       </Stack>
       <Stack>
-        {/* <ServicesForm formFields={formFields} /> */}
+        <ServicesForm formFields={formFields} />
       </Stack>
     </Stack>
   )

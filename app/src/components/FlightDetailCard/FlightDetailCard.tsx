@@ -78,20 +78,6 @@ const FlightDetailCard: React.FC<FlightDetailCardProps> = ({ data }) => {
           className="details-container"
           width={{ lg: "500px", xs: "100%" }}
         >
-          <Stack className="details-arrival" textAlign={"center"}>
-            <Typography className="airports-code">
-              {data.arrival.iata}
-            </Typography>
-            <Typography className="airports-name">
-              {data.arrival.airport}
-            </Typography>
-            <Typography fontSize={"1.2rem"}>
-              {transformDate(data.arrival.scheduled, "time")}
-            </Typography>
-          </Stack>
-          <Stack width={"100%"} alignItems={"center"}>
-            <IconPlane />
-          </Stack>
           <Stack className="details-departure" textAlign={"center"}>
             <Typography className="airports-code">
               {data.departure.iata}
@@ -101,6 +87,20 @@ const FlightDetailCard: React.FC<FlightDetailCardProps> = ({ data }) => {
             </Typography>
             <Typography fontSize={"1.2rem"}>
               {transformDate(data.departure.scheduled, "time")}
+            </Typography>
+          </Stack>
+          <Stack width={"100%"} alignItems={"center"}>
+            <IconPlane />
+          </Stack>
+          <Stack className="details-arrival" textAlign={"center"}>
+            <Typography className="airports-code">
+              {data.arrival.iata}
+            </Typography>
+            <Typography className="airports-name">
+              {data.arrival.airport}
+            </Typography>
+            <Typography fontSize={"1.2rem"}>
+              {transformDate(data.arrival.scheduled, "time")}
             </Typography>
           </Stack>
         </Stack>
