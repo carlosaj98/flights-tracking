@@ -4,7 +4,7 @@ const FlightsPageContainer = styled(Stack)({
   width: "100%",
   minHeight: "100vh",
   backgroundColor: "var(--background-color)",
-  padding: " 64px 0",
+  padding: " 32px 0",
 
   p: {
     fontFamily: "var(--font-base)",
