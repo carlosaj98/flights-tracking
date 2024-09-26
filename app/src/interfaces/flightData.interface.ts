@@ -1,68 +1,79 @@
-
-export interface Pagination  {
-  limit:  number;
-  offset: number;
-  count:  number;
-  total:  number;
+export interface Pagination {
+  limit: number
+  offset: number
+  count: number
+  total: number
 }
 
 export interface FlightData {
-  flight_date: string
-  flight_status: string
+  flight_date: string | null
+  flight_status: string | null
   departure: Direction
   arrival: Direction
   airline: Airline
   flight: Flight
-  aircraft: Aircraft
-  live: Live
-  lat?: number
-  lng?: number
+  aircraft: Aircraft | null
+  live: Live | null
+  lat?: number | null
+  lng?: number | null
+  lat_arrival?: number | null
+  lng_arrival?: number | null
+  lat_departure?: number | null
+  lng_departure?: number | null
 }
 
 export interface Aircraft {
-  registration: string
-  iata: string
-  icao: string
-  icao24: string
+  registration: string | null
+  iata: string | null
+  icao: string | null
+  icao24: string | null
 }
 
 export interface Airline {
-  name: string
-  iata: string
-  icao: string
+  name: string | null
+  iata: string | null
+  icao: string | null
 }
 
 export interface Direction {
-  airport: string
-  timezone: string
-  iata: string
-  icao: string
-  terminal: string
-  gate: string
-  baggage?: string
-  delay: number
-  scheduled: string
-  estimated: string
+  airport: string | null
+  timezone: string | null
+  iata: string | null
+  icao: string | null
+  terminal: string | null
+  gate: string | null
+  baggage?: string | null
+  delay: number | null
+  scheduled: string | null
+  estimated: string | null
   actual: string | null
   estimated_runway: string | null
   actual_runway: string | null
 }
 
 export interface Flight {
-  number: string
-  iata: string
-  icao: string
-  codeshared: null
+  number: string | null
+  iata: string | null
+  icao: string | null
+  codeshared: Codeshared | null
+}
+
+export interface Codeshared {
+  airline_name: string | null
+  airline_iata: string | null
+  airline_icao: string | null
+  flight_number: string | null
+  flight_iata: string | null
+  flight_icao: string | null
 }
 
 export interface Live {
-  updated: string
-  latitude: number
-  longitude: number
-  altitude: number
-  direction: number
-  speed_horizontal: number
-  speed_vertical: number
-  is_ground: boolean
+  updated: string | null
+  latitude: number | null
+  longitude: number | null
+  altitude: number | null
+  direction: number | null
+  speed_horizontal: number | null
+  speed_vertical: number | null
+  is_ground: boolean | null
 }
-
