@@ -37,11 +37,12 @@ const SectionMain: React.FC<SectionMainProps> = ({
           actionLoading={setIsLoading}
           actionDirection={setDirection}
         />
-        {/* <ServicesGlobe
+        <ServicesGlobe
           flights={flights}
           flightsDirection={formData.direction}
           airportCode={formData.airportCode}
-        /> */}
+          type={"single"}
+        />
       </Stack>
     </Stack>
   )

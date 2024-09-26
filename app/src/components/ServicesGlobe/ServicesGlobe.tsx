@@ -8,17 +8,20 @@ type GlobeProps = {
   flights: FlightData[]
   flightsDirection: string
   airportCode: string
+  type: "single" | "multiple"
 }
 
 const ServicesGlobe: React.FC<GlobeProps> = ({
   flights,
   flightsDirection,
   airportCode,
+  type
 }) => {
   const { arcsData, newMaterial, globeRef } = ServicesGlobeData(
     flights,
     flightsDirection,
-    airportCode
+    airportCode,
+    type
   )
   const { globeWidth } = useGlobeWidth()
 

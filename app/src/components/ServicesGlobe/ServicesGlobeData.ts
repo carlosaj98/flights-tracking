@@ -7,7 +7,8 @@ import { airports } from "../../utils/airportsData.json"
 function ServicesGlobeData(
   flights: FlightData[],
   flightsDirection: string,
-  airportCode: string
+  airportCode: string,
+  type: "single" | "multiple"
 ) {
   const [airportFiltered] = airports.filter(
     (airport) => airport.iata_code === airportCode
@@ -15,19 +16,28 @@ function ServicesGlobeData(
 
   const globeRef = useRef<GlobeMethods>()
   const arcsData = flights.map((flight) => {
-    return flightsDirection === "arr_iata"
-      ? {
-          startLat: flight.lat,
-          startLng: flight.lng,
-          endLat: airportFiltered.lat,
-          endLng: airportFiltered.lng,
-        }
-      : {
-          startLat: airportFiltered.lat,
-          startLng: airportFiltered.lng,
-          endLat: flight.lat,
-          endLng: flight.lng,
-        }
+    if (type === "single") {
+      return {
+        startLat: flight.lat_departure,
+        startLng: flight.lng_departure,
+        endLat: flight.lat_arrival,
+        endLng: flight.lng_arrival,
+      }
+    } else {
+      return flightsDirection === "arr_iata"
+        ? {
+            startLat: flight.lat,
+            startLng: flight.lng,
+            endLat: airportFiltered.lat,
+            endLng: airportFiltered.lng,
+          }
+        : {
+            startLat: airportFiltered.lat,
+            startLng: airportFiltered.lng,
+            endLat: flight.lat,
+            endLng: flight.lng,
+          }
+    }
   })
 
   const newMaterial = new THREE.MeshBasicMaterial()
