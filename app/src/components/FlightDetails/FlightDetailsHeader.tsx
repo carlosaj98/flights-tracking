@@ -2,11 +2,11 @@ import { Stack, Typography } from "@mui/material"
 import { IconPlane } from "../../common/Icons"
 import { FlightData } from "../../interfaces/flightData.interface"
 
-interface HeroDetailsProps {
+interface FlightDetailsProps {
   data: FlightData
 }
 
-const HeroDetailsHeader: React.FC<HeroDetailsProps> = ({data}) => {
+const FlightDetailsHeader: React.FC<FlightDetailsProps> = ({data}) => {
   return (
     <Stack
       flexDirection={{ sm: "row", xs: "column" }}
@@ -101,4 +101,4 @@ const HeroDetailsHeader: React.FC<HeroDetailsProps> = ({data}) => {
   )
 }
 
-export default HeroDetailsHeader
+export default FlightDetailsHeader

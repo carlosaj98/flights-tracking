@@ -7,7 +7,7 @@ import { Container } from "@mui/material"
 
 const SingleFlightPage: React.FC = () => {
   const [formData, setFormData] = useState<FieldValues>({})
-  const { flight, setIsLoading, setDirection } =
+  const { flight, setIsLoading, setDirection, isLoading } =
     useFlight(formData, {
       access_key: import.meta.env.VITE_API_KEY,
       airline_name: formData.airline,
@@ -23,6 +23,7 @@ const SingleFlightPage: React.FC = () => {
           setDirection={setDirection}
           flights={flight}
           formData={formData}
+          isLoading={isLoading}
         />
       </Container>
     </SingleFlightPageContainer>

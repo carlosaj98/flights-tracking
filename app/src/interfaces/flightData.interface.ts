@@ -44,8 +44,8 @@ export interface Direction {
   gate: string | null
   baggage?: string | null
   delay: number | null
-  scheduled: string | null
-  estimated: string | null
+  scheduled: string 
+  estimated: string 
   actual: string | null
   estimated_runway: string | null
   actual_runway: string | null

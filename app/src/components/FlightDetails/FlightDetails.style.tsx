@@ -1,6 +1,6 @@
 import { Stack, styled } from "@mui/material"
 
-const HeroDetailsContainer = styled(Stack)({
+const FlightDetailsContainer = styled(Stack)({
   width: "100%",
   borderRadius: "18px",
   boxShadow: "0 3px 6px var(--gray-semilight)",
@@ -97,4 +97,4 @@ const HeroDetailsContainer = styled(Stack)({
   },
 })
 
-export default HeroDetailsContainer
+export default FlightDetailsContainer

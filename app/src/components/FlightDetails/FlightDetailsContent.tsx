@@ -2,12 +2,12 @@ import { Stack, useMediaQuery, Typography } from "@mui/material"
 import { Direction } from "../../interfaces/flightData.interface"
 import transformDate from "../../utils/transformDate"
 
-interface HeroDetailsProps {
+interface FlightDetailsProps {
   data: Direction
   title: string
 }
 
-const HeroDetailsContent: React.FC<HeroDetailsProps> = ({ data, title }) => {
+const FlightDetailsContent: React.FC<FlightDetailsProps> = ({ data, title }) => {
   const isMobileScreen: boolean = useMediaQuery("(max-width:600px)")
 
   return (
@@ -98,4 +98,4 @@ const HeroDetailsContent: React.FC<HeroDetailsProps> = ({ data, title }) => {
   )
 }
 
-export default HeroDetailsContent
+export default FlightDetailsContent

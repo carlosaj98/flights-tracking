@@ -4,6 +4,8 @@ import formFields from "../configs/formFields"
 import { FieldValues } from "react-hook-form"
 import ServicesGlobe from "../../../components/ServicesGlobe/ServicesGlobe"
 import { FlightData } from "../../../interfaces/flightData.interface"
+import FlightDetails from "../../../components/FlightDetails/FlightDetails"
+import Loader from "../../../components/Loader/Loader"
 
 type SectionMainProps = {
   formData: FieldValues
@@ -11,6 +13,7 @@ type SectionMainProps = {
   setFormData: React.Dispatch<React.SetStateAction<FieldValues>>
   setIsLoading: React.Dispatch<React.SetStateAction<boolean>>
   setDirection: React.Dispatch<React.SetStateAction<"arrival" | "departure">>
+  isLoading: boolean
 }
 
 const SectionMain: React.FC<SectionMainProps> = ({
@@ -19,7 +22,9 @@ const SectionMain: React.FC<SectionMainProps> = ({
   setDirection,
   flights,
   formData,
+  isLoading,
 }) => {
+  console.log(flights)
   return (
     <Stack gap={"32px"}>
       <Stack alignItems={"center"}>
@@ -30,7 +35,7 @@ const SectionMain: React.FC<SectionMainProps> = ({
           In-Depth Information of Your Selected Flight
         </Typography>
       </Stack>
-      <Stack>
+      <Stack flexDirection={"row"} alignItems={"center"}>
         <ServicesForm
           formFields={formFields}
           actionForm={setFormData}
@@ -44,6 +49,11 @@ const SectionMain: React.FC<SectionMainProps> = ({
           type={"single"}
         />
       </Stack>
+      {!isLoading && flights.length ? (
+        <FlightDetails data={flights[0]} />
+      ) : (
+        <Loader status={isLoading} />
+      )}
     </Stack>
   )
 }
