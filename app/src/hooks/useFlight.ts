@@ -9,11 +9,13 @@ import { FlightData, Pagination } from "../interfaces/flightData.interface"
 import { apiParams } from "../interfaces/apiParams.interface"
 
 import { airports } from "../utils/airportsData.json"
+import { useNavigate } from "react-router-dom"
 
 function useFlight(aux: FieldValues, params: apiParams) {
   const [flight, setFlight] = useState<FlightData[]>([])
   const [direction, setDirection] = useState<"arrival" | "departure">("arrival")
   const [isLoading, setIsLoading] = useState(false)
+  const navigate = useNavigate()
 
   useEffect(() => {
     if (isLoading) {
@@ -42,11 +44,12 @@ function useFlight(aux: FieldValues, params: apiParams) {
               },
             ]
             setFlight(updatedFlights)
-            
+            sessionStorage.setItem("flight", JSON.stringify(updatedFlights[0]))
           }
         })
         .finally(() => {
           setIsLoading(false)
+          navigate("/flight")
           console.log(flight)
         })
     }

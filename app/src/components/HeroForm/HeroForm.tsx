@@ -23,10 +23,10 @@ const HeroForm: React.FC<FormComponentProps> = ({
   actionLoading,
 }) => {
   const { handleSubmit, control } = useForm<FieldValues>()
-
   const onSubmit: SubmitHandler<FieldValues> = (data) => {
     actionForm(data)
     actionLoading(true)
+    
   }
 
   return (
