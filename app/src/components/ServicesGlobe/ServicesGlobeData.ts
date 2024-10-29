@@ -11,7 +11,7 @@ function ServicesGlobeData(
   type: "single" | "multiple"
 ) {
   const [airportFiltered] = airports.filter(
-    (airport) => airport.iata_code === airportCode
+    (airport) => airport.iata_code === airportCode?.toUpperCase()
   )
 
   const globeRef = useRef<GlobeMethods>()

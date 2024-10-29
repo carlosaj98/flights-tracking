@@ -4,6 +4,7 @@ import { useFlight } from "../../hooks/useFlight"
 import SectionMain from "./sections/SectionMain"
 import SingleFlightPageContainer from "./SingleFlightPage.style"
 import { Container } from "@mui/material"
+import { BackButton } from "../../common/Buttons"
 
 const SingleFlightPage: React.FC = () => {
   const [formData, setFormData] = useState<FieldValues>({})
@@ -17,6 +18,7 @@ const SingleFlightPage: React.FC = () => {
   return (
     <SingleFlightPageContainer>
       <Container sx={{ height: "100%" }}>
+        <BackButton/>
         <SectionMain
           setFormData={setFormData}
           setIsLoading={setIsLoading}

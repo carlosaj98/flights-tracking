@@ -28,15 +28,15 @@ const SectionMain: React.FC<SectionMainProps> = ({
   console.log(flightStorage)
   return (
     <Stack gap={"32px"}>
-      <Stack alignItems={"center"}>
+      <Stack alignItems={"center"} gap={"12px"}>
         <Typography variant="h1">
           Find one <span>Flight</span>
         </Typography>
-        <Typography variant="h2">
+        <Typography variant="h2" textAlign={"center"}>
           In-Depth Information of Your Selected Flight
         </Typography>
       </Stack>
-      <Stack flexDirection={"row"} alignItems={"center"}>
+      <Stack flexDirection={{lg:"row", xs:"column"}} alignItems={"center"}>
         <ServicesForm
           formFields={formFields}
           actionForm={setFormData}

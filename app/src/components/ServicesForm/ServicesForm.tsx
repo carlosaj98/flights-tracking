@@ -90,7 +90,7 @@ const ServicesForm: React.FC<FormComponentProps> = ({
           </Stack>
         )
       })}
-      <FormSubmitButton text="SEARCH FLIGHTS" />
+      <FormSubmitButton text="SEARCH FLIGHT" />
     </ServicesFormContainer>
   )
 }
