@@ -70,7 +70,7 @@ const FlightDetailCard: React.FC<FlightDetailCardProps> = ({ data }) => {
               sx={{ textShadow: "0 0 2px white" }}
               color={statusColor}
             >
-              {upperCaseStatus(data.flight_status)}
+              {upperCaseStatus(data.flight_status!)}
             </Typography>
           </Stack>
         </Stack>

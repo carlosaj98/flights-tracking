@@ -79,7 +79,7 @@ const SectionFlights: React.FC<SectionFlightsProps> = ({
         {flights.map((flightData) => {
           return (
             <FlightDetailCard
-              key={flightData.flight.iata + flightData.flight_date}
+              key={flightData.flight.iata! + flightData.flight_date!}
               data={flightData}
             />
           )
