@@ -1,6 +1,7 @@
 import { formFieldsInterface } from "../../../interfaces/formFields.interface"
 import { IconAirline, IconCalendar, IconFlightNum } from "../../../common/Icons"
 import formatDate from "../../../utils/formatDate"
+import * as yup from "yup"
 
 const formFields: formFieldsInterface[] = [
   {
@@ -45,4 +46,9 @@ const formFields: formFieldsInterface[] = [
   },
 ]
 
-export default formFields
+const validationSchema = yup.object().shape({
+  airline: yup.string().required("Can`t be empty"),
+  flight: yup.string().required("Can`t be empty"),
+})
+
+export { formFields, validationSchema }

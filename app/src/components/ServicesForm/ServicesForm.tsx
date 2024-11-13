@@ -9,12 +9,15 @@ import { formFieldsInterface } from "../../interfaces/formFields.interface"
 import { InputRadio, InputSelect, InputText } from "../../common/InputsTemplate"
 import { FormSubmitButton } from "../../common/Buttons"
 import { Stack } from "@mui/material"
+import { ObjectSchema } from "yup"
+import { yupResolver } from "@hookform/resolvers/yup"
 
 interface FormComponentProps {
   formFields: formFieldsInterface[]
   actionForm: React.Dispatch<React.SetStateAction<FieldValues>>
   actionLoading: React.Dispatch<React.SetStateAction<boolean>>
   actionDirection: React.Dispatch<React.SetStateAction<"arrival" | "departure">>
+  validation: ObjectSchema<FieldValues>
 }
 
 const ServicesForm: React.FC<FormComponentProps> = ({
@@ -22,8 +25,13 @@ const ServicesForm: React.FC<FormComponentProps> = ({
   actionForm,
   actionLoading,
   actionDirection,
+  validation,
 }) => {
-  const { handleSubmit, control } = useForm<FieldValues>()
+  const {
+    handleSubmit,
+    control,
+    formState: { errors },
+  } = useForm<FieldValues>({ resolver: yupResolver(validation) })
 
   const onSubmit: SubmitHandler<FieldValues> = (data) => {
     actionForm(data)
@@ -67,7 +75,12 @@ const ServicesForm: React.FC<FormComponentProps> = ({
                   control={control}
                   defaultValue=""
                   render={({ field }) => (
-                    <InputText field={field} rest={rest} />
+                    <InputText
+                      field={field}
+                      rest={rest}
+                      error={!!errors[name]}
+                      helperText={errors[name]?.message as string}
+                    />
                   )}
                 />
               </Stack>

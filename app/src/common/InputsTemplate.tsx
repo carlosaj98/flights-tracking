@@ -15,14 +15,24 @@ import { optionsInputInterface } from "../interfaces/formFields.interface"
 interface InputProps {
   field: FieldValues
   rest: FieldValues
+  error?: boolean
+  helperText?: string
 }
 
-const InputText: React.FC<InputProps> = ({ field, rest }) => {
+const InputText: React.FC<InputProps> = ({
+  field,
+  rest,
+  error,
+  helperText,
+}) => {
   return (
     <TextField
       {...field}
       {...rest}
       autoComplete="off"
+      error={error}
+      helperText={helperText}
+      FormHelperTextProps={{ className: "custom-error-text" }}
       InputProps={{
         startAdornment: (
           <Stack height={"100%"} width={"1rem"} marginRight={"12px"}>

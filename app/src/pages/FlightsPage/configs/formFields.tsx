@@ -1,5 +1,6 @@
 import { formFieldsInterface } from "../../../interfaces/formFields.interface"
-import {  IconAirline, IconAirport } from "../../../common/Icons"
+import { IconAirline, IconAirport } from "../../../common/Icons"
+import * as yup from "yup"
 
 const formFields: formFieldsInterface[] = [
   {
@@ -31,7 +32,6 @@ const formFields: formFieldsInterface[] = [
     label: "Airport code",
     placeholder: "Write the airport code",
     icon: <IconAirport />,
-    required: true,
   },
 
   {
@@ -44,4 +44,8 @@ const formFields: formFieldsInterface[] = [
   },
 ]
 
-export default formFields
+const validationSchema = yup.object().shape({
+  airportCode: yup.string().required("Can`t be empty"),
+})
+
+export { formFields, validationSchema }
