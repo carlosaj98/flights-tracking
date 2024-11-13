@@ -1,4 +1,3 @@
-
 import {
   FieldValues,
   SubmitHandler,
@@ -9,24 +8,31 @@ import {
 import { formFieldsInterface } from "../../interfaces/formFields.interface"
 import { InputText, InputSelect } from "../../common/InputsTemplate"
 import CustomForm from "./HeroForm.style"
-import {FormSubmitButton} from "../../common/Buttons"
+import { FormSubmitButton } from "../../common/Buttons"
+import { ObjectSchema } from "yup"
+import { yupResolver } from "@hookform/resolvers/yup"
 
 interface FormComponentProps {
   formFields: formFieldsInterface[]
-  actionForm: React.Dispatch<React.SetStateAction<FieldValues>>,
+  actionForm: React.Dispatch<React.SetStateAction<FieldValues>>
   actionLoading: React.Dispatch<React.SetStateAction<boolean>>
+  validation: ObjectSchema<FieldValues>
 }
 
 const HeroForm: React.FC<FormComponentProps> = ({
   formFields,
   actionForm,
   actionLoading,
+  validation,
 }) => {
-  const { handleSubmit, control } = useForm<FieldValues>()
+  const {
+    handleSubmit,
+    control,
+    formState: { errors },
+  } = useForm<FieldValues>({ resolver: yupResolver(validation) })
   const onSubmit: SubmitHandler<FieldValues> = (data) => {
     actionForm(data)
     actionLoading(true)
-    
   }
 
   return (
@@ -40,7 +46,14 @@ const HeroForm: React.FC<FormComponentProps> = ({
               name={name}
               control={control}
               defaultValue=""
-              render={({ field }) => <InputText field={field} rest={rest} />}
+              render={({ field }) => (
+                <InputText
+                  field={field}
+                  rest={rest}
+                  error={!!errors[name]}
+                  helperText={errors[name]?.message as string}
+                />
+              )}
             />
           </div>
         ) : (

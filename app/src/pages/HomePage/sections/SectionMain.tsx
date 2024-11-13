@@ -4,7 +4,7 @@ import { Stack } from "@mui/material"
 import HeroGlobe from "../../../components/HeroGlobe/HeroGlobe"
 
 import HeroForm from "../../../components/HeroForm/HeroForm"
-import formFields from "../configs/formFields"
+import {formFields, validationSchema} from "../configs/formFields"
 
 import { useFlight } from "../../../hooks/useFlight"
 
@@ -51,6 +51,7 @@ const SectionMain: React.FC = () => {
             formFields={formFields}
             actionForm={setFormData}
             actionLoading={setIsLoading}
+            validation={validationSchema}
           />
         </Stack>
 

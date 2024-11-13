@@ -20,6 +20,12 @@ const CustomForm = styled("form")({
     fontSize:"1.1rem"
   },
 
+  ".custom-error-text": {
+    fontFamily: "var(--font-base)",
+    fontWeight: "500",
+    fontSize:"0.8rem"
+  },
+
 })
 
 export default CustomForm
