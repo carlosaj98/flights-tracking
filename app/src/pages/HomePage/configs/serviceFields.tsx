@@ -17,9 +17,9 @@ const serviceFields: serviceFieldInterface[] = [
 
   {
     title: "Find airports",
-    desc: "Find airports by filtering through advanced options to access detailed information. NOT AVAILABLE YET",
+    desc: "Find airports by filtering through advanced options to access detailed information.",
     image: "/landing_blue.png",
-    link: "/#",
+    link: "/airports",
   },
 ]
 
