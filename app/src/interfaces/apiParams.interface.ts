@@ -7,3 +7,8 @@ export interface apiParams {
   limit?: number,
   offset?: number
 }
+
+export interface apiAirportsParams {
+  api_key: string
+  country_code: string
+}

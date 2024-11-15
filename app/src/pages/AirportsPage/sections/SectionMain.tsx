@@ -1,8 +1,24 @@
 import { Stack, Typography } from "@mui/material"
-// import ServicesForm from "../../../components/ServicesForm/ServicesForm"
-// import { formFields } from "../configs/formFields"
+import ServicesForm from "../../../components/ServicesForm/ServicesForm"
+import { formFields } from "../configs/formFields"
+import { AirportData } from "../../../interfaces/airportData.interface"
+import { FieldValues } from "react-hook-form"
 
-const SectionMain: React.FC = () => {
+type SectionMainProps = {
+  formData: FieldValues
+  airports: AirportData[]
+  setFormData: React.Dispatch<React.SetStateAction<FieldValues>>
+  setIsLoading: React.Dispatch<React.SetStateAction<boolean>>
+  isLoading: boolean
+}
+
+const SectionMain: React.FC<SectionMainProps> = ({
+  formData,
+  airports,
+  setFormData,
+  setIsLoading,
+  isLoading,
+}) => {
   return (
     <Stack gap={"32px"}>
       <Stack textAlign={"center"} gap={"12px"}>
@@ -14,7 +30,11 @@ const SectionMain: React.FC = () => {
         </Typography>
       </Stack>
       <Stack alignItems={"center"}>
-        {/* <ServicesForm formFields={formFields} /> */}
+        <ServicesForm
+          formFields={formFields}
+          actionForm={setFormData}
+          actionLoading={setIsLoading}
+        />
       </Stack>
     </Stack>
   )
