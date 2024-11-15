@@ -93,7 +93,7 @@ const ServicesForm: React.FC<FormComponentProps> = ({
                   key={name}
                   name={name}
                   control={control}
-                  defaultValue={rest.options![1].optionValue}
+                  defaultValue={rest.options![0].optionValue}
                   render={({ field }) => (
                     <InputSelect field={field} rest={rest} />
                   )}

@@ -35,7 +35,7 @@ const InputText: React.FC<InputProps> = ({
       FormHelperTextProps={{ className: "custom-error-text" }}
       InputProps={{
         startAdornment: (
-          <Stack height={"100%"} width={"1rem"} marginRight={"12px"}>
+          <Stack height={"20px"} width={"20px"} marginRight={"12px"}>
             {rest.icon}
           </Stack>
         ),
@@ -72,7 +72,7 @@ const InputSelect: React.FC<InputProps> = ({ field, rest }) => {
       {...field}
       {...rest}
       startAdornment={
-        <Stack height={"100%"} width={"1rem"} marginRight={"12px"}>
+        <Stack height={"20px"} width={"20px"} marginRight={"12px"} >
           {rest.icon}
         </Stack>
       }
@@ -114,6 +114,25 @@ const InputSelect: React.FC<InputProps> = ({ field, rest }) => {
             backgroundColor: "var(--gray-semilight)",
             backdropFilter: "blur(5px)",
             boxShadow: "0 2px 4px var(--gray-semidark)",
+            padding:"6px",
+            "::-webkit-scrollbar": {
+              width: "16px",
+            },
+            "::-webkit-scrollbar-track": {
+              background: "var(--gray-semilight)",
+              borderRadius: "12px",
+              margin:"16px 0"
+              
+            },
+            "::-webkit-scrollbar-thumb": {
+              background: "var(--gray-semidark)",
+              borderRadius: "12px",
+              border:"4px solid var(--gray-semilight)",
+              "&:hover":{
+                cursor:"pointer",
+                background: "var(--gray-dark)"
+              }
+            },
           },
         },
       }}
@@ -145,7 +164,7 @@ const InputSelect: React.FC<InputProps> = ({ field, rest }) => {
             },
           }}
         >
-          {option.optionValue} ({option.optionTitle})
+          {option.optionTitle}
         </MenuItem>
       ))}
     </Select>
