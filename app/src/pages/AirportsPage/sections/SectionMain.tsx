@@ -1,6 +1,6 @@
 import { Stack, Typography } from "@mui/material"
 import ServicesForm from "../../../components/ServicesForm/ServicesForm"
-import { formFields } from "../configs/formFields"
+import { formFields, validationSchema } from "../configs/formFields"
 import { AirportData } from "../../../interfaces/airportData.interface"
 import { FieldValues } from "react-hook-form"
 
@@ -13,11 +13,8 @@ type SectionMainProps = {
 }
 
 const SectionMain: React.FC<SectionMainProps> = ({
-  formData,
-  airports,
   setFormData,
   setIsLoading,
-  isLoading,
 }) => {
   return (
     <Stack gap={"32px"}>
@@ -34,6 +31,7 @@ const SectionMain: React.FC<SectionMainProps> = ({
           formFields={formFields}
           actionForm={setFormData}
           actionLoading={setIsLoading}
+          validation={validationSchema}
         />
       </Stack>
     </Stack>

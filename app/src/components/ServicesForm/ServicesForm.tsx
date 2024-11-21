@@ -16,7 +16,7 @@ interface FormComponentProps {
   formFields: formFieldsInterface[]
   actionForm: React.Dispatch<React.SetStateAction<FieldValues>>
   actionLoading: React.Dispatch<React.SetStateAction<boolean>>
-  actionDirection: React.Dispatch<React.SetStateAction<"arrival" | "departure">>
+  actionDirection?: React.Dispatch<React.SetStateAction<"arrival" | "departure">>
   validation: ObjectSchema<FieldValues>
 }
 
@@ -37,9 +37,9 @@ const ServicesForm: React.FC<FormComponentProps> = ({
     actionForm(data)
     actionLoading(true)
     if (data.direction === "arr_iata") {
-      actionDirection("departure")
+      actionDirection?.("departure")
     } else {
-      actionDirection("arrival")
+      actionDirection?.("arrival")
     }
     console.log(data)
   }

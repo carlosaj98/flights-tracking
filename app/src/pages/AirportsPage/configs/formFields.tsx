@@ -1,6 +1,7 @@
 import { IconCountry } from "../../../common/Icons"
 import { formFieldsInterface } from "../../../interfaces/formFields.interface"
 import { countries } from "../../../utils/countriesData.json"
+import * as yup from "yup"
 
 const countriesSort = countries.sort((a, b) => a.name.localeCompare(b.name))
 console.log(countriesSort)
@@ -20,4 +21,8 @@ const formFields: formFieldsInterface[] = [
   },
 ]
 
-export { formFields }
+const validationSchema = yup.object().shape({
+  countries: yup.string().required(),
+})
+
+export { formFields, validationSchema }
