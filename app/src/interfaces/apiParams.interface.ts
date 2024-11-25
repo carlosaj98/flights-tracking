@@ -11,4 +11,5 @@ export interface apiParams {
 export interface apiAirportsParams {
   api_key: string
   country_code: string
+  iata_code: string
 }

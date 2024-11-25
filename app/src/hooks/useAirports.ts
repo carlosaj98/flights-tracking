@@ -2,10 +2,10 @@ import { useState, useEffect } from "react"
 import httpService from "../services/httpService"
 import { FieldValues } from "react-hook-form"
 import { apiAirportsParams } from "../interfaces/apiParams.interface"
-import { Airport } from "../interfaces/airportData.interface"
+import { AirportData } from "../interfaces/airportData.interface"
 
 function useAirports(aux: FieldValues, params: apiAirportsParams) {
-  const [airports, setAirports] = useState<Airport[]>([])
+  const [airports, setAirports] = useState<AirportData[]>([])
   const [isLoading, setIsLoading] = useState(false)
 
   useEffect(()=>{
@@ -20,6 +20,7 @@ function useAirports(aux: FieldValues, params: apiAirportsParams) {
           setIsLoading(false)
         })
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   },[aux])
 
   return {airports, setAirports, isLoading, setIsLoading}
