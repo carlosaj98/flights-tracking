@@ -1,5 +1,4 @@
 import Globe from "react-globe.gl"
-import data from "../../utils/geoData.json"
 import ServiceFlightData from "./ServiceFlightData"
 import useGlobeWidth from "../../hooks/useGlobeWidth"
 import { FlightData } from "../../interfaces/flightData.interface"
@@ -38,10 +37,6 @@ const ServiceFlightGlobe: React.FC<GlobeProps> = ({
       arcDashLength={1}
       arcDashGap={() => 1}
       arcDashAnimateTime={1500}
-      hexPolygonsData={data.features}
-      hexPolygonResolution={3}
-      hexPolygonMargin={0.3}
-      hexPolygonColor={() => "#357af9"}
       animateIn={false}
       atmosphereColor="#357af9"
     />
