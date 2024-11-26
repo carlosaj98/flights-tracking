@@ -1,6 +1,6 @@
 import { Stack, Typography } from "@mui/material"
 import ServicesForm from "../../../components/ServicesForm/ServicesForm"
-import ServicesGlobe from "../../../components/ServicesGlobe/ServicesGlobe"
+import ServiceFlightGlobe from "../../../components/ServicesGlobe/ServiceFlightGlobe"
 import {formFields, validationSchema} from "../configs/formFields"
 import { FieldValues } from "react-hook-form"
 import { FlightData } from "../../../interfaces/flightData.interface"
@@ -43,7 +43,7 @@ const SectionMain: React.FC<SectionMainProps> = ({
           actionDirection={setDirection}
           validation={validationSchema}
         />
-        <ServicesGlobe
+        <ServiceFlightGlobe
           flights={flights}
           flightsDirection={formData.direction}
           airportCode={formData.airportCode}

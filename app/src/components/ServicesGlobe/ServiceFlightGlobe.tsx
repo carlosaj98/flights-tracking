@@ -1,6 +1,6 @@
 import Globe from "react-globe.gl"
 import data from "../../utils/geoData.json"
-import ServicesGlobeData from "./ServicesGlobeData"
+import ServiceFlightData from "./ServiceFlightData"
 import useGlobeWidth from "../../hooks/useGlobeWidth"
 import { FlightData } from "../../interfaces/flightData.interface"
 
@@ -11,13 +11,13 @@ type GlobeProps = {
   type: "single" | "multiple"
 }
 
-const ServicesGlobe: React.FC<GlobeProps> = ({
+const ServiceFlightGlobe: React.FC<GlobeProps> = ({
   flights,
   flightsDirection,
   airportCode,
   type
 }) => {
-  const { arcsData, newMaterial, globeRef } = ServicesGlobeData(
+  const { arcsData, newMaterial, globeRef } = ServiceFlightData(
     flights,
     flightsDirection,
     airportCode,
@@ -47,4 +47,4 @@ const ServicesGlobe: React.FC<GlobeProps> = ({
     />
   )
 }
-export default ServicesGlobe
+export default ServiceFlightGlobe

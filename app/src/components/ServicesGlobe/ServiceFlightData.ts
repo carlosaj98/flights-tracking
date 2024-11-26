@@ -4,7 +4,7 @@ import { GlobeMethods } from "react-globe.gl"
 import { FlightData } from "../../interfaces/flightData.interface"
 import { airports } from "../../utils/airportsData.json"
 
-function ServicesGlobeData(
+function ServiceFlightData(
   flights: FlightData[],
   flightsDirection: string,
   airportCode: string,
@@ -54,4 +54,4 @@ function ServicesGlobeData(
   return { arcsData, newMaterial, globeRef }
 }
 
-export default ServicesGlobeData
+export default ServiceFlightData
