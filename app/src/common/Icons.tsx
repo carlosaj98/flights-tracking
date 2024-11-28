@@ -7,8 +7,8 @@ const IconAirline: React.FC = () => {
     <svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 384 512"
-      height={"100%"}
-      width={"100%"}
+      width={"20px"}
+      height={"20px"}
     >
       <path
         fill={"var(--black-op-semi)"}
@@ -23,8 +23,8 @@ const IconFlightNum: React.FC = () => {
     <svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 640 512"
-      height={"100%"}
-      width={"100%"}
+      width={"20px"}
+      height={"20px"}
     >
       <path
         fill={"var(--black-op-semi)"}
@@ -39,8 +39,8 @@ const IconCalendar: React.FC = () => {
     <svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 448 512"
-      height={"100%"}
-      width={"100%"}
+      width={"20px"}
+      height={"20px"}
     >
       <path
         fill={"var(--black-op-semi)"}
@@ -55,8 +55,8 @@ const IconPlane: React.FC = () => {
     <svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 576 512"
-      height={"30px"}
-      width={"30px"}
+      width={"20px"}
+      height={"20px"}
     >
       <path
         fill={"black"}
@@ -126,8 +126,8 @@ const IconAirport: React.FC = () => {
     <svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 384 512"
-      height={"100%"}
-      width={"100%"}
+      height={"20px"}
+      width={"20px"}
     >
       <path
         fill={"var(--black-op-semi)"}
@@ -174,8 +174,8 @@ const IconCountry: React.FC = () => {
     <svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 576 512"
-      height={"100%"}
-      width={"100%"}
+      height={"20px"}
+      width={"20px"}
     >
       <path
         fill={"var(--black-op-semi)"}

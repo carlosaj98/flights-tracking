@@ -35,7 +35,7 @@ const InputText: React.FC<InputProps> = ({
       FormHelperTextProps={{ className: "custom-error-text" }}
       InputProps={{
         startAdornment: (
-          <Stack height={"20px"} width={"20px"} marginRight={"12px"}>
+          <Stack marginRight={"18px"}>
             {rest.icon}
           </Stack>
         ),
@@ -72,7 +72,7 @@ const InputSelect: React.FC<InputProps> = ({ field, rest }) => {
       {...field}
       {...rest}
       startAdornment={
-        <Stack height={"20px"} width={"20px"} marginRight={"12px"} >
+        <Stack marginRight={"18px"} >
           {rest.icon}
         </Stack>
       }

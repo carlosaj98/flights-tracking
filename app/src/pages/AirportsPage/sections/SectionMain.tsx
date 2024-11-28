@@ -3,6 +3,7 @@ import ServicesForm from "../../../components/ServicesForm/ServicesForm"
 import { formFields, validationSchema } from "../configs/formFields"
 import { AirportData } from "../../../interfaces/airportData.interface"
 import { FieldValues } from "react-hook-form"
+import ServiceAirportGlobe from "../../../components/ServicesGlobe/ServiceAirportGlobe"
 
 type SectionMainProps = {
   formData: FieldValues
@@ -33,6 +34,7 @@ const SectionMain: React.FC<SectionMainProps> = ({
           actionLoading={setIsLoading}
           validation={validationSchema}
         />
+        <ServiceAirportGlobe/>
       </Stack>
     </Stack>
   )
