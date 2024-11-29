@@ -21,7 +21,7 @@ function useAirports(aux: FieldValues, params: apiAirportsParams) {
         })
     }
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  },[aux])
+  },[aux, params])
 
   return {airports, setAirports, isLoading, setIsLoading}
 }

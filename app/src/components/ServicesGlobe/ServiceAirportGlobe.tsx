@@ -1,18 +1,22 @@
 import Globe from "react-globe.gl"
 import ServiceAirportData from "./ServiceAirportData"
 import useGlobeWidth from "../../hooks/useGlobeWidth"
-import htmlMarkers from "../../utils/htmlMarkers/htmlMarkers"
+import { AirportData } from "../../interfaces/airportData.interface"
 
-const ServiceAirportGlobe: React.FC = () => {
+type GlobeProps = {
+  airports: AirportData[]
+}
+
+const ServiceAirportGlobe: React.FC<GlobeProps> = ({airports}) => {
   const { newMaterial, globeRef } = ServiceAirportData()
 
-  const N = 30
-  const gData = [...Array(N).keys()].map(() => ({
-    lat: (Math.random() - 0.5) * 180,
-    lng: (Math.random() - 0.5) * 360,
-    size: 7 + Math.random() * 30,
-    color: ["red", "white", "blue", "green"][Math.round(Math.random() * 3)],
-  }))
+  // const N = 30
+  // const gData = [...Array(N).keys()].map(() => ({
+  //   lat: (Math.random() - 0.5) * 180,
+  //   lng: (Math.random() - 0.5) * 360,
+  //   size: 7 + Math.random() * 30,
+  //   color: ["red", "white", "blue", "green"][Math.round(Math.random() * 3)],
+  // }))
 
   const { globeWidth } = useGlobeWidth()
   return (
@@ -21,8 +25,11 @@ const ServiceAirportGlobe: React.FC = () => {
       width={globeWidth}
       height={globeWidth}
       backgroundColor="rgba(0,0,0,0)"
-      htmlElementsData={gData}
-      htmlElement={() => htmlMarkers("SVQ")}
+      pointsData={airports}
+      pointColor={()=>"#fabc34"}
+      pointAltitude={0.05}
+      pointRadius={0.1}
+      pointResolution={1}
       globeMaterial={newMaterial}
       animateIn={false}
       atmosphereColor="#357af9"

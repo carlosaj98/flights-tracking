@@ -24,6 +24,16 @@ const AirportsPageContainer = styled(Stack)({
     heigth: "100%",
     fontFamily: "var(--font-base)",
   },
+
+  canvas: {
+    borderRadius: "100%",
+    "&:hover": {
+      cursor: "grab",
+    },
+    "&:active": {
+      cursor: "grabbing",
+    },
+  },
 })
 
 export default AirportsPageContainer
