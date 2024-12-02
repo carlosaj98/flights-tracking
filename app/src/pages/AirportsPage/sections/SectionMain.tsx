@@ -28,7 +28,11 @@ const SectionMain: React.FC<SectionMainProps> = ({
           Access details on airports based on the country you select.
         </Typography>
       </Stack>
-      <Stack flexDirection={"row"} alignItems={"center"} gap={"32px"}>
+      <Stack
+        flexDirection={{ lg: "row", xs: "column" }}
+        alignItems={"center"}
+        gap={"32px"}
+      >
         <ServicesForm
           formFields={formFields}
           actionForm={setFormData}

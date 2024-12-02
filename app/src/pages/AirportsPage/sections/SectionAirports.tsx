@@ -12,7 +12,7 @@ const SectionAirports: React.FC = () => {
     >
       <Typography variant="h3">Airports</Typography>
       <Stack
-        gap={"24px"}
+        gap={{lg:"24px", xs:"16px"}}
         flexDirection={"row"}
         justifyContent={"center"}
         flexWrap={"wrap"}

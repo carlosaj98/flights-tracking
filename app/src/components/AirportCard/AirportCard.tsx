@@ -8,7 +8,10 @@ type AirportCardProps = {
 
 const AirportCard: React.FC<AirportCardProps> = ({ airport }) => {
   return (
-    <AirportCardContainer>
+    <AirportCardContainer sx={{
+      width:{lg:"350px", sm:"45%", xs:"100%"},
+      height:{lg:"225px", sm:"250px", xs:"225px"}
+    }}>
       <Stack className="airport-title-container">
         <Typography className="airport-name">{airport.name}</Typography>
       </Stack>
@@ -17,7 +20,7 @@ const AirportCard: React.FC<AirportCardProps> = ({ airport }) => {
           {airport.iata_code || "N/A"}
         </Typography>
       </Stack>
-      <Stack className="airport-coord-container">
+      <Stack className="airport-coord-container" width={"100%"}>
         <Stack className="latitude-container">
           <Typography className="coord-title">Latitude</Typography>
           <Typography className="airport-coord">{airport.lat}</Typography>

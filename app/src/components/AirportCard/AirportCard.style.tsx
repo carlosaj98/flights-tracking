@@ -4,8 +4,6 @@ const AirportCardContainer = styled(Stack)({
   backgroundColor: "white",
   justifyContent:"space-between",
   alignItems:"center",
-  width:"350px",
-  height:"200px",
   padding:"12px 24px",
   borderRadius:"18px",
   boxShadow:"0 2px 5px var(--gray-base)",
@@ -36,7 +34,7 @@ const AirportCardContainer = styled(Stack)({
   ".airport-coord-container":{
     flexDirection:"row",
     justifyContent:"center",
-    gap:"48px",
+    gap:"32px",
     width:"100%",
     textAlign:"center",
     "& .coord-title":{
