@@ -16,7 +16,7 @@ type SectionMainProps = {
 const SectionMain: React.FC<SectionMainProps> = ({
   setFormData,
   setIsLoading,
-  airports
+  airports,
 }) => {
   return (
     <Stack gap={"32px"}>
@@ -28,14 +28,14 @@ const SectionMain: React.FC<SectionMainProps> = ({
           Access details on airports based on the country you select.
         </Typography>
       </Stack>
-      <Stack flexDirection={"row"} alignItems={"center"}>
+      <Stack flexDirection={"row"} alignItems={"center"} gap={"32px"}>
         <ServicesForm
           formFields={formFields}
           actionForm={setFormData}
           actionLoading={setIsLoading}
           validation={validationSchema}
         />
-        <ServiceAirportGlobe airports={airports}/>
+        <ServiceAirportGlobe airports={airports} />
       </Stack>
     </Stack>
   )

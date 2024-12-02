@@ -1,10 +1,17 @@
-import { Stack, styled } from "@mui/material";
+import { Stack, styled } from "@mui/material"
 
 const AirportsPageContainer = styled(Stack)({
   width: "100%",
   minHeight: "100vh",
   backgroundColor: "var(--background-color)",
   padding: " 64px 0",
+
+  h3: {
+    fontSize: "2.25rem",
+    fontWeight: "600",
+    heigth: "100%",
+    fontFamily: "var(--font-base)",
+  },
 
   h1: {
     fontSize: "2.5rem",

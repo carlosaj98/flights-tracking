@@ -37,7 +37,7 @@ const ServiceFlightGlobe: React.FC<GlobeProps> = ({
       arcDashLength={1}
       arcDashGap={() => 1}
       arcDashAnimateTime={1500}
-      animateIn={false}
+      animateIn={true}
       atmosphereColor="#357af9"
     />
   )
