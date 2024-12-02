@@ -57,7 +57,7 @@ const SectionMain: React.FC<SectionMainProps> = ({
       {!isLoading && flights.length ? (
         <FlightDetails data={flights[0]} />
       ) : (
-        <Loader status={isLoading} />
+        <Loader status={isLoading} text="Flight"/>
       )}
     </Stack>
   )

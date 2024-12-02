@@ -39,7 +39,7 @@ const FlightsPage: React.FC = () => {
             pagination={pagination!}
           />
         ) : (
-          <Loader status={isLoading}/>
+          <Loader status={isLoading} text="Flights"/>
         )}
       </Container>
     </FlightsPageContainer>

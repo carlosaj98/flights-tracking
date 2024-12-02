@@ -5,6 +5,7 @@ import SectionAirports from "./sections/SectionAirports"
 import { FieldValues } from "react-hook-form"
 import useAirports from "../../hooks/useAirports"
 import { Container } from "@mui/material"
+import Loader from "../../components/Loader/Loader"
 
 const AirportsPage: React.FC = () => {
   const [formData, setFormData] = useState<FieldValues>({})
@@ -23,7 +24,11 @@ const AirportsPage: React.FC = () => {
           formData={formData}
           isLoading={isLoading}
         />
-        <SectionAirports/>
+        {!isLoading && airports.length ? (
+          <SectionAirports airports={airports} isLoading={isLoading} />
+        ) : (
+          <Loader status={isLoading} text="Airports"/>
+        )}
       </Container>
     </AirportsPageContainer>
   )

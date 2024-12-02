@@ -1,7 +1,10 @@
 import { Stack, Typography, Button, Box } from "@mui/material"
 import { IconArrow } from "../../../common/Icons"
 import FlightDetailCard from "../../../components/FlightDetailCard/FlightDetailCard"
-import { FlightData, Pagination } from "../../../interfaces/flightData.interface"
+import {
+  FlightData,
+  Pagination,
+} from "../../../interfaces/flightData.interface"
 
 type SectionFlightsProps = {
   setIsLoading: React.Dispatch<React.SetStateAction<boolean>>
@@ -22,7 +25,7 @@ const SectionFlights: React.FC<SectionFlightsProps> = ({
     <Stack
       component={"section"}
       className="section-flights"
-      gap={"24px"}
+      gap={"12px"}
       marginTop={"32px"}
     >
       <Stack
@@ -34,7 +37,7 @@ const SectionFlights: React.FC<SectionFlightsProps> = ({
       </Stack>
       <Stack id="flights-list-container" gap={"32px"} alignItems={"center"}>
         <Stack alignItems={"center"} width={"100%"} gap={"12px"}>
-          <Typography>
+          <Typography id="flights-count">
             Found flights: <span>{pagination!.total}</span>
           </Typography>
           <Stack
@@ -48,7 +51,7 @@ const SectionFlights: React.FC<SectionFlightsProps> = ({
               className="btn-pages"
               variant="contained"
               disabled={offset === 0}
-              sx={{ width: "100px" }}
+              sx={{ width: {sm:"100px", xs:"75px" }}}
               onClick={() => {
                 setOffset(offset - pagination!.limit), setIsLoading(true)
               }}
@@ -57,15 +60,17 @@ const SectionFlights: React.FC<SectionFlightsProps> = ({
                 <IconArrow direction="left" />
               </Box>
             </Button>
-            <Typography>
-              Page: {offset / pagination!.limit} /{" "}
-              {Math.round(pagination!.total / pagination!.limit)}
-            </Typography>
+              <Typography id="pagination">
+                Page: {offset / pagination!.limit} /{" "}
+                {Math.round(pagination!.total / pagination!.limit)}
+              </Typography>
+
+
             <Button
               className="btn-pages"
               variant="contained"
               disabled={offset >= pagination!.total}
-              sx={{ width: "100px" }}
+              sx={{ width: {sm:"100px", xs:"75px" }}}
               onClick={() => {
                 setOffset(offset + pagination!.limit), setIsLoading(true)
               }}

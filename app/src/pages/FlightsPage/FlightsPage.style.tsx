@@ -8,12 +8,22 @@ const FlightsPageContainer = styled(Stack)({
 
   p: {
     fontFamily: "var(--font-base)",
+  },
+
+  "#flights-count":{
     color: "var(--gray-semidark)",
-    fontSize: "1.15rem",
+    fontSize: "1.1rem",
     fontWeight: "500",
     span: {
-      color: "var(--primary-color-dark)",
+      color: "var(--primary-color-base)",
+      fontWeight: "600",
     },
+  },
+
+  "#pagination":{
+    fontSize: "1.1rem",
+    color: "var(--gray-dark)",
+    fontWeight: "500",
   },
 
   ".text-loader":{
