@@ -16,7 +16,9 @@ interface FormComponentProps {
   formFields: formFieldsInterface[]
   actionForm: React.Dispatch<React.SetStateAction<FieldValues>>
   actionLoading: React.Dispatch<React.SetStateAction<boolean>>
-  actionDirection?: React.Dispatch<React.SetStateAction<"arrival" | "departure">>
+  actionDirection?: React.Dispatch<
+    React.SetStateAction<"arrival" | "departure">
+  >
   validation: ObjectSchema<FieldValues>
 }
 
@@ -93,7 +95,11 @@ const ServicesForm: React.FC<FormComponentProps> = ({
                   key={name}
                   name={name}
                   control={control}
-                  defaultValue={""}
+                  defaultValue={
+                    rest.options![1].optionTitle === "Today"
+                      ? rest.options![1].optionValue
+                      : rest.options![0].optionValue
+                  }
                   render={({ field }) => (
                     <InputSelect field={field} rest={rest} />
                   )}

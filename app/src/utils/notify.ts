@@ -4,7 +4,7 @@ function notify(type: "success" | "error", message: string) {
   if (type === "success") {
     toast.success(message, {
       position: "top-center",
-      autoClose: 2000,
+      autoClose: 3000,
       hideProgressBar: true,
       closeOnClick: true,
       pauseOnHover: false,
@@ -16,7 +16,7 @@ function notify(type: "success" | "error", message: string) {
   if (type === "error") {
     toast.error(message, {
       position: "top-center",
-      autoClose: 2000,
+      autoClose: 3000,
       hideProgressBar: true,
       closeOnClick: true,
       pauseOnHover: false,

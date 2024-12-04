@@ -26,6 +26,7 @@ const SectionMain: React.FC = () => {
       flexDirection={{ lg: "row", xs: "column" }}
       alignItems={"center"}
       justifyContent={"center"}
+      marginTop={"24px"}
     >
       <Stack
         id="hero-text-container"
