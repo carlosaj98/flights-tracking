@@ -1,7 +1,7 @@
 import FlightsPageContainer from "./FlightsPage.style"
 import { Container } from "@mui/material"
 import { useFlights } from "../../hooks/useFlight"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { FieldValues } from "react-hook-form"
 import SectionMain from "./sections/SectionMain"
 import SectionFlights from "./sections/SectionFlights"
@@ -19,6 +19,9 @@ const FlightsPage: React.FC = () => {
       limit: formData.limit,
       offset: offset,
     })
+    useEffect(()=>{
+      window.scrollTo(0, 0);
+    },[])
   return (
     <FlightsPageContainer>
       <Container sx={{ height: "100%" }}>

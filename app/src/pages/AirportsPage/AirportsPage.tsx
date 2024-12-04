@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import AirportsPageContainer from "./AirportsPage.style"
 import SectionMain from "./sections/SectionMain"
 import SectionAirports from "./sections/SectionAirports"
@@ -15,6 +15,9 @@ const AirportsPage: React.FC = () => {
     country_code: formData.countries,
     iata_code: formData.airportCode,
   })
+  useEffect(()=>{
+    window.scrollTo(0, 0);
+  },[])
   return (
     <AirportsPageContainer>
       <Container sx={{ height: "100%" }}>

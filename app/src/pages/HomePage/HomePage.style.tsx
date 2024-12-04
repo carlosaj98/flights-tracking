@@ -37,7 +37,7 @@ const HomePageContainer = styled(Stack)({
   },
 
   ".animate__zoomInDown": {
-    animationDelay: "0.55s",
+    animationDelay: "0.5s",
   },
 
   "#contact-text span": {

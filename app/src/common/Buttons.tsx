@@ -56,7 +56,7 @@ const BackButton: React.FC = () => {
   const navigate = useNavigate()
   return (
     <Button
-      onClick={() => navigate(-1)}
+      onClick={() => navigate("/")}
       sx={{
         display: "flex",
         borderRadius:"12px",

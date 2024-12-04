@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { FieldValues } from "react-hook-form"
 import { useFlight } from "../../hooks/useFlight"
 import SectionMain from "./sections/SectionMain"
@@ -15,6 +15,9 @@ const SingleFlightPage: React.FC = () => {
       flight_iata: formData.flight,
     })
     console.log(flight)
+    useEffect(()=>{
+      window.scrollTo(0, 0);
+    },[])
   return (
     <SingleFlightPageContainer>
       <Container sx={{ height: "100%" }}>

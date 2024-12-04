@@ -50,7 +50,8 @@ function GlobalCSS() {
 
         ".Toastify__toast": {
           borderRadius:"18px",
-          padding:"12px"
+          padding:"12px",
+          marginTop:"24px"
         }
       }}
     />
