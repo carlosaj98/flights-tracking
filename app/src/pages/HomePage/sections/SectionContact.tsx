@@ -19,7 +19,7 @@ const SectionContact: React.FC = () => {
           fontWeight={"500"}
           color={"var(--gray-semidark)"}
         >
-          Discover who is behind this project and reach me
+          Easily connect for assistance, inquiries, or feedback
         </Typography>
       </Stack>
       <Stack

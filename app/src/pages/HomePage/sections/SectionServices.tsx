@@ -20,7 +20,7 @@ const SectionServices = () => {
           fontWeight={"500"}
           color={"var(--gray-semidark)"}
         >
-          Explore our services designed to make your travel experience seamless
+          Explore powerful tools designed to make flight searches seamless and efficient
         </Typography>
       </Stack>
       <Stack flexDirection={{lg:"row", xs:"column"}} justifyContent={"space-between"} gap={"24px"}>
