@@ -27,8 +27,8 @@ const ServiceAirportGlobe: React.FC<GlobeProps> = ({airports}) => {
       backgroundColor="rgba(0,0,0,0)"
       pointsData={airports}
       pointColor={()=>"#fabc34"}
-      pointAltitude={0.03}
-      pointRadius={0.1}
+      pointAltitude={0.1}
+      pointRadius={0.15}
       pointResolution={6}
       globeMaterial={newMaterial}
       animateIn={true}

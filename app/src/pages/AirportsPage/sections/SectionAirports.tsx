@@ -81,6 +81,7 @@ const SectionAirports: React.FC<SectionAirportsProps> = ({
         flexDirection={"row"}
         justifyContent={"center"}
         flexWrap={"wrap"}
+        marginTop={"24px"}
       >
         {airports.slice(firstLimit, secondLimit).map((airport) => {
           return <AirportCard key={airport.name} airport={airport} />

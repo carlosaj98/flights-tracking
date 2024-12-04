@@ -25,6 +25,11 @@ const SingleFlightPageContainer = styled(Stack)({
     fontFamily: "var(--font-base)",
   },
 
+  ".text-loader":{
+    fontSize: "1.5rem",
+    color: "var(--primary-color-extradark)",
+  },
+
   
 })
 
