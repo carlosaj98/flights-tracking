@@ -47,6 +47,11 @@ function GlobalCSS() {
           fontFamily: "var(--font-base)",
           overflowX: "hidden",
         },
+
+        ".Toastify__toast": {
+          borderRadius:"18px",
+          padding:"12px"
+        }
       }}
     />
   )

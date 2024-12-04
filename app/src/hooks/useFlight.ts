@@ -10,6 +10,7 @@ import { apiParams } from "../interfaces/apiParams.interface"
 
 import { airports } from "../utils/airportsData.json"
 import { useNavigate } from "react-router-dom"
+import notify from "../utils/notify"
 
 function useFlight(aux: FieldValues, params: apiParams) {
   const [flight, setFlight] = useState<FlightData[]>([])
@@ -45,7 +46,14 @@ function useFlight(aux: FieldValues, params: apiParams) {
             ]
             setFlight(updatedFlights)
             sessionStorage.setItem("flight", JSON.stringify(updatedFlights[0]))
+            !data.data.length
+              ? notify("error", "Error finding flight")
+              : notify("success", "Flight found successfully")
           }
+        })
+        .catch((error) => {
+          console.error("Error finding flights:", error)
+          notify("error", "Error finding flight")
         })
         .finally(() => {
           setIsLoading(false)
@@ -84,6 +92,13 @@ function useFlights(aux: FieldValues, params: apiParams) {
           })
           setFlights(updatedFlights)
           setPagination(data.pagination)
+          !data.data.length
+            ? notify("error", "Error finding flights")
+            : notify("success", "Flights found successfully")
+        })
+        .catch((error) => {
+          console.error("Error finding flights:", error)
+          notify("error", "Error finding flights")
         })
         .finally(() => {
           setIsLoading(false)
