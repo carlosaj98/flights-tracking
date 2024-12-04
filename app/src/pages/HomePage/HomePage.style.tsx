@@ -6,7 +6,7 @@ const HomePageContainer = styled(Stack)({
   backgroundColor: "var(--background-color)",
 
   section: {
-    padding: "48px 0px",
+    padding: "32px 0px",
   },
 
   "#hero-text-container": {
@@ -17,7 +17,6 @@ const HomePageContainer = styled(Stack)({
     fontSize: "2.5rem",
     fontWeight: "800",
     color: "black",
-    heigth: "100%",
 
     span: {
       color: "var(--primary-color-base)",
@@ -37,12 +36,8 @@ const HomePageContainer = styled(Stack)({
     cursor: "grabbing",
   },
 
-  ".animate__fadeInLeft": {
-    animationDelay: "0.5s",
-  },
-
-  ".animate__fadeInRight": {
-    animationDelay: "0.25s",
+  ".animate__zoomInDown": {
+    animationDelay: "0.55s",
   },
 
   "#contact-text span": {

@@ -6,6 +6,7 @@ import { FieldValues } from "react-hook-form"
 import useAirports from "../../hooks/useAirports"
 import { Container } from "@mui/material"
 import Loader from "../../components/Loader/Loader"
+import { BackButton } from "../../common/Buttons"
 
 const AirportsPage: React.FC = () => {
   const [formData, setFormData] = useState<FieldValues>({})
@@ -17,6 +18,7 @@ const AirportsPage: React.FC = () => {
   return (
     <AirportsPageContainer>
       <Container sx={{ height: "100%" }}>
+        <BackButton/>
         <SectionMain
           setFormData={setFormData}
           setIsLoading={setIsLoading}

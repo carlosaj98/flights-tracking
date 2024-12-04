@@ -4,7 +4,7 @@ import { Stack } from "@mui/material"
 import HeroGlobe from "../../../components/HeroGlobe/HeroGlobe"
 
 import HeroForm from "../../../components/HeroForm/HeroForm"
-import {formFields, validationSchema} from "../configs/formFields"
+import { formFields, validationSchema } from "../configs/formFields"
 
 import { useFlight } from "../../../hooks/useFlight"
 
@@ -22,46 +22,40 @@ const SectionMain: React.FC = () => {
   return (
     <Stack
       component={"section"}
-      flexDirection={"column"}
+      id="section-main"
+      flexDirection={{ lg: "row", xs: "column" }}
       alignItems={"center"}
       justifyContent={"center"}
-      minHeight={"100%"}
-      gap={"32px"}
     >
       <Stack
-        id="hero-container"
-        flexDirection={{ lg: "row", xs: "column" }}
-        alignItems={"center"}
+        id="hero-text-container"
+        maxWidth={{ lg: "calc(100% - 700px)"}}
+        height={{ lg: "700px", xs: "fit-content" }}
+        className="animate__animated animate__fadeIn"
       >
-        <Stack
-          id="hero-text-container"
-          className="animate__animated animate__fadeInLeft"
-        >
-          <Stack textAlign={{ lg: "left", xs: "center" }}>
-            <h1>
-              Find your <span>Flight</span>!
-            </h1>
-            <h2>
-              Track flights in real time with the possibility of visualize them
-              in 3D.
-            </h2>
-          </Stack>
-
-          <HeroForm
-            formFields={formFields}
-            actionForm={setFormData}
-            actionLoading={setIsLoading}
-            validation={validationSchema}
-          />
+        <Stack textAlign={{ lg: "left", xs: "center" }}>
+          <h1>
+            Find your <span>Flight</span>!
+          </h1>
+          <h2>
+            Track flights in real time with the possibility of visualize them in
+            3D.
+          </h2>
         </Stack>
-
-        <Stack
-          id="canvas-container"
-          className="animate__animated animate__fadeInRight"
-          alignItems={"center"}
-        >
-          <HeroGlobe />
-        </Stack>
+        <HeroForm
+          formFields={formFields}
+          actionForm={setFormData}
+          actionLoading={setIsLoading}
+          validation={validationSchema}
+        />
+      </Stack>
+      <Stack
+        id="canvas-container"
+        width={"100%"}
+        alignItems={"center"}
+        className="animate__animated animate__zoomInDown"
+      >
+        <HeroGlobe />
       </Stack>
     </Stack>
   )
