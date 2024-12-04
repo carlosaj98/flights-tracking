@@ -3,6 +3,7 @@ import { Box, Stack, Typography } from "@mui/material"
 import FlightDetailCardContainer from "./FlightDetailCard.style"
 import transformDate from "../../utils/transformDate"
 import { IconPlane } from "../../common/Icons"
+import { ButtonDetails } from "../../common/Buttons"
 // import { LinkDetailPage } from "../../common/Layouts"
 
 type FlightDetailCardProps = {
@@ -21,9 +22,9 @@ const FlightDetailCard: React.FC<FlightDetailCardProps> = ({ data }) => {
   if (data.flight_status === "active") statusColor = "#16a34a"
   return (
     <FlightDetailCardContainer
-      height={{ lg: "200px", sm: "250px", xs:"100%" }}
+      height={{ lg: "200px", sm: "250px", xs: "100%" }}
       width={{ lg: "fit-content", xs: "100%" }}
-      flexDirection={{lg:"row", xs:"column"}}
+      flexDirection={{ lg: "row", xs: "column" }}
     >
       <Stack
         width={"100%"}
@@ -32,10 +33,10 @@ const FlightDetailCard: React.FC<FlightDetailCardProps> = ({ data }) => {
       >
         <Stack
           className="details-container"
-          width={{ lg: "300px", sm: "500px", xs:"100%" }}
-          borderRight={{sm:"2px dashed var(--gray-semidark)", xs:"none"}}
-          borderBottom={{sm:"none", xs:"2px dashed var(--gray-semidark)"}}
-          alignItems={{sm:"flex-start", xs:"center"}}
+          width={{ lg: "300px", sm: "500px", xs: "100%" }}
+          borderRight={{ sm: "2px dashed var(--gray-semidark)", xs: "none" }}
+          borderBottom={{ sm: "none", xs: "2px dashed var(--gray-semidark)" }}
+          alignItems={{ sm: "flex-start", xs: "center" }}
         >
           <Typography className="flight-num">{data.flight.iata}</Typography>
           <Typography>
@@ -48,7 +49,7 @@ const FlightDetailCard: React.FC<FlightDetailCardProps> = ({ data }) => {
             alignItems={"center"}
             flexGrow={"1"}
             className="status-container"
-            paddingTop={{sm:"0px", xs:"12px"}}
+            paddingTop={{ sm: "0px", xs: "12px" }}
           >
             <Stack
               width={"20px"}
@@ -105,8 +106,9 @@ const FlightDetailCard: React.FC<FlightDetailCardProps> = ({ data }) => {
           </Stack>
         </Stack>
       </Stack>
-
-      {/* <LinkDetailPage /> */}
+      <ButtonDetails
+        action={() => sessionStorage.setItem("flight", JSON.stringify(data))}
+      />
     </FlightDetailCardContainer>
   )
 }
