@@ -42,6 +42,7 @@ const SectionMain: React.FC<SectionMainProps> = ({
           actionLoading={setIsLoading}
           actionDirection={setDirection}
           validation={validationSchema}
+          textButton="SEARCH FLIGHTS"
         />
         <ServiceFlightGlobe
           flights={flights}

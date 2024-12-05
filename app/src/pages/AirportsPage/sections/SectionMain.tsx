@@ -38,6 +38,7 @@ const SectionMain: React.FC<SectionMainProps> = ({
           actionForm={setFormData}
           actionLoading={setIsLoading}
           validation={validationSchema}
+          textButton={"SEARCH AIRPORTS"}
         />
         <ServiceAirportGlobe airports={airports} />
       </Stack>

@@ -20,6 +20,7 @@ interface FormComponentProps {
     React.SetStateAction<"arrival" | "departure">
   >
   validation: ObjectSchema<FieldValues>
+  textButton: string
 }
 
 const ServicesForm: React.FC<FormComponentProps> = ({
@@ -28,6 +29,7 @@ const ServicesForm: React.FC<FormComponentProps> = ({
   actionLoading,
   actionDirection,
   validation,
+  textButton
 }) => {
   const {
     handleSubmit,
@@ -109,7 +111,7 @@ const ServicesForm: React.FC<FormComponentProps> = ({
           </Stack>
         )
       })}
-      <FormSubmitButton text="SEARCH FLIGHT" />
+      <FormSubmitButton text={textButton} />
     </ServicesFormContainer>
   )
 }

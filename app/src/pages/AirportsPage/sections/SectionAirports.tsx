@@ -58,7 +58,8 @@ const SectionAirports: React.FC<SectionAirportsProps> = ({
           </Box>
         </Button>
         <Typography id="pagination">
-          Page: {page} / {Math.round(airports.length / 20)}
+          Page: {page} /{" "}
+          {airports.length < 20 ? 1 : Math.round(airports.length / 20)}
         </Typography>
         <Button
           className="btn-pages"
