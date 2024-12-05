@@ -60,7 +60,7 @@ const SectionContact: React.FC = () => {
           </p>
           <p>
             If you have any questions, inquiries, or suggestions, feel free to
-            contact me through the form. I'm here to help!
+            contact me. I'm here to help!
           </p>
           <SocialLinks />
         </Stack>
