@@ -17,7 +17,7 @@ const AirportCard: React.FC<AirportCardProps> = ({ airport }) => {
       </Stack>
       <Stack height={"100%"} justifyContent={"center"}>
         <Typography className="airport-code">
-          {airport.iata_code || "N/A"}
+          {airport.iata_code || "---"}
         </Typography>
       </Stack>
       <Stack className="airport-coord-container" width={"100%"}>

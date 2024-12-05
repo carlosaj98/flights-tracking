@@ -22,7 +22,7 @@ Before running the project, ensure you have the following tools installed:
    ```bash  
    git clone https://github.com/carlosaj98/flights-tracking.git  
 
-   cd air-tracker  
+   cd app 
 
 2. Install dependencies:  
    ```bash  
