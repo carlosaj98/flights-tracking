@@ -15,7 +15,7 @@
 ### Prerequisites  
 Before running the project, ensure you have the following tools installed:  
 - [Node.js](https://nodejs.org/)  
-- npm or yarn  
+- npm
 
 ### Installation  
 1. Clone the repository:  
