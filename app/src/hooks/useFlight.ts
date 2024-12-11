@@ -11,6 +11,7 @@ import { apiParams } from "../interfaces/apiParams.interface"
 import { airports } from "../utils/airportsData.json"
 import { useNavigate } from "react-router-dom"
 import notify from "../utils/notify"
+import flightTransform from "../utils/flightTransform"
 
 function useFlight(aux: FieldValues, params: apiParams) {
   const [flight, setFlight] = useState<FlightData[]>([])
@@ -27,29 +28,14 @@ function useFlight(aux: FieldValues, params: apiParams) {
             ({ flight_date }: { flight_date: string }) =>
               flight_date === aux.date
           )
-          const coordTrackedDeparture = airports.filter(
-            (airport) => airport.iata_code === transformData[0].departure.iata
-          )
-          const coordTrackedArrival = airports.filter(
-            (airport) => airport.iata_code === transformData[0].arrival.iata
-          )
-
-          if (coordTrackedDeparture.length > 0 && coordTrackedArrival.length) {
-            const updatedFlights: FlightData[] = [
-              {
-                ...transformData[0],
-                lat_departure: coordTrackedDeparture[0].lat,
-                lng_departure: coordTrackedDeparture[0].lng,
-                lat_arrival: coordTrackedArrival[0].lat,
-                lng_arrival: coordTrackedArrival[0].lng,
-              },
-            ]
+          const updatedFlights = flightTransform(transformData)
+          if (updatedFlights) {
             setFlight(updatedFlights)
             sessionStorage.setItem("flight", JSON.stringify(updatedFlights[0]))
-            !data.data.length
-              ? notify("error", "Error finding flight")
-              : notify("success", "Flight found successfully")
           }
+          !data.data.length
+            ? notify("error", "Error finding flight")
+            : notify("success", "Flight found successfully")
         })
         .catch((error) => {
           console.error("Error finding flights:", error)

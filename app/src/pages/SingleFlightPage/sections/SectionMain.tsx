@@ -24,8 +24,6 @@ const SectionMain: React.FC<SectionMainProps> = ({
   formData,
   isLoading,
 }) => {
-  const flightStorage = sessionStorage.getItem("flight")
-  console.log(flightStorage)
   return (
     <Stack gap={"32px"}>
       <Stack alignItems={"center"} gap={"12px"}>
@@ -52,9 +50,6 @@ const SectionMain: React.FC<SectionMainProps> = ({
           type={"single"}
         />
       </Stack>
-      {flightStorage && !flights.length && (
-        <FlightDetails data={JSON.parse(flightStorage)} />
-      )}
       {!isLoading && flights.length ? (
         <FlightDetails data={flights[0]} />
       ) : (

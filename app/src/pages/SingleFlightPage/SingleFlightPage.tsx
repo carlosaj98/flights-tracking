@@ -5,28 +5,42 @@ import SectionMain from "./sections/SectionMain"
 import SingleFlightPageContainer from "./SingleFlightPage.style"
 import { Container } from "@mui/material"
 import { BackButton } from "../../common/Buttons"
+import flightTransform from "../../utils/flightTransform"
 
 const SingleFlightPage: React.FC = () => {
   const [formData, setFormData] = useState<FieldValues>({})
-  const { flight, setIsLoading, setDirection, isLoading } =
-    useFlight(formData, {
+  const { flight, setIsLoading, setDirection, isLoading } = useFlight(
+    formData,
+    {
       access_key: import.meta.env.VITE_API_KEY,
       airline_name: formData.airline,
       flight_iata: formData.flight,
-    })
-    console.log(flight)
-    useEffect(()=>{
-      window.scrollTo(0, 0);
-    },[])
+    }
+  )
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
+
+  const getFlightStorage = sessionStorage.getItem("flight")
+  const parsedFlight = () => {
+    if (getFlightStorage) {
+      return flightTransform([JSON.parse(getFlightStorage)])
+    }
+    return flight
+  };
+
+  const flightStorage = parsedFlight()
+  
+
   return (
     <SingleFlightPageContainer>
       <Container sx={{ height: "100%" }}>
-        <BackButton/>
+        <BackButton />
         <SectionMain
           setFormData={setFormData}
           setIsLoading={setIsLoading}
           setDirection={setDirection}
-          flights={flight}
+          flights={flightStorage || flight}
           formData={formData}
           isLoading={isLoading}
         />
