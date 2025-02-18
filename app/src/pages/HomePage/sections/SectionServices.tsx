@@ -23,7 +23,7 @@ const SectionServices = () => {
           Explore powerful tools designed to make flight searches seamless and efficient
         </Typography>
       </Stack>
-      <Stack flexDirection={{lg:"row", xs:"column"}} justifyContent={"space-between"} gap={"24px"}>
+      <Stack flexDirection={{xs:"column", md:"row"}} justifyContent={"space-between"} gap={"24px"}>
         {serviceFields.map((field) => {
           return <ServiceCard key={field.title} serviceField={field} />
         })}

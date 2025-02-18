@@ -38,7 +38,7 @@ const SectionContact: React.FC = () => {
           <img src="/contact_image.png" width={"100%"} height={"100%"} />
         </Box>
         <Stack
-          maxWidth={{ lg: "50%", xs: "100%" }}
+          maxWidth={"65ch"}
           textAlign={{ lg: "start", xs: "center" }}
           justifyContent={"center"}
           gap={"24px"}
