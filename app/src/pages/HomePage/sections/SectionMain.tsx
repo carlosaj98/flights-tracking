@@ -52,7 +52,7 @@ const SectionMain: React.FC = () => {
       </Stack>
       <Stack
         id="canvas-container"
-        width={"100%"}
+        width={{md:"100%", xs:"fit-content"}}
         alignItems={"center"}
         className="animate__animated animate__zoomInDown"
       >

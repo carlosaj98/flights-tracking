@@ -1,6 +1,6 @@
 import ServicesForm from "../../../components/ServicesForm/ServicesForm"
 import { Stack, Typography } from "@mui/material"
-import {formFields, validationSchema} from "../configs/formFields"
+import { formFields, validationSchema } from "../configs/formFields"
 import { FieldValues } from "react-hook-form"
 import ServiceFlightGlobe from "../../../components/ServicesGlobe/ServiceFlightGlobe"
 import { FlightData } from "../../../interfaces/flightData.interface"
@@ -34,7 +34,7 @@ const SectionMain: React.FC<SectionMainProps> = ({
           In-Depth Information of Your Selected Flight
         </Typography>
       </Stack>
-      <Stack flexDirection={{lg:"row", xs:"column"}} alignItems={"center"}>
+      <Stack flexDirection={{ lg: "row", xs: "column" }} alignItems={"center"}>
         <ServicesForm
           formFields={formFields}
           actionForm={setFormData}
@@ -43,17 +43,19 @@ const SectionMain: React.FC<SectionMainProps> = ({
           validation={validationSchema}
           textButton="SEARCH FLIGHT"
         />
-        <ServiceFlightGlobe
-          flights={flights}
-          flightsDirection={formData.direction}
-          airportCode={formData.airportCode}
-          type={"single"}
-        />
+        <Stack id="canvas-container">
+          <ServiceFlightGlobe
+            flights={flights}
+            flightsDirection={formData.direction}
+            airportCode={formData.airportCode}
+            type={"single"}
+          />
+        </Stack>
       </Stack>
       {!isLoading && flights.length ? (
         <FlightDetails data={flights[0]} />
       ) : (
-        <Loader status={isLoading} text="Flight"/>
+        <Loader status={isLoading} text="Flight" />
       )}
     </Stack>
   )

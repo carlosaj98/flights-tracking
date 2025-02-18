@@ -30,6 +30,14 @@ const SingleFlightPageContainer = styled(Stack)({
     color: "var(--primary-color-extradark)",
   },
 
+  "#canvas-container:hover": {
+    cursor: "grab",
+  },
+
+  "#canvas-container:active": {
+    cursor: "grabbing",
+  },
+
   
 })
 

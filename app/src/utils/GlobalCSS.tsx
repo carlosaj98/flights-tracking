@@ -42,6 +42,24 @@ function GlobalCSS() {
           margin: 0,
         },
 
+        "::-webkit-scrollbar":{
+          width:"12px",
+        },
+
+        "::-webkit-scrollbar-track": {
+          background: "var(--background-color)",
+        },
+
+        "::-webkit-scrollbar-thumb": {
+          background: "var(--gray-base)",
+          borderRadius:"16px",
+          cursor:"pointer",
+          border: "2px solid var(--background-color)",
+          "&:hover":{
+            background: "var(--gray-dark)",
+          }
+        },
+
         body: {
           backgroundColor:"white",
           fontFamily: "var(--font-base)",
