@@ -1,5 +1,5 @@
 import { Box, Button } from "@mui/material"
-import { IconArrow, IconBack } from "./Icons"
+import { IconBack } from "./Icons"
 import { useNavigate } from "react-router-dom"
 
 interface ButtonsProp {
