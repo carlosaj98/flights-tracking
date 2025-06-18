@@ -34,31 +34,25 @@ const InputText: React.FC<InputProps> = ({
       helperText={helperText}
       FormHelperTextProps={{ className: "custom-error-text" }}
       InputProps={{
-        startAdornment: (
-          <Stack marginRight={"18px"}>
-            {rest.icon}
-          </Stack>
-        ),
+        startAdornment: <Stack marginRight={"18px"}>{rest.icon}</Stack>,
         sx: {
-          borderRadius: "18px",
+          borderRadius: "6px",
           backgroundColor: "white",
           fontFamily: "var(--font-base)",
-          boxShadow: "0 2px 4px var(--gray-semilight) inset",
         },
       }}
       sx={{
         ".MuiOutlinedInput-root": {
           "& fieldset": {
             transition: "all 0.2s ease-out",
-            border: "1px solid var(--gray-semilight)",
+            border: "1px solid var(--neutral-300)",
           },
           "&:hover fieldset": {
-            border: "1px solid var(--gray-base)",
-            boxShadow: "0 2px 4px var(--gray-base) inset",
+            border: "1px solid var(--neutral-400)",
           },
           "&.Mui-focused fieldset": {
-            boxShadow: "0 2px 4px var(--primary-color-base) inset",
-            border: "1px solid var(--primary-color-base)",
+            boxShadow: "0 2px 4px var(--neutral-400) inset",
+            border: "1px solid var(--neutral-400)",
           },
         },
       }}
@@ -71,29 +65,23 @@ const InputSelect: React.FC<InputProps> = ({ field, rest }) => {
     <Select
       {...field}
       {...rest}
-      startAdornment={
-        <Stack marginRight={"18px"} >
-          {rest.icon}
-        </Stack>
-      }
+      startAdornment={<Stack marginRight={"18px"}>{rest.icon}</Stack>}
       sx={{
-        borderRadius: "18px",
+        borderRadius: "6px",
         backgroundColor: "white",
         fontFamily: "var(--font-base)",
-        boxShadow: "0 2px 4px var(--gray-semilight) inset",
 
         "&.MuiOutlinedInput-root": {
           "& fieldset": {
             transition: "all 0.2s ease-out",
-            border: "1px solid var(--gray-semilight)",
+            border: "1px solid var(--neutral-300)",
           },
           "&:hover fieldset": {
-            border: "1px solid var(--gray-base)",
-            boxShadow: "0 2px 4px var(--gray-base) inset",
+            border: "1px solid var(--neutral-400)",
           },
           "&.Mui-focused fieldset": {
-            boxShadow: "0 2px 4px var(--primary-color-base) inset",
-            border: "1px solid var(--primary-color-base)",
+            boxShadow: "0 2px 4px var(--neutral-400) inset",
+            border: "1px solid var(--neutral-400)",
           },
         },
       }}
@@ -110,29 +98,11 @@ const InputSelect: React.FC<InputProps> = ({ field, rest }) => {
         sx: {
           "& .MuiMenu-paper": {
             marginTop: "12px",
-            borderRadius: "12px",
-            backgroundColor: "var(--gray-semilight)",
+            borderRadius: "6px",
+            backgroundColor: "var(--blue-100)",
             backdropFilter: "blur(5px)",
-            boxShadow: "0 2px 4px var(--gray-semidark)",
-            padding:"6px",
-            "::-webkit-scrollbar": {
-              width: "16px",
-            },
-            "::-webkit-scrollbar-track": {
-              background: "var(--gray-semilight)",
-              borderRadius: "12px",
-              margin:"16px 0"
-              
-            },
-            "::-webkit-scrollbar-thumb": {
-              background: "var(--gray-semidark)",
-              borderRadius: "12px",
-              border:"4px solid var(--gray-semilight)",
-              "&:hover":{
-                cursor:"pointer",
-                background: "var(--gray-dark)"
-              }
-            },
+            boxShadow: "0 2px 4px var(--neutral-400)",
+            padding: "6px",
           },
         },
       }}
@@ -145,22 +115,22 @@ const InputSelect: React.FC<InputProps> = ({ field, rest }) => {
           divider
           sx={{
             padding: "12px 24px",
-            color: "black",
+            color: "var(--neutral-800)",
             transition: "all 0.2s ease-out",
-            backgroundColor: "white",
-            boxShadow: "0 2px 4px var(--gray-base)",
-            borderRadius: "12px",
+            backgroundColor: "var(--neutral-50)",
+            boxShadow: "0 1px 2px var(--neutral-300)",
+            borderRadius: "6px",
             "&:hover, &.MuiMenuItem-root.Mui-selected:hover": {
               color: "white",
-              backgroundColor: "var(--gray-dark)",
+              backgroundColor: "var(--neutral-600)",
 
-              boxShadow: "0 2px 4px var(--gray-semidark)",
+              boxShadow: "0 1px 2px var(--neutral-800)",
             },
             fontFamily: "var(--font-base)",
 
             "&.MuiMenuItem-root.Mui-selected": {
-              color: "white",
-              backgroundColor: "var(--primary-color-base)",
+              color: "var(--blue-600)",
+              backgroundColor: "var(--neutral-50)",
             },
           }}
         >
