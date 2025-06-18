@@ -12,21 +12,20 @@ const FormSubmitButton: React.FC<ButtonsProp> = ({ text }) => {
     <Button
       type="submit"
       variant="contained"
+      disableElevation
       sx={{
         textTransform: "none",
         fontFamily: "var(--font-base)",
         fontWeight: "600",
-        fontSize: "1.1rem",
-        borderRadius: "18px",
-        backgroundColor: "var(--secondary-color-base)",
+        fontSize: "1rem",
+        borderRadius: "6px",
+        backgroundColor: "var(--orange-400)",
         padding: "12px",
-        boxShadow: "0 2px 4px var(--secondary-color-light) inset",
-        color: "var(--secondary-color-extradark)",
+        color: "var(--orange-950)",
         transition: "all 0.2s ease",
         "&:hover": {
-          backgroundColor: "var(--secondary-color-dark)",
-          boxShadow: "0 2px 4px var(--secondary-color-extradark) inset",
-          color: "var(--secondary-color-extralight)",
+          backgroundColor: "var(--orange-300)",
+          color: "var(--orange-900)",
         },
       }}
     >
@@ -35,22 +34,22 @@ const FormSubmitButton: React.FC<ButtonsProp> = ({ text }) => {
   )
 }
 
-const ArrowButton: React.FC<ButtonsProp> = ({ text, action }) => {
-  return (
-    <Button
-      onClick={action}
-      variant="contained"
-      sx={{
-        backgroundColor: "var(--primary-color-base)",
-        borderRadius: "18px",
-        fontSize: "1rem",
-      }}
-    >
-      <p>{text}</p>
-      <IconArrow direction="right" />
-    </Button>
-  )
-}
+// const ArrowButton: React.FC<ButtonsProp> = ({ text, action }) => {
+//   return (
+//     <Button
+//       onClick={action}
+//       variant="contained"
+//       sx={{
+//         backgroundColor: "red",
+//         borderRadius: "18px",
+//         fontSize: "1rem",
+//       }}
+//     >
+//       <p>{text}</p>
+//       <IconArrow direction="right" />
+//     </Button>
+//   )
+// }
 
 const BackButton: React.FC = () => {
   const navigate = useNavigate()
@@ -59,24 +58,25 @@ const BackButton: React.FC = () => {
       onClick={() => navigate("/")}
       sx={{
         display: "flex",
-        borderRadius: "12px",
+        borderRadius: "6px",
+        paddingX: "12px",
         gap: "12px",
         cursor: "pointer",
         marginBottom: "24px",
         fontFamily: "var(--font-base)",
         fontWeight: "600",
         fontSize: "1rem",
-        color: "var(--gray-dark)",
+        color: "var(--neutral-500)",
         svg: {
-          fill: "var(--gray-base)",
+          fill: "var(--neutral-500)",
           transition: "all 0.2s ease",
         },
         "&:hover": {
           svg: {
-            fill: "var(--primary-color-dark)",
+            fill: "var(--blue-700)",
           },
-          color: "var(--primary-color-dark)",
-          backgroundColor: "var(--primary-color-extralight)",
+          color: "var(--blue-700)",
+          backgroundColor: "var(--blue-100)",
         },
       }}
     >
@@ -119,4 +119,4 @@ const ButtonDetails: React.FC<ButtonsProp> = ({ action }) => {
   )
 }
 
-export { FormSubmitButton, ArrowButton, BackButton, ButtonDetails }
+export { FormSubmitButton, BackButton, ButtonDetails }
