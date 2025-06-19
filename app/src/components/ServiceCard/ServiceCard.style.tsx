@@ -3,12 +3,12 @@ import { Stack, styled } from "@mui/material"
 const ServiceCardContainer = styled(Stack)({
   backgroundColor: "white",
   width: "100%",
-  justifyContent: "center",
+  justifyContent: "space-between",
   alignItems: "center",
   textAlign: "center",
   padding: "24px",
-  borderRadius: "18px",
-  boxShadow: "0px 3px 6px var(--gray-semilight)",
+  borderRadius: "6px",
+  boxShadow: "0px 3px 6px var(--neutral-300)",
   gap: "24px",
 
   p: {
@@ -17,11 +17,12 @@ const ServiceCardContainer = styled(Stack)({
 
   ".service-title": {
     fontWeight: "600",
+    color:"var(--neutral-700)",
   },
 
   ".service-desc": {
     fontWeight: "400",
-    color: "var(--gray-dark)",
+    color: "var(--neutral-600)",
   },
 
   a: {

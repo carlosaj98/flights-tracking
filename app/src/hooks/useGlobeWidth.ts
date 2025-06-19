@@ -5,11 +5,11 @@ function useGlobeWidth() {
 
   const updateGlobeWidth = () => {
     if (innerWidth > 1200) {
-      setGlobeWidth(700)
+      setGlobeWidth(600)
     } else if (innerWidth > 900) {
-      setGlobeWidth(550)
+      setGlobeWidth(400)
     } else if (innerWidth > 600) {
-      setGlobeWidth(innerWidth / 1.5)
+      setGlobeWidth(innerWidth / 2)
     } else {
       setGlobeWidth(innerWidth / 1.5)
     }

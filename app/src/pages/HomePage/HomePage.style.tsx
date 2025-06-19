@@ -5,9 +5,6 @@ const HomePageContainer = styled(Stack)({
   minHeight: "100vh",
   backgroundColor: "var(--background-color)",
 
-  section: {
-    padding: "32px 0px",
-  },
 
   "#hero-text-container": {
     gap: "24px",
@@ -19,13 +16,21 @@ const HomePageContainer = styled(Stack)({
     color: "black",
 
     span: {
-      color: "var(--primary-color-base)",
+      color: "var(--blue-500)",
     },
   },
 
   "#hero-text-container h2": {
-    color: "var(--gray-semidark)",
+    color: "var(--neutral-600)",
+    fontSize: "1.25rem",
     fontWeight: "500",
+  },
+
+  h3: {
+    color: "var(--neutral-800)",
+    fontSize: "2rem",
+    fontWeight: "600",
+    fontFamily: "var(--font-base)",
   },
 
   "#canvas-container:hover": {
@@ -48,9 +53,9 @@ const HomePageContainer = styled(Stack)({
     fontWeight: "600",
     textDecoration: "none",
     color: "var(--primary-color-base)",
-    ":hover":{
+    ":hover": {
       color: "var(--primary-color-dark)",
-    }
+    },
   },
 })
 
