@@ -99,7 +99,7 @@ const InputSelect: React.FC<InputProps> = ({ field, rest }) => {
           "& .MuiMenu-paper": {
             marginTop: "12px",
             borderRadius: "6px",
-            backgroundColor: "var(--blue-100)",
+            backgroundColor: "var(--neutral-300)",
             backdropFilter: "blur(5px)",
             boxShadow: "0 2px 4px var(--neutral-400)",
             padding: "6px",
@@ -117,20 +117,17 @@ const InputSelect: React.FC<InputProps> = ({ field, rest }) => {
             padding: "12px 24px",
             color: "var(--neutral-800)",
             transition: "all 0.2s ease-out",
-            backgroundColor: "var(--neutral-50)",
-            boxShadow: "0 1px 2px var(--neutral-300)",
+            backgroundColor: "white",
+            boxShadow: "0 1px 2px var(--neutral-400)",
             borderRadius: "6px",
             "&:hover, &.MuiMenuItem-root.Mui-selected:hover": {
-              color: "white",
-              backgroundColor: "var(--neutral-600)",
-
-              boxShadow: "0 1px 2px var(--neutral-800)",
+              backgroundColor: "var(--blue-50)",
             },
             fontFamily: "var(--font-base)",
 
             "&.MuiMenuItem-root.Mui-selected": {
               color: "var(--blue-600)",
-              backgroundColor: "var(--neutral-50)",
+              backgroundColor: "white",
             },
           }}
         >

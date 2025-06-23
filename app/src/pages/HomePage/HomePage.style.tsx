@@ -5,7 +5,6 @@ const HomePageContainer = styled(Stack)({
   minHeight: "100vh",
   backgroundColor: "var(--background-color)",
 
-
   "#hero-text-container": {
     gap: "24px",
   },
@@ -42,7 +41,7 @@ const HomePageContainer = styled(Stack)({
   },
 
   ".animate__zoomInDown": {
-    animationDelay: "0.5s",
+    animationDelay: "0.2s",
   },
 
   "#contact-text span": {
@@ -52,9 +51,9 @@ const HomePageContainer = styled(Stack)({
   "#contact-text a": {
     fontWeight: "600",
     textDecoration: "none",
-    color: "var(--primary-color-base)",
+    color: "var(--neutral-600)",
     ":hover": {
-      color: "var(--primary-color-dark)",
+      color: "var(--neutral-800)",
     },
   },
 })
