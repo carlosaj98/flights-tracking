@@ -201,6 +201,30 @@ const IconCountry: React.FC = () => {
   )
 }
 
+const IconList: React.FC = () => {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="20"
+      height="20"
+      viewBox="0 0 24 24"
+    >
+      <g
+        fill="none"
+        stroke="var(--neutral-400)"
+        stroke-linecap="round"
+        stroke-width="1.75"
+      >
+        <path d="M20 6H3m8 10H3m9-5H3" />
+        <path
+          stroke-linejoin="round"
+          d="m15 14.5l2.5 2.5m0 0l2.5-2.5M17.5 17V9"
+        />
+      </g>
+    </svg>
+  )
+}
+
 export {
   IconAirline,
   IconFlightNum,
@@ -214,4 +238,5 @@ export {
   IconArrow,
   IconBack,
   IconCountry,
+  IconList
 }

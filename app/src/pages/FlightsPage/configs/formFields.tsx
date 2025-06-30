@@ -1,5 +1,5 @@
 import { formFieldsInterface } from "../../../interfaces/formFields.interface"
-import { IconAirline, IconAirport } from "../../../common/Icons"
+import { IconAirline, IconAirport, IconList } from "../../../common/Icons"
 import * as yup from "yup"
 
 const formFields: formFieldsInterface[] = [
@@ -14,7 +14,7 @@ const formFields: formFieldsInterface[] = [
     ],
   },
   {
-    type: "radio",
+    type: "select",
     name: "limit",
     id: "flight-limit",
     label: "Number of flights",
@@ -23,6 +23,7 @@ const formFields: formFieldsInterface[] = [
       { optionTitle: "25 Flights", optionValue: 25 },
       { optionTitle: "50 Flights", optionValue: 50 },
     ],
+    icon:<IconList />
   },
 
   {

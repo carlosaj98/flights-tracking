@@ -147,19 +147,16 @@ const InputRadio: React.FC<InputProps> = ({ field, rest }) => {
         span: { fontFamily: "var(--font-base)" },
       }}
     >
-      <FormLabel id="demo-controlled-radio-buttons-group">
-        {rest.label}
-      </FormLabel>
+      <FormLabel>{rest.label}</FormLabel>
       <RadioGroup
-        aria-labelledby="demo-controlled-radio-buttons-group"
-        name="controlled-radio-buttons-group"
         defaultValue={rest.options[0].optionValue}
+        sx={{ display: "flex", flexDirection: "row", gap: "12px" }}
       >
         {rest.options?.map((option: optionsInputInterface) => (
           <FormControlLabel
             key={option.optionValue}
             value={option.optionValue}
-            control={<Radio />}
+            control={<Radio disableRipple/>}
             label={option.optionTitle}
           />
         ))}
