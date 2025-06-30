@@ -15,17 +15,18 @@ const HeroGlobe: React.FC = () => {
       backgroundColor="rgba(0,0,0,0)"
       globeMaterial={newMaterial}
       arcsData={arcsData}
-      arcColor={["#fce28b", "#fabc34", "#d87007"]}
+      arcColor={["#f4960c", "#f4960c"]}
       arcStroke={1}
       arcDashLength={1}
       arcDashGap={() => Math.random() * 3}
       arcDashAnimateTime={2000}
       hexPolygonsData={data.features}
       hexPolygonResolution={3}
-      hexPolygonMargin={0.3}
-      hexPolygonColor={() => "#357af9"}
+      hexPolygonMargin={0.15}
+      hexPolygonColor={() => "#215cef"}
       animateIn={false}
-      atmosphereColor="#357af9"
+      atmosphereColor="#91c2ff"
+      atmosphereAltitude={0.15}
       waitForGlobeReady
     />
   )

@@ -14,7 +14,7 @@ const ServiceFlightGlobe: React.FC<GlobeProps> = ({
   flights,
   flightsDirection,
   airportCode,
-  type
+  type,
 }) => {
   const { arcsData, newMaterial, globeRef } = ServiceFlightData(
     flights,
@@ -32,13 +32,14 @@ const ServiceFlightGlobe: React.FC<GlobeProps> = ({
       backgroundColor="rgba(0,0,0,0)"
       globeMaterial={newMaterial}
       arcsData={arcsData}
-      arcColor={["#fce28b", "#fabc34", "#d87007"]}
-      arcStroke={1}
+      arcColor={["#f4960c", "#f4960c"]}
+      arcStroke={0.75}
       arcDashLength={1}
       arcDashGap={() => 1}
       arcDashAnimateTime={1500}
       animateIn={true}
-      atmosphereColor="#357af9"
+      atmosphereColor="#91c2ff"
+      atmosphereAltitude={0.15}
     />
   )
 }

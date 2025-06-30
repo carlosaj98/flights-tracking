@@ -2,7 +2,6 @@ import * as THREE from "three"
 import { useRef, useEffect } from "react"
 import { GlobeMethods } from "react-globe.gl"
 
-
 function HeroGlobeData() {
   const globeRef = useRef<GlobeMethods>()
   const N = 15
@@ -14,7 +13,7 @@ function HeroGlobeData() {
   }))
 
   const newMaterial = new THREE.MeshBasicMaterial()
-  newMaterial.color = new THREE.Color("black")
+  newMaterial.color = new THREE.Color("#eff6ff")
 
   useEffect(() => {
     if (globeRef.current) {

@@ -41,7 +41,10 @@ function ServiceFlightData(
   })
 
   const texture = new THREE.TextureLoader().load("/earth_map.jpg")
-  const newMaterial = new THREE.MeshBasicMaterial({ map: texture, color:"#91c2ff" })
+  const newMaterial = new THREE.MeshBasicMaterial({
+    map: texture,
+    color: "#eff6ff",
+  })
 
   useEffect(() => {
     if (globeRef.current) {
