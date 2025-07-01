@@ -16,7 +16,7 @@ const IconAirline: React.FC = () => {
       />
       <path
         fill={"var(--neutral-400)"}
-        fill-rule="evenodd"
+        fillRule="evenodd"
         d="m25 25l5 2v-2l-5-2.5V20a1 1 0 0 0-2 0v2.5L18 25v2l5-2v3.5L21 30v1l3-1l3 1v-1l-2-1.5Z"
       />
     </svg>
@@ -34,9 +34,9 @@ const IconFlightNum: React.FC = () => {
       <path
         fill="none"
         stroke="var(--neutral-400)"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        stroke-width="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
         d="m14.639 10.258l4.83-1.294a2 2 0 1 1 1.035 3.863L6.015 16.71l-4.45-5.02l2.897-.776l2.45 1.414l2.897-.776l-3.743-6.244l2.898-.777l5.675 5.727zM3 21h18"
       />
     </svg>
@@ -53,7 +53,7 @@ const IconCalendar: React.FC = () => {
     >
       <path
         fill="var(--neutral-400)"
-        fill-rule="evenodd"
+        fillRule="evenodd"
         d="M14 4v-.994C14 2.45 13.55 2 12.994 2H11v1h-1V2H6v1H5V2H3.006C2.45 2 2 2.45 2 3.006v9.988C2 13.55 2.45 14 3.006 14h9.988C13.55 14 14 13.55 14 12.994V5H2V4zm-3-3h1.994C14.102 1 15 1.897 15 3.006v9.988A2.005 2.005 0 0 1 12.994 15H3.006A2.005 2.005 0 0 1 1 12.994V3.006C1 1.898 1.897 1 3.006 1H5V0h1v1h4V0h1zM4 7h2v1H4zm3 0h2v1H7zm3 0h2v1h-2zM4 9h2v1H4zm3 0h2v1H7zm3 0h2v1h-2zm-6 2h2v1H4zm3 0h2v1H7zm3 0h2v1h-2z"
       />
     </svg>
@@ -141,9 +141,9 @@ const IconAirport: React.FC = () => {
       <g
         fill="none"
         stroke="var(--neutral-400)"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        stroke-width="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
       >
         <circle cx="16" cy="11" r="4" />
         <path d="M24 15c-3 7-8 15-8 15s-5-8-8-15s2-13 8-13s11 6 8 13Z" />
@@ -211,12 +211,12 @@ const IconList: React.FC = () => {
       <g
         fill="none"
         stroke="var(--neutral-400)"
-        stroke-linecap="round"
-        stroke-width="1.75"
+        strokeLinecap="round"
+        strokeWidth="1.75"
       >
         <path d="M20 6H3m8 10H3m9-5H3" />
         <path
-          stroke-linejoin="round"
+          strokeLinejoin="round"
           d="m15 14.5l2.5 2.5m0 0l2.5-2.5M17.5 17V9"
         />
       </g>
