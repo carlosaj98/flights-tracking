@@ -1,0 +1,52 @@
+import { FlightData } from "../../../interfaces/flightData.interface"
+
+export const exampleFlight: FlightData[] = [
+  {
+    flight_date: "2025-07-01",
+    flight_status: "scheduled",
+    departure: {
+      airport: "Blagnac",
+      timezone: "Europe/Paris",
+      iata: "TLS",
+      icao: "LFBO",
+      terminal: null,
+      gate: "B12",
+      delay: 18,
+      scheduled: "2025-07-01T06:00:00+00:00",
+      estimated: "2025-07-01T06:00:00+00:00",
+      actual: "2025-07-01T06:17:00+00:00",
+      estimated_runway: "2025-07-01T06:17:00+00:00",
+      actual_runway: "2025-07-01T06:17:00+00:00",
+    },
+    arrival: {
+      airport: "San Pablo",
+      timezone: "Europe/Madrid",
+      iata: "SVQ",
+      icao: "LEZL",
+      terminal: "1",
+      gate: null,
+      baggage: "6",
+      scheduled: "2025-07-01T07:45:00+00:00",
+      delay: null,
+      estimated: "2025-07-01T07:45:00+00:00",
+      actual: null,
+      estimated_runway: null,
+      actual_runway: null,
+    },
+    airline: {
+      name: "Ryanair",
+      iata: "FR",
+      icao: "RYR",
+    },
+    flight: {
+      number: "1193",
+      iata: "FR1193",
+      icao: "RYR1193",
+      codeshared: null,
+    },
+    aircraft: null,
+    live: null,
+    lat: 43.62908,
+    lng: 1.36382,
+  },
+]

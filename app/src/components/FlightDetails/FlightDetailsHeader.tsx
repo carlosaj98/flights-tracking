@@ -1,4 +1,4 @@
-import { Stack, Typography } from "@mui/material"
+import { Box, Stack, Typography } from "@mui/material"
 import { IconPlane } from "../../common/Icons"
 import { FlightData } from "../../interfaces/flightData.interface"
 
@@ -6,7 +6,24 @@ interface FlightDetailsProps {
   data: FlightData
 }
 
-const FlightDetailsHeader: React.FC<FlightDetailsProps> = ({data}) => {
+const FlightDetailsHeader: React.FC<FlightDetailsProps> = ({ data }) => {
+  let flightStatusColor = ""
+
+  switch (data.flight_status) {
+    case "active":
+      flightStatusColor = "#00a63e"
+      break
+    case "landed":
+      flightStatusColor = "var(--orange-500)"
+      break
+    case "cancelled":
+    case "incident":
+    case "diverted":
+      flightStatusColor = "red"
+      break
+    default:
+      flightStatusColor = "var(--neutral-400)"
+  }
   return (
     <Stack
       flexDirection={{ sm: "row", xs: "column" }}
@@ -75,26 +92,32 @@ const FlightDetailsHeader: React.FC<FlightDetailsProps> = ({data}) => {
             className="header-text-subtitle"
             fontSize={{ md: "1rem", xs: "0.85rem" }}
           >
-           {data.arrival.airport}
+            {data.arrival.airport}
           </Typography>
         </Stack>
       </Stack>
 
       <Stack
         className="header-details-item"
-        alignItems={{ sm: "flex-end", xs: "center" }}
+        alignItems={"center"}
+        alignSelf={"center"}
+        flexDirection={"row"}
+        justifyContent={{ sm: "flex-end", xs: "center" }}
+        gap={"6px"}
       >
+        <Box
+          width={"15px"}
+          height={"15px"}
+          bgcolor={flightStatusColor}
+          borderRadius={"50%"}
+          border={"2px solid var(--neutral-50)"}
+        ></Box>
         <Typography
           className="header-text-title"
           fontSize={{ md: "1.25rem", xs: "1.1rem" }}
         >
-          Airborne
-        </Typography>
-        <Typography
-          className="header-text-subtitle"
-          fontSize={{ md: "1rem", xs: "0.85rem" }}
-        >
-          On Time
+          {data.flight_status!.charAt(0).toUpperCase() +
+            data.flight_status!.slice(1)}
         </Typography>
       </Stack>
     </Stack>

@@ -6,6 +6,7 @@ import SingleFlightPageContainer from "./SingleFlightPage.style"
 import { Container } from "@mui/material"
 import { BackButton } from "../../common/Buttons"
 import flightTransform from "../../utils/flightTransform"
+import { exampleFlight } from "./configs/exampleFlight"
 
 const SingleFlightPage: React.FC = () => {
   const [formData, setFormData] = useState<FieldValues>({})
@@ -27,10 +28,9 @@ const SingleFlightPage: React.FC = () => {
       return flightTransform([JSON.parse(getFlightStorage)])
     }
     return flight
-  };
+  }
 
   const flightStorage = parsedFlight()
-  
 
   return (
     <SingleFlightPageContainer>
@@ -41,6 +41,7 @@ const SingleFlightPage: React.FC = () => {
           setIsLoading={setIsLoading}
           setDirection={setDirection}
           flights={flightStorage || flight}
+          // flights={flightTransform(exampleFlight) || exampleFlight}
           formData={formData}
           isLoading={isLoading}
         />

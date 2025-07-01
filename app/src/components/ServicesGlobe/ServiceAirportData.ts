@@ -8,13 +8,13 @@ function ServiceAirportData() {
   const texture = new THREE.TextureLoader().load("/earth_map.jpg")
   const newMaterial = new THREE.MeshBasicMaterial({
     map: texture,
-    color: "#eff6ff",
+    color: "white",
   })
 
   useEffect(() => {
     if (globeRef.current) {
       globeRef.current.controls().autoRotate = true
-      globeRef.current.controls().autoRotateSpeed = 1
+      globeRef.current.controls().autoRotateSpeed = 0.6
       globeRef.current.controls().enableZoom = true
     }
   }, [])

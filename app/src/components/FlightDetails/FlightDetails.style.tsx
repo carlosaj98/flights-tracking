@@ -2,9 +2,9 @@ import { Stack, styled } from "@mui/material"
 
 const FlightDetailsContainer = styled(Stack)({
   width: "100%",
-  borderRadius: "18px",
-  boxShadow: "0 3px 6px var(--gray-semilight)",
-  backgroundColor: "var(--primary-color-base)",
+  borderRadius: "6px",
+  boxShadow: "0 3px 3px var(--neutral-300)",
+  backgroundColor: "var(--blue-600)",
   overflow: "clip",
 
   p: {
@@ -12,26 +12,28 @@ const FlightDetailsContainer = styled(Stack)({
   },
 
   "#header-details-container": {
-    borderRadius: "18px 18px 0px 0px",
     padding: "18px",
-    color: "white",
+    color: "var(--neutral-50)",
   },
 
   ".header-details-item": {
     width: "100%",
+    svg:{
+      fill:"var(--blue-50)"
+    }
   },
 
   ".header-text-title": {
-    fontWeight: "500",
+    fontWeight: "600",
   },
 
   ".header-text-subtitle": {
-    color: "var(--primary-color-extralight)",
+    color: "var(--blue-200)",
   },
 
   ".content-details-container": {
     height: "100%",
-    gap: "3px",
+    gap: "2px",
   },
 
   ".card-container": {
@@ -42,11 +44,13 @@ const FlightDetailsContainer = styled(Stack)({
   },
 
   ".direction-title": {
-    backgroundColor: "var(--primary-color-extralight)",
-    color: "var(--primary-color-extradark)",
-    padding: "6px 18px",
+    padding: "3px 9px",
+    border: "1px solid var(--blue-600)",
     borderRadius: "18px",
+    fontSize: "12px",
+    color: "var(--blue-600)",
     fontWeight: "500",
+    marginBottom: "6px",
   },
 
   ".airport-container": {
@@ -54,45 +58,66 @@ const FlightDetailsContainer = styled(Stack)({
     alignItems: "center",
     textAlign: "center",
     fontWeight: "500",
+    gap: "6px",
   },
 
   ".airport-name": {
     fontWeight: "500",
+    fontSize: "1.15rem",
+    color: "var(--neutral-800)",
   },
 
   ".airport-code-container": {
-    flexDirection: "row",
     width: "100%",
-    justifyContent: "space-evenly",
-    color: "var(--gray-dark)",
+    justifyContent: "center",
+    p: {
+      color: "var(--neutral-600)",
+      fontSize: "14px",
+    },
   },
 
   ".date-container": {
     width: "100%",
-    backgroundColor: "var(--gray-light)",
+    backgroundColor: "var(--neutral-100)",
     gap: "6px",
     justifyContent: "center",
     padding: "6px 0px",
+    p:{
+      fontSize:"14px",
+      color:"var(--neutral-800)"
+    },
     "& p:nth-of-type(1)": {
-      borderBottom: "2px solid black",
+      borderBottom: "2px solid white",
       fontWeight: "500",
     },
   },
 
-  ".site-container": {
+  ".shipment-container": {
     flexDirection: "row",
-    alignSelf: "center",
-    gap: "12px",
-    backgroundColor: "var(--gray-semidark)",
-    padding: "6px 8px",
+    justifyContent: "space-between",
+    width: "100%",
+    textAlign: "center",
+    gap: "18px",
+    marginTop:"6px"
+  },
+
+  ".shipment-info": {
+    flexDirection: "row",
+    justifyContent: "center",
+    gap: "6px",
+    width: "100%",
+    backgroundColor: "var(--blue-100)",
     borderRadius: "18px",
-    color: "white",
-    fontWeight: "500",
+    padding:"2px",
+    p: {
+      fontSize: "14px",
+      color: "var(--neutral-800)",
+      fontWeight: "500",
+    },
+
     "& p:nth-of-type(2)": {
-      backgroundColor: "white",
-      width: "60px",
-      color: "black",
-      borderRadius: "18px",
+      fontWeight: "600",
+      color: "var(--blue-600)",
     },
   },
 })
