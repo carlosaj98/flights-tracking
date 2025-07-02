@@ -7,6 +7,7 @@ import SectionMain from "./sections/SectionMain"
 import SectionFlights from "./sections/SectionFlights"
 import Loader from "../../components/Loader/Loader"
 import { BackButton } from "../../common/Buttons"
+// import { exampleFlights } from "./configs/exampleFlights"
 
 const FlightsPage: React.FC = () => {
   const [formData, setFormData] = useState<FieldValues>({})

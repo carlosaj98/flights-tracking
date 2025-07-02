@@ -97,24 +97,23 @@ const ButtonDetails: React.FC<ButtonsProp> = ({ action }) => {
   return (
     <Button
       onClick={handleClick}
-      variant="contained"
       sx={{
-        height: { lg: "100%", xs: "50px" },
-        width: { lg: "100px", xs: "100%" },
+        width: "100%",
         textTransform: "none",
         fontFamily: "var(--font-base)",
-        fontWeight: "500",
-        color: "var(--gray-light)",
-        fontSize: "1rem",
-        borderRadius: "0px",
-        backgroundColor: "var(--primary-color-base)",
+        fontWeight: "600",
+        color: "var(--blue-500)",
+        fontSize: "14px",
+        borderRadius: "6px",
+        border:"1px solid var(--blue-200)",
         "&:hover": {
-          color: "var(--primary-color-extralight)",
-          backgroundColor: "var(--primary-color-extradark)",
+          color: "var(--blue-900)",
+          backgroundColor: "var(--blue-100)",
+          border:"1px solid transparent"
         },
       }}
     >
-      MORE DETAILS
+      More Details
     </Button>
   )
 }

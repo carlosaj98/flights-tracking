@@ -2,7 +2,7 @@ import { FlightData } from "../../interfaces/flightData.interface"
 import { Box, Stack, Typography } from "@mui/material"
 import FlightDetailCardContainer from "./FlightDetailCard.style"
 import transformDate from "../../utils/transformDate"
-import { IconPlane } from "../../common/Icons"
+import { IconPlaneOutline } from "../../common/Icons"
 import { ButtonDetails } from "../../common/Buttons"
 // import { LinkDetailPage } from "../../common/Layouts"
 
@@ -10,105 +10,75 @@ type FlightDetailCardProps = {
   data: FlightData
 }
 
+type FlightStatus = "scheduled" | "landed" | "active"
+
 function upperCaseStatus(status: string) {
   const result = status.charAt(0).toUpperCase() + status.slice(1)
   return result
 }
 
+function setFlightStatusColor(status: string | null) {
+  const flightStatusColors: Record<FlightStatus, { bg: string; text: string }> =
+    {
+      scheduled: { bg: "var(--neutral-200)", text: "var(--neutral-800)" },
+      landed: { bg: "var(--orange-100)", text: "var(--orange-800)" },
+      active: { bg: "#dcfce7", text: "#067530" },
+    }
+
+  const restStatusColor = { bg: "#ffe2e2", text: "#9f0712" }
+
+  if (status === "scheduled" || status === "landed" || status === "active") {
+    return flightStatusColors[status as FlightStatus]
+  } else {
+    return restStatusColor
+  }
+}
+
 const FlightDetailCard: React.FC<FlightDetailCardProps> = ({ data }) => {
-  let statusColor = ""
-  if (data.flight_status === "scheduled") statusColor = "#dc2626"
-  if (data.flight_status === "landed") statusColor = "#f59e0b"
-  if (data.flight_status === "active") statusColor = "#16a34a"
   return (
-    <FlightDetailCardContainer
-      height={{ lg: "200px", sm: "250px", xs: "100%" }}
-      width={{ lg: "fit-content", xs: "100%" }}
-      flexDirection={{ lg: "row", xs: "column" }}
-    >
-      <Stack
-        width={"100%"}
-        height={"100%"}
-        flexDirection={{ sm: "row", xs: "column" }}
-      >
-        <Stack
-          className="details-container"
-          width={{ lg: "300px", sm: "500px", xs: "100%" }}
-          borderRight={{ sm: "2px dashed var(--gray-semidark)", xs: "none" }}
-          borderBottom={{ sm: "none", xs: "2px dashed var(--gray-semidark)" }}
-          alignItems={{ sm: "flex-start", xs: "center" }}
-        >
-          <Typography className="flight-num">{data.flight.iata}</Typography>
-          <Typography>
-            {data.airline.name} ({data.airline.iata})
-          </Typography>
-          <Typography>{data.flight_date}</Typography>
-          <Stack
-            flexDirection={"row"}
-            gap={"12px"}
-            alignItems={"center"}
-            flexGrow={"1"}
-            className="status-container"
-            paddingTop={{ sm: "0px", xs: "12px" }}
-          >
-            <Stack
-              width={"20px"}
-              height={"20px"}
-              padding={"3px"}
-              borderRadius={"100%"}
-              border={"2px solid var(--gray-semilight)"}
-              sx={{ backgroundColor: "white" }}
-            >
-              <Box
-                width={"100%"}
-                height={"100%"}
-                borderRadius={"100%"}
-                sx={{ backgroundColor: statusColor }}
-              ></Box>
-            </Stack>
-            <Typography
-              fontWeight={"500"}
-              sx={{ textShadow: "0 0 2px white" }}
-              color={statusColor}
-            >
-              {upperCaseStatus(data.flight_status!)}
-            </Typography>
-          </Stack>
+    <FlightDetailCardContainer sx={{ width: { md: "49%", xs: "100%" } }}>
+      <Stack className="card-header-info">
+        <Stack className="flight-header-details">
+          <Typography>{data.flight.iata}</Typography>
+          <Typography>{`${data.airline.name} (${data.airline.iata})`}</Typography>
+          <Typography>{transformDate(data.flight_date!, "date")}</Typography>
         </Stack>
-        <Stack
-          className="details-container"
-          width={{ lg: "500px", xs: "100%" }}
+        <Typography
+          className="flight-status"
+          bgcolor={setFlightStatusColor(data.flight_status).bg}
+          color={setFlightStatusColor(data.flight_status).text}
         >
-          <Stack className="details-departure" textAlign={"center"}>
-            <Typography className="airports-code">
-              {data.departure.iata}
-            </Typography>
-            <Typography className="airports-name">
-              {data.departure.airport}
-            </Typography>
-            <Typography fontSize={"1.2rem"}>
+          {upperCaseStatus(data.flight_status!)}
+        </Typography>
+      </Stack>
+      <Stack className="card-body-info">
+        <Stack textAlign={"left"} className="location-container">
+          <Typography className="airports-iata">
+            {data.departure.iata}
+          </Typography>
+          <Stack className="location-details">
+            <Typography>{data.departure.airport}</Typography>
+            <Typography>
               {transformDate(data.departure.scheduled, "time")}
             </Typography>
           </Stack>
-          <Stack width={"100%"} alignItems={"center"}>
-            <IconPlane />
-          </Stack>
-          <Stack className="details-arrival" textAlign={"center"}>
-            <Typography className="airports-code">
-              {data.arrival.iata}
-            </Typography>
-            <Typography className="airports-name">
-              {data.arrival.airport}
-            </Typography>
-            <Typography fontSize={"1.2rem"}>
+        </Stack>
+        <Stack alignItems={"center"} flexDirection={"row"} gap={"6px"}>
+          <Box width={"25px"} border={"1px dashed var(--neutral-300)"}></Box>
+          <IconPlaneOutline />
+          <Box width={"25px"} border={"1px dashed var(--neutral-300)"}></Box>
+        </Stack>
+        <Stack textAlign={"right"} className="location-container">
+          <Typography className="airports-iata">{data.arrival.iata}</Typography>
+          <Stack className="location-details">
+            <Typography>{data.arrival.airport}</Typography>
+            <Typography>
               {transformDate(data.arrival.scheduled, "time")}
             </Typography>
           </Stack>
         </Stack>
       </Stack>
-      <ButtonDetails
-        action={() => sessionStorage.setItem("flight", JSON.stringify(data))}
-      />
+      <ButtonDetails action={() => sessionStorage.setItem("flight", JSON.stringify(data))}/>
     </FlightDetailCardContainer>
   )
 }

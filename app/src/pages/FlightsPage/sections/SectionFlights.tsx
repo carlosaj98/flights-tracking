@@ -51,7 +51,7 @@ const SectionFlights: React.FC<SectionFlightsProps> = ({
               className="btn-pages"
               variant="contained"
               disabled={offset === 0}
-              sx={{ width: {sm:"100px", xs:"75px" }}}
+              sx={{ width: { sm: "100px", xs: "75px" } }}
               onClick={() => {
                 setOffset(offset - pagination!.limit), setIsLoading(true)
               }}
@@ -60,17 +60,16 @@ const SectionFlights: React.FC<SectionFlightsProps> = ({
                 <IconArrow direction="left" />
               </Box>
             </Button>
-              <Typography id="pagination">
-                Page: {offset / pagination!.limit} /{" "}
-                {Math.round(pagination!.total / pagination!.limit)}
-              </Typography>
-
+            <Typography id="pagination">
+              Page: {offset / pagination!.limit} /{" "}
+              {Math.round(pagination!.total / pagination!.limit)}
+            </Typography>
 
             <Button
               className="btn-pages"
               variant="contained"
               disabled={offset >= pagination!.total}
-              sx={{ width: {sm:"100px", xs:"75px" }}}
+              sx={{ width: { sm: "100px", xs: "75px" } }}
               onClick={() => {
                 setOffset(offset + pagination!.limit), setIsLoading(true)
               }}
@@ -81,14 +80,22 @@ const SectionFlights: React.FC<SectionFlightsProps> = ({
             </Button>
           </Stack>
         </Stack>
-        {flights.map((flightData) => {
-          return (
-            <FlightDetailCard
-              key={flightData.flight.iata! + flightData.flight_date!}
-              data={flightData}
-            />
-          )
-        })}
+        <Stack
+          flexDirection={"row"}
+          justifyContent={"space-between"}
+          width={"100%"}
+          flexWrap={"wrap"}
+          gap={"12px"}
+        >
+          {flights.map((flightData) => {
+            return (
+              <FlightDetailCard
+                key={flightData.flight.iata! + flightData.flight_date!}
+                data={flightData}
+              />
+            )
+          })}
+        </Stack>
       </Stack>
     </Stack>
   )

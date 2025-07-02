@@ -1,51 +1,75 @@
-import { Stack, styled } from "@mui/material";
+import { Stack, styled } from "@mui/material"
 
 const FlightDetailCardContainer = styled(Stack)({
-  alignItems:"center",
-  borderRadius:"18px",
-  boxShadow:"0 2px 5px var(--gray-base)",
-  backgroundColor:"white",
-  overflow:"hidden",
+  borderRadius: "6px",
+  boxShadow: "0 2px 4px var(--neutral-200)",
+  backgroundColor: "white",
+  border: "1px solid var(--neutral-200)",
+  padding: "18px",
+  gap: "12px",
 
-  p:{
-    fontFamily: "var(--font-base)"
+  p: {
+    fontFamily: "var(--font-base)",
   },
 
-  ".details-container":{
-    padding:"32px",
+  ".card-header-info": {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
+    width: "100%",
+  },
 
-    "&:nth-of-type(1)":{
-      justifyContent:"center",
-      backgroundColor:"var(--gray-light)",
+  ".flight-status": {
+    fontSize: "14px",
+    padding: "4px 12px",
+    borderRadius: "18px",
+  },
+
+  ".flight-header-details": {
+    p: {
+      fontSize: "14px",
+      color: "var(--neutral-600)",
     },
-    "&:nth-of-type(2)":{
-      flexDirection:"row",
-      justifyContent:"center",
-      alignItems:"center",
+
+    "p:nth-of-type(1)": {
+      fontSize: "1.2rem",
+      fontWeight: "600",
+      color: "var(--blue-600)",
     },
   },
 
-  ".details-arrival, .details-departure":{
-    width:"100%",
-    alignItems:"center"
+  ".card-body-info": {
+    flexDirection: "row",
+    width: "100%",
+    justifyContent: "space-between",
+    alignItems: "center",
+    gap: "12px",
   },
 
-  ".flight-num":{
-    fontSize:"1.75rem",
-    fontWeight:"500",
-    color:"black"
+  ".location-container": {
+    width: "100%",
+    justifyContent: "flex-start",
+    height: "100%",
   },
 
-  ".airports-code":{
-    fontSize:"1.75rem",
-    fontWeight:"500",
-    color:"var(--primary-color-base)"
+  ".airports-iata": {
+    fontSize: "1rem",
+    color: "var(--neutral-800)",
+    fontWeight: "600",
   },
 
-  ".airports-name":{
-    fontSize:"1.2rem",
-    fontWeight:"500",
-    color:"var(--primary-color-extradark)"
+  ".location-details": {
+    height: "100%",
+    justifyContent: "space-between",
+    p: {
+      fontSize: "14px",
+      fontWeight: "400",
+      color: "var(--neutral-600)",
+      "&:nth-of-type(2)": {
+        color: "var(--neutral-600)",
+        fontWeight: "600",
+      },
+    },
   },
 })
 
