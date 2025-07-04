@@ -20,13 +20,13 @@ const FlightsPage: React.FC = () => {
       limit: formData.limit,
       offset: offset,
     })
-    useEffect(()=>{
-      window.scrollTo(0, 0);
-    },[])
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
   return (
     <FlightsPageContainer>
       <Container sx={{ height: "100%" }}>
-        <BackButton/>
+        <BackButton />
         <SectionMain
           setFormData={setFormData}
           setIsLoading={setIsLoading}
@@ -43,7 +43,7 @@ const FlightsPage: React.FC = () => {
             pagination={pagination!}
           />
         ) : (
-          <Loader status={isLoading} text="Flights"/>
+          <Loader status={isLoading} text="Flights" />
         )}
       </Container>
     </FlightsPageContainer>

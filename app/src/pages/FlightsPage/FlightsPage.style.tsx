@@ -10,23 +10,23 @@ const FlightsPageContainer = styled(Stack)({
     fontFamily: "var(--font-base)",
   },
 
-  "#flights-count":{
-    color: "var(--gray-semidark)",
-    fontSize: "1.1rem",
-    fontWeight: "500",
+  "#flights-count": {
+    color: "var(--neutral-600)",
+    fontSize: "1rem",
+    fontWeight: "400",
     span: {
-      color: "var(--primary-color-base)",
+      color: "var(--blue-600)",
       fontWeight: "600",
     },
   },
 
-  "#pagination":{
-    fontSize: "1.1rem",
-    color: "var(--gray-dark)",
+  "#pagination": {
+    fontSize: "14px",
+    color: "var(--neutral-600)",
     fontWeight: "500",
   },
 
-  ".text-loader":{
+  ".text-loader": {
     fontSize: "1.5rem",
     color: "var(--primary-color-extradark)",
   },
@@ -51,10 +51,10 @@ const FlightsPageContainer = styled(Stack)({
   },
 
   h3: {
-    fontSize: "2.25rem",
+    fontSize: "1.5rem",
     fontWeight: "600",
-    heigth: "100%",
     fontFamily: "var(--font-base)",
+    color: "var(--neutral-800)",
   },
   canvas: {
     borderRadius: "100%",
@@ -67,38 +67,37 @@ const FlightsPageContainer = styled(Stack)({
   },
 
   ".btn-pages": {
-    backgroundColor: "var(--secondary-color-base)",
-    borderRadius: "18px",
+    backgroundColor: "var(--orange-400)",
+    borderRadius: "6px",
     fontFamily: "var(--font-base)",
-    fontSize: "1rem",
+    fontSize: "14px",
     display: "flex",
     alignItems: "center",
-    gap: "12px",
+    jusifyContent:"center",
+    gap: "6px",
     textTransform: "none",
     fontWeight: "600",
-    padding: "12px",
-    boxShadow: "0 2px 4px var(--secondary-color-light) inset",
-    color: "var(--secondary-color-extradark)",
+    padding: "6px",
+    color: "var(--orange-950)",
     transition: "all 0.2s ease",
     svg: {
-      fill: "var(--secondary-color-extradark)",
+      fill: "var(--orange-950)",
     },
 
     "&:hover": {
-      backgroundColor: "var(--secondary-color-dark)",
-      boxShadow: "0 2px 4px var(--secondary-color-extradark) inset",
-      color: "var(--secondary-color-extralight)",
+      backgroundColor: "var(--orange-300)",
+      color: "var(--orange-900)",
       svg: {
-        fill: "var(--secondary-color-extralight)",
+        fill: "var(--orange-900)",
       },
     },
 
     "&.Mui-disabled": {
-      color: "var(--gray-dark)",
-      backgroundColor: "var(--gray-semilight)",
-      boxShadow: "0 2px 4px var(--gray-dark) inset",
+      color: "var(--neutral-500)",
+      backgroundColor: "var(--neutral-300)",
+      boxShadow: "0 2px 4px var(--neutral-400) inset",
       svg: {
-        fill: "var(--gray-dark)",
+        fill: "var(--neutral-500)",
       },
     },
   },
