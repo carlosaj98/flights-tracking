@@ -21,7 +21,7 @@ const FlightsPageContainer = styled(Stack)({
   },
 
   "#pagination": {
-    fontSize: "14px",
+    fontSize: "1rem",
     color: "var(--neutral-600)",
     fontWeight: "500",
   },

@@ -26,9 +26,9 @@ const AirportCardContainer = styled(Stack)({
       fontWeight: "600",
       color: "var(--neutral-800)",
       width: "100%",
-      whiteSpace:"nowrap",
-      overflow:"hidden",
-      textOverflow: "ellipsis"
+      // whiteSpace:"nowrap",
+      // overflow:"hidden",
+      // textOverflow: "ellipsis"
     },
   },
 

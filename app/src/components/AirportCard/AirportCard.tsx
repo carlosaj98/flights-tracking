@@ -8,6 +8,13 @@ type AirportCardProps = {
 }
 
 const AirportCard: React.FC<AirportCardProps> = ({ airport }) => {
+  const truncateNames = (name: string) => {
+    const maxCharacters = 40
+    if (name.length > maxCharacters) {
+      return name.slice(0, maxCharacters) + "..."
+    }
+    return name
+  }
   return (
     <AirportCardContainer
       sx={{
@@ -16,7 +23,9 @@ const AirportCard: React.FC<AirportCardProps> = ({ airport }) => {
       }}
     >
       <Stack className="airport-title-container">
-        <Typography className="airport-name">{airport.name}</Typography>
+        <Typography className="airport-name">
+          {truncateNames(airport.name)}
+        </Typography>
         <Typography
           className="airport-code"
           width={"20%"}
