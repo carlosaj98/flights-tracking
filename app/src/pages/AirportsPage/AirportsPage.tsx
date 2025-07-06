@@ -7,6 +7,7 @@ import useAirports from "../../hooks/useAirports"
 import { Container } from "@mui/material"
 import Loader from "../../components/Loader/Loader"
 import { BackButton } from "../../common/Buttons"
+import { exampleAirports } from "./configs/exampleAirports"
 
 const AirportsPage: React.FC = () => {
   const [formData, setFormData] = useState<FieldValues>({})
@@ -25,12 +26,12 @@ const AirportsPage: React.FC = () => {
         <SectionMain
           setFormData={setFormData}
           setIsLoading={setIsLoading}
-          airports={airports}
+          airports={exampleAirports}
           formData={formData}
           isLoading={isLoading}
         />
-        {!isLoading && airports.length ? (
-          <SectionAirports airports={airports} isLoading={isLoading} />
+        {!isLoading && exampleAirports.length ? (
+          <SectionAirports airports={exampleAirports} isLoading={isLoading} />
         ) : (
           <Loader status={isLoading} text="Airports"/>
         )}

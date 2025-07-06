@@ -6,7 +6,7 @@ import SingleFlightPageContainer from "./SingleFlightPage.style"
 import { Container } from "@mui/material"
 import { BackButton } from "../../common/Buttons"
 import flightTransform from "../../utils/flightTransform"
-import { exampleFlight } from "./configs/exampleFlight"
+// import { exampleFlight } from "./configs/exampleFlight"
 
 const SingleFlightPage: React.FC = () => {
   const [formData, setFormData] = useState<FieldValues>({})

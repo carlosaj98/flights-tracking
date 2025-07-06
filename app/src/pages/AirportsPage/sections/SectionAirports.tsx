@@ -14,11 +14,11 @@ const SectionAirports: React.FC<SectionAirportsProps> = ({
   isLoading,
 }) => {
   const [firstLimit, setFirstLimit] = useState(0)
-  const [secondLimit, setSecondLimit] = useState(20)
+  const [secondLimit, setSecondLimit] = useState(21)
   const [page, setPage] = useState(1)
   useEffect(() => {
     setFirstLimit(0)
-    setSecondLimit(20)
+    setSecondLimit(21)
     setPage(1)
   }, [isLoading])
   return (
@@ -48,8 +48,8 @@ const SectionAirports: React.FC<SectionAirportsProps> = ({
           sx={{ width: { sm: "100px", xs: "75px" } }}
           disabled={firstLimit === 0}
           onClick={() => {
-            setFirstLimit((prev) => prev - 20),
-              setSecondLimit((prev) => prev - 20)
+            setFirstLimit((prev) => prev - 21),
+              setSecondLimit((prev) => prev - 21)
             setPage((prev) => prev - 1)
           }}
         >
@@ -59,7 +59,7 @@ const SectionAirports: React.FC<SectionAirportsProps> = ({
         </Button>
         <Typography id="pagination">
           Page: {page} /{" "}
-          {airports.length < 20 ? 1 : Math.round(airports.length / 20)}
+          {airports.length < 21 ? 1 : Math.round(airports.length / 21)}
         </Typography>
         <Button
           className="btn-pages"
@@ -67,8 +67,8 @@ const SectionAirports: React.FC<SectionAirportsProps> = ({
           sx={{ width: { sm: "100px", xs: "75px" } }}
           disabled={secondLimit >= airports.length}
           onClick={() => {
-            setFirstLimit((prev) => prev + 20),
-              setSecondLimit((prev) => prev + 20)
+            setFirstLimit((prev) => prev + 21),
+              setSecondLimit((prev) => prev + 21)
             setPage((prev) => prev + 1)
           }}
         >
@@ -78,9 +78,9 @@ const SectionAirports: React.FC<SectionAirportsProps> = ({
         </Button>
       </Stack>
       <Stack
-        gap={{ lg: "24px", xs: "16px" }}
+        gap={{ lg: "12px", xs: "12px" }}
         flexDirection={"row"}
-        justifyContent={"center"}
+        justifyContent={"space-between"}
         flexWrap={"wrap"}
         marginTop={"24px"}
       >
