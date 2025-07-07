@@ -18,7 +18,7 @@ const AirportCard: React.FC<AirportCardProps> = ({ airport }) => {
   return (
     <AirportCardContainer
       sx={{
-        width: { lg: "32%", xs: "100%" },
+        width: { lg: "calc((100% / 3) - 8px)", xs: "100%" },
         height: { lg: "225px", xs: "225px" },
       }}
     >

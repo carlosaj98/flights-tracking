@@ -51,6 +51,7 @@ const SectionAirports: React.FC<SectionAirportsProps> = ({
         justifyContent={"space-between"}
         flexWrap={"wrap"}
         marginTop={"24px"}
+        width={"100%"}
       >
         {airports.slice(firstLimit, secondLimit).map((airport) => {
           return (
