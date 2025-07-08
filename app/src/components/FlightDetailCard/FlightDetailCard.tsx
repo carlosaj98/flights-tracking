@@ -39,25 +39,36 @@ const FlightDetailCard: React.FC<FlightDetailCardProps> = ({ data }) => {
     <FlightDetailCardContainer sx={{ width: { md: "49%", xs: "100%" } }}>
       <Stack className="card-header-info">
         <Stack className="flight-header-details">
-          <Typography>{data.flight.iata}</Typography>
-          <Typography>{`${data.airline.name} (${data.airline.iata})`}</Typography>
+          <Typography>{data.flight.iata || "---"}</Typography>
+          {data.airline.name && data.airline.iata ? (
+            <Typography>{`${data.airline.name || "---"} (${
+              data.airline.iata
+            })`}</Typography>
+          ) : (
+            <Typography>{"---"}</Typography>
+          )}
+
           <Typography>{transformDate(data.flight_date!, "date")}</Typography>
         </Stack>
-        <Typography
-          className="flight-status"
-          bgcolor={setFlightStatusColor(data.flight_status).bg}
-          color={setFlightStatusColor(data.flight_status).text}
-        >
-          {upperCaseStatus(data.flight_status!)}
-        </Typography>
+        {data.flight_status ? (
+          <Typography
+            className="flight-status"
+            bgcolor={setFlightStatusColor(data.flight_status).bg}
+            color={setFlightStatusColor(data.flight_status).text}
+          >
+            {upperCaseStatus(data.flight_status!)}
+          </Typography>
+        ) : (
+          <Typography className="flight-status">{"---"}</Typography>
+        )}
       </Stack>
       <Stack className="card-body-info">
         <Stack textAlign={"left"} className="location-container">
           <Typography className="airports-iata">
-            {data.departure.iata}
+            {data.departure.iata || "---"}
           </Typography>
           <Stack className="location-details">
-            <Typography>{data.departure.airport}</Typography>
+            <Typography>{data.departure.airport || "---"}</Typography>
             <Typography>
               {transformDate(data.departure.scheduled, "time")}
             </Typography>
@@ -69,16 +80,20 @@ const FlightDetailCard: React.FC<FlightDetailCardProps> = ({ data }) => {
           <Box width={"25px"} border={"1px dashed var(--neutral-300)"}></Box>
         </Stack>
         <Stack textAlign={"right"} className="location-container">
-          <Typography className="airports-iata">{data.arrival.iata}</Typography>
+          <Typography className="airports-iata">
+            {data.arrival.iata || "---"}
+          </Typography>
           <Stack className="location-details">
-            <Typography>{data.arrival.airport}</Typography>
+            <Typography>{data.arrival.airport || "---"}</Typography>
             <Typography>
               {transformDate(data.arrival.scheduled, "time")}
             </Typography>
           </Stack>
         </Stack>
       </Stack>
-      <ButtonDetails action={() => sessionStorage.setItem("flight", JSON.stringify(data))}/>
+      <ButtonDetails
+        action={() => sessionStorage.setItem("flight", JSON.stringify(data))}
+      />
     </FlightDetailCardContainer>
   )
 }

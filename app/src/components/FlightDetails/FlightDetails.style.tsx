@@ -58,7 +58,7 @@ const FlightDetailsContainer = styled(Stack)({
     alignItems: "center",
     textAlign: "center",
     fontWeight: "500",
-    gap: "6px",
+    gap: "3px",
   },
 
   ".airport-name": {
@@ -106,7 +106,7 @@ const FlightDetailsContainer = styled(Stack)({
     justifyContent: "center",
     gap: "6px",
     width: "100%",
-    backgroundColor: "var(--blue-100)",
+    backgroundColor: "var(--blue-50)",
     borderRadius: "18px",
     padding:"2px",
     p: {

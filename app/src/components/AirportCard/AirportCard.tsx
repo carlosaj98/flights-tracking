@@ -9,6 +9,7 @@ type AirportCardProps = {
 
 const AirportCard: React.FC<AirportCardProps> = ({ airport }) => {
   const truncateNames = (name: string) => {
+    if (name === null) return "---"
     const maxCharacters = 40
     if (name.length > maxCharacters) {
       return name.slice(0, maxCharacters) + "..."
@@ -42,11 +43,11 @@ const AirportCard: React.FC<AirportCardProps> = ({ airport }) => {
       <Stack className="airport-details-container" width={"100%"}>
         <Stack className="airport-details">
           <Typography>LATITUDE</Typography>
-          <Typography>{airport.lat}</Typography>
+          <Typography>{airport.lat || "---"}</Typography>
         </Stack>
         <Stack className="airport-details">
           <Typography>LONGITUDE</Typography>
-          <Typography>{airport.lng}</Typography>
+          <Typography>{airport.lng || "---"}</Typography>
         </Stack>
       </Stack>
       <Link

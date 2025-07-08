@@ -23,8 +23,8 @@ const FlightDetailsContent: React.FC<FlightDetailsProps> = ({
       <Stack className="airport-container">
         <Typography className="airport-name">{data.airport}</Typography>
         <Stack className="airport-code-container">
-          <Typography>IATA: {data.iata}</Typography>
-          <Typography>ICAO: {data.icao}</Typography>
+          <Typography>IATA: {data.iata || "---"}</Typography>
+          <Typography>ICAO: {data.icao || "---"}</Typography>
         </Stack>
       </Stack>
 

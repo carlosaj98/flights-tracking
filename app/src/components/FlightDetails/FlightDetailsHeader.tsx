@@ -41,14 +41,18 @@ const FlightDetailsHeader: React.FC<FlightDetailsProps> = ({ data }) => {
           className="header-text-title"
           fontSize={{ md: "1.25rem", xs: "1.1rem" }}
         >
-          {data.flight.iata}
+          {data.flight.iata || "---"}
         </Typography>
-        <Typography
-          className="header-text-subtitle"
-          fontSize={{ md: "1rem", xs: "0.85rem" }}
-        >
-          {data.airline.name} ({data.airline.iata})
-        </Typography>
+        {data.airline.name && data.airline.iata ? (
+          <Typography
+            className="header-text-subtitle"
+            fontSize={{ md: "1rem", xs: "0.85rem" }}
+          >
+            {data.airline.name} ({data.airline.iata})
+          </Typography>
+        ) : (
+          <Typography className="header-text-subtitle">{"---"}</Typography>
+        )}
       </Stack>
       <Stack
         className="header-details-item"
@@ -64,13 +68,13 @@ const FlightDetailsHeader: React.FC<FlightDetailsProps> = ({ data }) => {
             className="header-text-title"
             fontSize={{ md: "1.25rem", xs: "1.1rem" }}
           >
-            {data.departure.iata}
+            {data.departure.iata || "---"}
           </Typography>
           <Typography
             className="header-text-subtitle"
-            fontSize={{ md: "1rem", xs: "0.85rem" }}
+            fontSize={"14px"}
           >
-            {data.departure.airport}
+            {data.departure.airport || "---"}
           </Typography>
         </Stack>
         <Stack
@@ -86,13 +90,13 @@ const FlightDetailsHeader: React.FC<FlightDetailsProps> = ({ data }) => {
             className="header-text-title"
             fontSize={{ md: "1.25rem", xs: "1.1rem" }}
           >
-            {data.arrival.iata}
+            {data.arrival.iata || "---"}
           </Typography>
           <Typography
             className="header-text-subtitle"
-            fontSize={{ md: "1rem", xs: "0.85rem" }}
+            fontSize={"14px"}
           >
-            {data.arrival.airport}
+            {data.arrival.airport || "---"}
           </Typography>
         </Stack>
       </Stack>
