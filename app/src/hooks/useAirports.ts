@@ -14,10 +14,9 @@ function useAirports(aux: FieldValues, params: apiAirportsParams) {
       httpService("/airports")
         .getAirports(params)
         .then(({ data }) => {
-          console.log(data.response)
           setAirports(data.response)
           !data.response.length
-            ? notify("error", "Error finding airports")
+            ? notify("error", "No Airports found. Please check your search settings.")
             : notify("success", "Airports found successfully")
         })
         .catch((error) => {

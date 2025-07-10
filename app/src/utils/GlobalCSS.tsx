@@ -105,9 +105,10 @@ function GlobalCSS() {
         },
 
         ".Toastify__toast": {
-          borderRadius: "18px",
+          borderRadius: "6px",
           padding: "12px",
           marginTop: "24px",
+          fontFamily:"var(--font-base)"
         },
       }}
     />

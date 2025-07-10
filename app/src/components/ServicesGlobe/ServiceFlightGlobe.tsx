@@ -32,7 +32,7 @@ const ServiceFlightGlobe: React.FC<GlobeProps> = ({
       backgroundColor="rgba(0,0,0,0)"
       globeMaterial={newMaterial}
       arcsData={arcsData}
-      arcColor={["#f4960c", "#f4960c"]}
+      arcColor={() => "rgba(244, 150, 12, 1)"}
       arcStroke={0.75}
       arcDashLength={1}
       arcDashGap={() => 1}

@@ -28,26 +28,30 @@ function useFlight(aux: FieldValues, params: apiParams) {
             ({ flight_date }: { flight_date: string }) =>
               flight_date === aux.date
           )
+          if (!transformData.length) {
+            notify("error", "Flight not found")
+            throw new Error("Flight not found")
+          }
           const updatedFlights = flightTransform(transformData)
           if (updatedFlights) {
             setFlight(updatedFlights)
             sessionStorage.setItem("flight", JSON.stringify(updatedFlights[0]))
+            notify("success", "Flight found successfully")
           }
-          !data.data.length
-            ? notify("error", "Error finding flight")
-            : notify("success", "Flight found successfully")
         })
         .catch((error) => {
-          console.error("Error finding flights:", error)
-          notify("error", "Error finding flight")
+          error.status === 429 &&
+            notify("error", "Server error, sorry for the inconvenience")
+          error.status === 500 &&
+            notify("error", "Server error, sorry for the inconvenience")
         })
         .finally(() => {
           setIsLoading(false)
-          navigate("/flight")
+          flight.length > 0 && navigate("/flight")
           console.log(flight)
         })
     }
-  }, [aux])
+  }, [aux, params])
 
   return { flight, setFlight, isLoading, setIsLoading, setDirection, direction }
 }
@@ -79,12 +83,14 @@ function useFlights(aux: FieldValues, params: apiParams) {
           setFlights(updatedFlights)
           setPagination(data.pagination)
           !data.data.length
-            ? notify("error", "Error finding flights")
+            ? notify("error", "No flights found. Please check your search settings")
             : notify("success", "Flights found successfully")
         })
         .catch((error) => {
-          console.error("Error finding flights:", error)
-          notify("error", "Error finding flights")
+          error.status === 429 &&
+            notify("error", "Server error, sorry for the inconvenience")
+          error.status === 500 &&
+            notify("error", "Server error, sorry for the inconvenience")
         })
         .finally(() => {
           setIsLoading(false)
