@@ -2,6 +2,9 @@ import Globe from "react-globe.gl"
 import ServiceFlightData from "./ServiceFlightData"
 import useGlobeWidth from "../../hooks/useGlobeWidth"
 import { FlightData } from "../../interfaces/flightData.interface"
+import { useEffect, useState } from "react"
+import { airports } from "../../utils/airportsData.json"
+import { AirportCoordsView } from "../../interfaces/airportData.interface"
 
 type GlobeProps = {
   flights: FlightData[]
@@ -16,13 +19,30 @@ const ServiceFlightGlobe: React.FC<GlobeProps> = ({
   airportCode,
   type,
 }) => {
+  const [coordsView, setCoordsView] = useState<AirportCoordsView>({
+    lat: 0,
+    lng: 0,
+  })
   const { arcsData, newMaterial, globeRef } = ServiceFlightData(
     flights,
     flightsDirection,
     airportCode,
-    type
+    type,
+    coordsView
   )
   const { globeWidth } = useGlobeWidth()
+
+  useEffect(() => {
+    if (flights.length > 0) {
+      const airportCoords = airports.find((airport) => {
+        return airport.iata_code === airportCode.toUpperCase()
+      })
+      setCoordsView({
+        lat: airportCoords?.lat || 0,
+        lng: airportCoords?.lng || 0,
+      })
+    }
+  }, [flights])
 
   return (
     <Globe

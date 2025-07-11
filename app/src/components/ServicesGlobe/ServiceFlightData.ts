@@ -3,12 +3,14 @@ import { useRef, useEffect } from "react"
 import { GlobeMethods } from "react-globe.gl"
 import { FlightData } from "../../interfaces/flightData.interface"
 import { airports } from "../../utils/airportsData.json"
+import { AirportCoordsView } from "../../interfaces/airportData.interface"
 
 function ServiceFlightData(
   flights: FlightData[],
   flightsDirection: string,
   airportCode: string,
-  type: "single" | "multiple"
+  type: "single" | "multiple",
+  coordsView: AirportCoordsView
 ) {
   const [airportFiltered] = airports.filter(
     (airport) => airport.iata_code === airportCode?.toUpperCase()
@@ -48,11 +50,16 @@ function ServiceFlightData(
 
   useEffect(() => {
     if (globeRef.current) {
-      globeRef.current.controls().autoRotate = true
-      globeRef.current.controls().autoRotateSpeed = 0.6
       globeRef.current.controls().enableZoom = true
+      globeRef.current.pointOfView(
+        {
+          lat: coordsView.lat,
+          lng: coordsView.lng,
+        },
+        500
+      )
     }
-  }, [])
+  }, [coordsView])
 
   return { arcsData, newMaterial, globeRef }
 }

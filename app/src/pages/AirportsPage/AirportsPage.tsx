@@ -7,7 +7,7 @@ import useAirports from "../../hooks/useAirports"
 import { Container } from "@mui/material"
 import Loader from "../../components/Loader/Loader"
 import { BackButton } from "../../common/Buttons"
-import { exampleAirports } from "./configs/exampleAirports"
+// import { exampleAirports } from "./configs/exampleAirports"
 
 const AirportsPage: React.FC = () => {
   const [formData, setFormData] = useState<FieldValues>({})
