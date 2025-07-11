@@ -29,7 +29,7 @@ const ServicesForm: React.FC<FormComponentProps> = ({
   actionLoading,
   actionDirection,
   validation,
-  textButton
+  textButton,
 }) => {
   const {
     handleSubmit,
@@ -97,11 +97,7 @@ const ServicesForm: React.FC<FormComponentProps> = ({
                   key={name}
                   name={name}
                   control={control}
-                  defaultValue={
-                    rest.options![1].optionTitle === "Today"
-                      ? rest.options![1].optionValue
-                      : rest.options![0].optionValue
-                  }
+                  defaultValue={rest.options![0].optionValue}
                   render={({ field }) => (
                     <InputSelect field={field} rest={rest} />
                   )}

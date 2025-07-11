@@ -1,10 +1,10 @@
-import { Stack, styled } from "@mui/material";
+import { Stack, styled } from "@mui/material"
 
 const SingleFlightPageContainer = styled(Stack)({
   width: "100%",
   minHeight: "100vh",
   backgroundColor: "var(--background-color)",
-  padding: " 64px 0",
+  padding: " 32px 0",
 
   h1: {
     fontSize: "2.5rem",
@@ -25,7 +25,7 @@ const SingleFlightPageContainer = styled(Stack)({
     fontFamily: "var(--font-base)",
   },
 
-  ".text-loader":{
+  ".text-loader": {
     fontSize: "1.5rem",
     color: "var(--primary-color-extradark)",
   },
@@ -37,8 +37,6 @@ const SingleFlightPageContainer = styled(Stack)({
   "#canvas-container:active": {
     cursor: "grabbing",
   },
-
-  
 })
 
 export default SingleFlightPageContainer

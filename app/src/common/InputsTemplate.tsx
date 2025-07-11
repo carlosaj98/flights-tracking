@@ -89,7 +89,6 @@ const InputSelect: React.FC<InputProps> = ({ field, rest }) => {
         MenuListProps: {
           disablePadding: true,
           sx: {
-            padding: "12px",
             display: "flex",
             flexDirection: "column",
             gap: "6px",
@@ -102,7 +101,20 @@ const InputSelect: React.FC<InputProps> = ({ field, rest }) => {
             backgroundColor: "var(--neutral-300)",
             backdropFilter: "blur(5px)",
             boxShadow: "0 2px 4px var(--neutral-400)",
-            padding: "6px",
+            padding: "12px",
+            "::-webkit-scrollbar-track": {
+              background: "transparent",
+              borderRadius: "6px",
+            },
+            "::-webkit-scrollbar-thumb": {
+              background: "var(--neutral-600)",
+              borderRadius: "12px",
+              border: "3px solid var(--neutral-300)",
+              "&:hover": {
+                cursor: "pointer",
+                background: "var(--neutral-500)",
+              },
+            },
           },
         },
       }}
@@ -156,7 +168,7 @@ const InputRadio: React.FC<InputProps> = ({ field, rest }) => {
           <FormControlLabel
             key={option.optionValue}
             value={option.optionValue}
-            control={<Radio disableRipple/>}
+            control={<Radio disableRipple />}
             label={option.optionTitle}
           />
         ))}

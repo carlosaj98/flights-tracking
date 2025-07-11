@@ -32,6 +32,7 @@ const SectionMain: React.FC<SectionMainProps> = ({
         flexDirection={{ lg: "row", xs: "column" }}
         alignItems={"center"}
         gap={"32px"}
+        height={{ lg: "600px", xs: "fit-content" }}
       >
         <ServicesForm
           formFields={formFields}
