@@ -1,53 +1,88 @@
-import { Stack, styled } from "@mui/material";
+import { Stack, styled } from "@mui/material"
 
 const AirportCardContainer = styled(Stack)({
   backgroundColor: "white",
-  justifyContent:"space-between",
-  alignItems:"center",
-  padding:"12px 24px",
-  borderRadius:"18px",
-  boxShadow:"0 2px 5px var(--gray-base)",
-  gap:"12px",
+  justifyContent: "flex-start",
+  alignItems: "center",
+  padding: "24px",
+  borderRadius: "6px",
+  boxShadow: "0 2px 4px var(--neutral-200)",
+  border: "1px solid var(--neutral-200)",
+  gap: "12px",
 
-  p:{
-    fontFamily:"var(--font-base)",
+  p: {
+    fontFamily: "var(--font-base)",
   },
 
-  ".airport-title-container":{
-    justifyContent:"center",
+  ".airport-title-container": {
+    justifyContent: "space-between",
+    flexDirection: "row",
+    gap: "12px",
+    width: "100%",
+    height: "60px",
+    alignItems: "flex-start",
+    "& .airport-name": {
+      fontSize: "1.1rem",
+      fontWeight: "600",
+      color: "var(--neutral-800)",
+      width: "100%",
+      // whiteSpace:"nowrap",
+      // overflow:"hidden",
+      // textOverflow: "ellipsis"
+    },
+  },
+
+  ".airport-code": {
+    fontSize: "14px",
+    fontWeight: "500",
+    borderRadius: "18px",
+    padding: "3px 6px",
+    textAlign: "center",
+  },
+
+  ".airport-details-container": {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    gap: "12px",
+    width: "100%",
+  },
+
+  ".airport-details": {
+    backgroundColor: "var(--neutral-100)",
     width:"100%",
+    borderRadius: "6px",
+    padding: "6px 12px",
+    "& p:nth-of-type(1)": {
+      fontSize: "14px",
+      color:"var(--neutral-600)",
+    },
+    "& p:nth-of-type(2)": {
+      fontSize: "14px",
+      fontWeight:"500",
+      color:"var(--neutral-800)"
+    },
+  },
+  ".maps-button":{
+    width:"100%",
+    borderRadius:"6px",
+    backgroundColor:"var(--blue-600)",
+    padding:"6px 12px",
+    justifyContent:"center",
+    display:"flex",
     alignItems:"center",
-    textAlign:"center",
-    "& .airport-name":{
-      fontSize:"1.25rem",
-      fontWeight:"500",
-      color:"var(--primary-color-extradark)"
+    gap:"12px",
+    color:"var(--blue-50)",
+    transition: "all 0.2s ease",
+    marginTop:"auto",
+    "&:hover":{
+      backgroundColor:"var(--blue-800)",
     },
-  },
-
-  ".airport-code":{
-    fontSize:"1.5rem",
-    fontWeight:"600",
-    color:"var(--primary-color-base)"
-  },
-
-  ".airport-coord-container":{
-    flexDirection:"row",
-    justifyContent:"center",
-    gap:"32px",
-    width:"100%",
-    textAlign:"center",
-    "& .coord-title":{
-      fontSize:"1.1rem",
-      fontWeight:"500",
-      color:"var(--gray-base)"
+    p:{
+          fontSize:"14px",
     },
-  
-    "& .airport-coord":{
-      fontSize:"1.1rem",
-      fontWeight:"600",
-      color:"var(--gray-dark)"
-    },
+    svg:{
+      fill:"var(--blue-50)"
+    }
   }
 })
 

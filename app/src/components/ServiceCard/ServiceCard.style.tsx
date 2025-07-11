@@ -3,12 +3,12 @@ import { Stack, styled } from "@mui/material"
 const ServiceCardContainer = styled(Stack)({
   backgroundColor: "white",
   width: "100%",
-  justifyContent: "center",
+  justifyContent: "space-between",
   alignItems: "center",
   textAlign: "center",
   padding: "24px",
-  borderRadius: "18px",
-  boxShadow: "0px 3px 6px var(--gray-semilight)",
+  borderRadius: "6px",
+  boxShadow: "0px 3px 6px var(--neutral-300)",
   gap: "24px",
 
   p: {
@@ -17,30 +17,28 @@ const ServiceCardContainer = styled(Stack)({
 
   ".service-title": {
     fontWeight: "600",
+    color:"var(--neutral-700)",
   },
 
   ".service-desc": {
     fontWeight: "400",
-    color: "var(--gray-dark)",
+    color: "var(--neutral-600)",
   },
 
   a: {
-    width: "100%",
     fontFamily: "var(--font-base)",
-    fontWeight: "600",
-    fontSize: "1.1rem",
-    borderRadius: "18px",
+    fontWeight: "500",
+    fontSize: "1rem",
+    borderRadius: "24px",
     cursor: "pointer",
-    backgroundColor: "var(--primary-color-base)",
-    padding: "8px",
-    boxShadow: "0 2px 4px var(--primary-color-light) inset",
+    backgroundColor: "var(--blue-600)",
+    padding: "8px 24px",
     textDecoration: "none",
-    color: "white",
+    color: "var(--blue-50)",
     transition: "all 0.2s ease",
     "&:hover": {
-      backgroundColor: "var(--primary-color-dark)",
-      boxShadow: "0 2px 4px var(--primary-color-extradark) inset",
-      color: "var(--primary-color-extralight)",
+      backgroundColor: "var(--blue-800)",
+      color: "var(--neutral-50)",
     },
   },
 })

@@ -6,3 +6,8 @@ export interface AirportData {
   lng:          number;
   country_code: string;
 }
+
+export interface AirportCoordsView {
+  lat: number,
+  lng: number
+}

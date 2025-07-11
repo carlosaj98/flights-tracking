@@ -5,19 +5,19 @@ const CustomForm = styled("form")({
   flexDirection:"column",
   width:"100%",
   gap:"24px",
-  backgroundColor:"white",
+  backgroundColor:"var(--neutral-50)",
   padding:"18px",
-  borderRadius:"18px",
-  boxShadow:"0px 3px 6px var(--gray-semilight)",
+  borderRadius:"6px",
+  boxShadow:"0px 3px 6px var(--neutral-300)",
 
   ".input-container":{
 
     display:"flex",
     flexDirection:"column",
     gap:"6px",
-    color:"black",
-    fontWeight:"600",
-    fontSize:"1.1rem"
+    color:"var(--neutral-800)",
+    fontWeight:"500",
+    fontSize:"1rem"
   },
 
   ".custom-error-text": {

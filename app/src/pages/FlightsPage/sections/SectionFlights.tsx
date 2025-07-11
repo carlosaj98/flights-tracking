@@ -28,67 +28,74 @@ const SectionFlights: React.FC<SectionFlightsProps> = ({
       gap={"12px"}
       marginTop={"32px"}
     >
-      <Stack
-        borderTop={"2px solid var(--gray-base)"}
-        padding={"24px"}
-        alignItems={"center"}
-      >
-        <Typography variant="h3">Flights</Typography>
+      <Stack borderTop={"2px solid var(--neutral-200)"} paddingTop={"24px"}>
+        <Typography variant="h3" alignSelf={"flex-start"}>
+          Flight Results
+        </Typography>
       </Stack>
-      <Stack id="flights-list-container" gap={"32px"} alignItems={"center"}>
-        <Stack alignItems={"center"} width={"100%"} gap={"12px"}>
-          <Typography id="flights-count">
-            Found flights: <span>{pagination!.total}</span>
-          </Typography>
-          <Stack
-            gap={"48px"}
-            flexDirection={"row"}
-            width={"100%"}
-            justifyContent={"center"}
-            alignItems={"center"}
-          >
-            <Button
-              className="btn-pages"
-              variant="contained"
-              disabled={offset === 0}
-              sx={{ width: {sm:"100px", xs:"75px" }}}
-              onClick={() => {
-                setOffset(offset - pagination!.limit), setIsLoading(true)
-              }}
-            >
-              <Box height={"20px"}>
-                <IconArrow direction="left" />
-              </Box>
-            </Button>
-              <Typography id="pagination">
-                Page: {offset / pagination!.limit} /{" "}
-                {Math.round(pagination!.total / pagination!.limit)}
-              </Typography>
-
-
-            <Button
-              className="btn-pages"
-              variant="contained"
-              disabled={offset >= pagination!.total}
-              sx={{ width: {sm:"100px", xs:"75px" }}}
-              onClick={() => {
-                setOffset(offset + pagination!.limit), setIsLoading(true)
-              }}
-            >
-              <Box height={"20px"}>
-                <IconArrow direction="right" />
-              </Box>
-            </Button>
-          </Stack>
+      <Stack id="flights-list-container" gap={"32px"}>
+        <Typography id="flights-count">
+          Found <span>{pagination!.total}</span> flights
+        </Typography>
+        <Stack
+          flexDirection={"row"}
+          justifyContent={"space-between"}
+          width={"100%"}
+          flexWrap={"wrap"}
+          gap={"12px"}
+        >
+          {flights.map((flightData) => {
+            return (
+              <FlightDetailCard
+                key={flightData.flight.iata! + flightData.flight_date!}
+                data={flightData}
+              />
+            )
+          })}
         </Stack>
-        {flights.map((flightData) => {
-          return (
-            <FlightDetailCard
-              key={flightData.flight.iata! + flightData.flight_date!}
-              data={flightData}
-            />
-          )
-        })}
+        <Stack
+          gap={"24px"}
+          flexDirection={"row"}
+          width={"100%"}
+          justifyContent={{ md: "center", xs: "space-between" }}
+          alignItems={"center"}
+        >
+          <Button
+            className="btn-pages"
+            variant="contained"
+            disableElevation
+            sx={{ width: { md: "120px", xs: "100px" } }}
+            disabled={offset === 0}
+            onClick={() => {
+              setOffset(offset - pagination!.limit), setIsLoading(true)
+            }}
+          >
+            <Box height={"20px"}>
+              <IconArrow direction="left" />
+            </Box>
+            Previous
+          </Button>
+          <Typography id="pagination">
+            {`Page ${offset / pagination!.limit} of ${Math.round(
+              pagination!.total / pagination!.limit
+            )}
+            `}
+          </Typography>
+
+          <Button
+            className="btn-pages"
+            variant="contained"
+            sx={{ width: { md: "120px", xs: "100px" } }}
+            disableElevation
+            disabled={offset >= pagination!.total}
+            onClick={() => {
+              setOffset(offset + pagination!.limit), setIsLoading(true)
+            }}
+          >
+            Next
+            <IconArrow direction="right" />
+          </Button>
+        </Stack>
       </Stack>
     </Stack>
   )

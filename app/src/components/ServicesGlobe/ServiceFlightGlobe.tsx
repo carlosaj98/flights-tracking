@@ -2,6 +2,9 @@ import Globe from "react-globe.gl"
 import ServiceFlightData from "./ServiceFlightData"
 import useGlobeWidth from "../../hooks/useGlobeWidth"
 import { FlightData } from "../../interfaces/flightData.interface"
+import { useEffect, useState } from "react"
+import { airports } from "../../utils/airportsData.json"
+import { AirportCoordsView } from "../../interfaces/airportData.interface"
 
 type GlobeProps = {
   flights: FlightData[]
@@ -14,15 +17,35 @@ const ServiceFlightGlobe: React.FC<GlobeProps> = ({
   flights,
   flightsDirection,
   airportCode,
-  type
+  type,
 }) => {
+  const [coordsView, setCoordsView] = useState<AirportCoordsView>({
+    lat: 0,
+    lng: 0,
+  })
   const { arcsData, newMaterial, globeRef } = ServiceFlightData(
     flights,
     flightsDirection,
     airportCode,
-    type
+    type,
+    coordsView
   )
   const { globeWidth } = useGlobeWidth()
+
+  useEffect(() => {
+    if (flights.length > 0) {
+      console.log(flightsDirection)
+      const airportCoords = airports.find((airport) => {
+        return !airportCode
+          ? airport.iata_code === flights[0].departure.iata
+          : airport.iata_code === airportCode.toUpperCase()
+      })
+      setCoordsView({
+        lat: airportCoords?.lat || 0,
+        lng: airportCoords?.lng || 0,
+      })
+    }
+  }, [flights])
 
   return (
     <Globe
@@ -32,13 +55,14 @@ const ServiceFlightGlobe: React.FC<GlobeProps> = ({
       backgroundColor="rgba(0,0,0,0)"
       globeMaterial={newMaterial}
       arcsData={arcsData}
-      arcColor={["#fce28b", "#fabc34", "#d87007"]}
-      arcStroke={1}
+      arcColor={() => "rgba(244, 150, 12, 1)"}
+      arcStroke={0.75}
       arcDashLength={1}
       arcDashGap={() => 1}
       arcDashAnimateTime={1500}
       animateIn={true}
-      atmosphereColor="#357af9"
+      atmosphereColor="#91c2ff"
+      atmosphereAltitude={0.15}
     />
   )
 }

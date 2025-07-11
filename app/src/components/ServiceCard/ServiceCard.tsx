@@ -13,11 +13,11 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ serviceField }) => {
       <Box width={"100px"} height={"100px"} sx={{ objectFit: "contain" }}>
         <img src={serviceField.image} width={"100%"} height={"100%"}></img>
       </Box>
-      <Stack>
-        <Typography className="service-title" fontSize={"1.25rem"}>
+      <Stack gap={"6px"} flexGrow={1}>
+        <Typography className="service-title" fontSize={"1.15rem"}>
           {serviceField.title}
         </Typography>
-        <Typography className="service-desc" fontSize={"1rem"}>
+        <Typography className="service-desc" fontSize={"14px"}>
           {serviceField.desc}
         </Typography>
       </Stack>

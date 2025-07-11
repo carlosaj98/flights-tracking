@@ -34,7 +34,12 @@ const SectionMain: React.FC<SectionMainProps> = ({
           In-Depth Information of Your Selected Flight
         </Typography>
       </Stack>
-      <Stack flexDirection={{ lg: "row", xs: "column" }} alignItems={"center"}>
+      <Stack
+        flexDirection={{ lg: "row", xs: "column" }}
+        alignItems={"center"}
+        gap={"32px"}
+        height={{ lg: "600px", xs: "fit-content" }}
+      >
         <ServicesForm
           formFields={formFields}
           actionForm={setFormData}

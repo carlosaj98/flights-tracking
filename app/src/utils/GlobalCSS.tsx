@@ -69,7 +69,7 @@ function GlobalCSS() {
           "--black-op-light": "rgba(0,0,0, 0.25)",
           "--black-op-dark": "rgba(0,0,0, 0.75)",
 
-          "--background-color": "#f5f5f7",
+          "--background-color": "#f5f5f5",
 
           "--font-base": "Poppins, sans-serif",
         },
@@ -105,9 +105,10 @@ function GlobalCSS() {
         },
 
         ".Toastify__toast": {
-          borderRadius: "18px",
+          borderRadius: "6px",
           padding: "12px",
           marginTop: "24px",
+          fontFamily:"var(--font-base)"
         },
       }}
     />

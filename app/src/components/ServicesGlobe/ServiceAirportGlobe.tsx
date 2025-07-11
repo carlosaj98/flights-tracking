@@ -1,22 +1,28 @@
 import Globe from "react-globe.gl"
 import ServiceAirportData from "./ServiceAirportData"
 import useGlobeWidth from "../../hooks/useGlobeWidth"
-import { AirportData } from "../../interfaces/airportData.interface"
+import {
+  AirportCoordsView,
+  AirportData,
+} from "../../interfaces/airportData.interface"
+import { useEffect, useState } from "react"
 
 type GlobeProps = {
   airports: AirportData[]
 }
 
-const ServiceAirportGlobe: React.FC<GlobeProps> = ({airports}) => {
-  const { newMaterial, globeRef } = ServiceAirportData()
+const ServiceAirportGlobe: React.FC<GlobeProps> = ({ airports }) => {
+  const [coordsView, setCoordsView] = useState<AirportCoordsView>({
+    lat: 0,
+    lng: 0,
+  })
+  useEffect(() => {
+    if (airports.length > 0)
+      setCoordsView({ lat: airports[0].lat, lng: airports[0].lng })
+  }, [airports])
 
-  // const N = 30
-  // const gData = [...Array(N).keys()].map(() => ({
-  //   lat: (Math.random() - 0.5) * 180,
-  //   lng: (Math.random() - 0.5) * 360,
-  //   size: 7 + Math.random() * 30,
-  //   color: ["red", "white", "blue", "green"][Math.round(Math.random() * 3)],
-  // }))
+  // const coordsView = { lat: airports[0].lat || 0, lng: airports[0].lng || 0 }
+  const { newMaterial, globeRef } = ServiceAirportData(coordsView)
 
   const { globeWidth } = useGlobeWidth()
   return (
@@ -26,13 +32,16 @@ const ServiceAirportGlobe: React.FC<GlobeProps> = ({airports}) => {
       height={globeWidth}
       backgroundColor="rgba(0,0,0,0)"
       pointsData={airports}
-      pointColor={()=>"#fabc34"}
+      pointColor={() => "rgba(244, 150, 12, 0.75)"}
       pointAltitude={0.1}
-      pointRadius={0.15}
+      pointRadius={0.2}
       pointResolution={6}
       globeMaterial={newMaterial}
       animateIn={true}
-      atmosphereColor="#357af9"
+      atmosphereColor="#91c2ff"
+      atmosphereAltitude={0.15}
+      pointLabel={""}
+      pointsMerge={true}
     />
   )
 }

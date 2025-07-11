@@ -3,21 +3,24 @@ import SocialLinks from "../../../components/SocialLinks/SocialLinks"
 
 const SectionContact: React.FC = () => {
   return (
-    <Stack component={"section"} alignItems={"center"} gap={"32px"}>
-      <Stack id="contact-header" alignItems={"center"} textAlign={"center"}>
+    <Stack
+      component={"section"}
+      alignItems={"center"}
+      gap={"24px"}
+      marginBottom={"64px"}
+    >
+      <Stack
+        id="contact-header"
+        alignItems={"center"}
+        textAlign={"center"}
+        gap={"6px"}
+      >
+        <Typography variant={"h3"}>Contact</Typography>
         <Typography
-          variant={"h3"}
           fontFamily={"var(--font-base)"}
-          fontSize={"2.25rem"}
-          fontWeight={"600"}
-        >
-          Contact
-        </Typography>
-        <Typography
-          fontFamily={"var(--font-base)"}
-          fontSize={"1.25rem"}
+          fontSize={"1.15rem"}
           fontWeight={"500"}
-          color={"var(--gray-semidark)"}
+          color={"var(--neutral-600)"}
         >
           Easily connect for assistance, inquiries, or feedback
         </Typography>
@@ -35,7 +38,12 @@ const SectionContact: React.FC = () => {
           width={{ lg: "400px", xs: "250px" }}
           height={{ lg: "400px", xs: "250px" }}
         >
-          <img src="/contact_image.png" width={"100%"} height={"100%"} />
+          <img
+            src="/contact_image.png"
+            width={"100%"}
+            height={"100%"}
+            style={{ filter: "grayscale(100%)", opacity:"80%", borderRadius:"6px" }}
+          />
         </Box>
         <Stack
           maxWidth={"65ch"}
@@ -43,7 +51,8 @@ const SectionContact: React.FC = () => {
           justifyContent={"center"}
           gap={"24px"}
           id="contact-text"
-          color={"var(--gray-dark)"}
+          color={"var(--neutral-600)"}
+          fontSize={"16px"}
         >
           <p>
             I am Carlos, the creator of this website dedicated to real-time

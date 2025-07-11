@@ -7,8 +7,19 @@ interface FlightDetailsProps {
   title: string
 }
 
-const FlightDetailsContent: React.FC<FlightDetailsProps> = ({ data, title }) => {
+const FlightDetailsContent: React.FC<FlightDetailsProps> = ({
+  data,
+  title,
+}) => {
   const isMobileScreen: boolean = useMediaQuery("(max-width:600px)")
+  const truncateNames = (name: string) => {
+    if (name === null) return "---"
+    const maxCharacters = 40
+    if (name.length > maxCharacters) {
+      return name.slice(0, maxCharacters) + "..."
+    }
+    return name
+  }
 
   return (
     <Stack
@@ -18,10 +29,12 @@ const FlightDetailsContent: React.FC<FlightDetailsProps> = ({ data, title }) => 
     >
       <Typography className="direction-title">{title}</Typography>
       <Stack className="airport-container">
-        <Typography className="airport-name">{data.airport}</Typography>
+        <Typography className="airport-name">
+          {truncateNames(data.airport || "---")}
+        </Typography>
         <Stack className="airport-code-container">
-          <Typography>IATA: {data.iata}</Typography>
-          <Typography>ICAO: {data.icao}</Typography>
+          <Typography>IATA: {data.iata || "---"}</Typography>
+          <Typography>ICAO: {data.icao || "---"}</Typography>
         </Stack>
       </Stack>
 
@@ -35,64 +48,51 @@ const FlightDetailsContent: React.FC<FlightDetailsProps> = ({ data, title }) => 
             <Stack textAlign={"center"} gap={"12px"} width={"100%"}>
               <Stack
                 className="date-container"
-                borderRadius={"18px 0px 0px 18px"}
+                borderRadius={"6px 0px 0px 6px"}
               >
                 <Typography>Scheduled</Typography>
                 <Typography>{transformDate(data.scheduled, "full")}</Typography>
-              </Stack>
-              <Stack className="site-container">
-                <Typography>Terminal</Typography>
-                <Typography>{data.terminal}</Typography>
               </Stack>
             </Stack>
             <Stack textAlign={"center"} gap={"12px"} width={"100%"}>
               <Stack
                 className="date-container"
-                borderRadius={"0px 18px 18px 0px"}
+                borderRadius={"0px 6px 6px 0px"}
               >
                 <Typography>Estimated</Typography>
                 <Typography>{transformDate(data.estimated, "full")}</Typography>
-              </Stack>
-              <Stack className="site-container">
-                <Typography>Gate</Typography>
-                <Typography>{data.gate}</Typography>
               </Stack>
             </Stack>
           </>
         ) : (
           <>
             <Stack textAlign={"center"} gap={"12px"} width={"100%"}>
-              <Stack className="date-container" borderRadius={"18px"}>
+              <Stack className="date-container" borderRadius={"6px"}>
                 <Typography>Scheduled</Typography>
                 <Typography fontSize={"0.85rem"}>
                   {transformDate(data.scheduled, "full")}
                 </Typography>
               </Stack>
-              <Stack className="date-container" borderRadius={"18px"}>
+              <Stack className="date-container" borderRadius={"6px"}>
                 <Typography>Estimated</Typography>
                 <Typography fontSize={"0.85rem"}>
                   {transformDate(data.estimated, "full")}
                 </Typography>
               </Stack>
             </Stack>
-            <Stack
-              textAlign={"center"}
-              gap={"12px"}
-              width={"100%"}
-              flexDirection={"row"}
-              justifyContent={"center"}
-            >
-              <Stack className="site-container">
-                <Typography fontSize={"0.85rem"}>Terminal</Typography>
-                <Typography fontSize={"0.85rem"}>{data.terminal}</Typography>
-              </Stack>
-              <Stack className="site-container">
-                <Typography fontSize={"0.85rem"}>Gate</Typography>
-                <Typography fontSize={"0.85rem"}>{data.gate}</Typography>
-              </Stack>
-            </Stack>
           </>
         )}
+      </Stack>
+      <Stack className="shipment-container">
+        <Stack className="shipment-info">
+          <Typography>Terminal</Typography>
+          <Typography>{`${data.terminal || "-"}`}</Typography>
+        </Stack>
+
+        <Stack className="shipment-info">
+          <Typography>Gate</Typography>
+          <Typography>{`${data.gate || "-"}`}</Typography>
+        </Stack>
       </Stack>
     </Stack>
   )

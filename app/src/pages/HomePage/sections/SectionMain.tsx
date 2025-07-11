@@ -26,22 +26,20 @@ const SectionMain: React.FC = () => {
       flexDirection={{ lg: "row", xs: "column" }}
       alignItems={"center"}
       justifyContent={"center"}
-      marginTop={"24px"}
+      marginTop={"64px"}
     >
       <Stack
         id="hero-text-container"
-        maxWidth={{ lg: "calc(100% - 700px)"}}
+        maxWidth={{ lg: "calc(100% - 600px)" }}
         height={{ lg: "700px", xs: "fit-content" }}
         className="animate__animated animate__fadeIn"
+        flexGrow={1}
       >
         <Stack textAlign={{ lg: "left", xs: "center" }}>
           <h1>
             Find your <span>Flight</span>!
           </h1>
-          <h2>
-            Track flights in real time with the possibility of visualize them in
-            3D.
-          </h2>
+          <h2>Track flights in real time and visualize them in 3D.</h2>
         </Stack>
         <HeroForm
           formFields={formFields}
@@ -52,7 +50,7 @@ const SectionMain: React.FC = () => {
       </Stack>
       <Stack
         id="canvas-container"
-        width={{md:"100%", xs:"fit-content"}}
+        width={{ lg: "600px", xs: "fit-content" }}
         alignItems={"center"}
         className="animate__animated animate__zoomInDown"
       >

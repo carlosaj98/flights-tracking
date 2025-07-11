@@ -1,4 +1,6 @@
 function transformDate(date: string, result: "date" | "time" | "full") {
+  if (date === null) return "---"
+
   const newDate = new Date(date)
   const year = newDate.getUTCFullYear()
   const month = String(newDate.getUTCMonth() + 1).padStart(2, "0")

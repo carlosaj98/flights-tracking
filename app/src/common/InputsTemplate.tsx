@@ -34,31 +34,25 @@ const InputText: React.FC<InputProps> = ({
       helperText={helperText}
       FormHelperTextProps={{ className: "custom-error-text" }}
       InputProps={{
-        startAdornment: (
-          <Stack marginRight={"18px"}>
-            {rest.icon}
-          </Stack>
-        ),
+        startAdornment: <Stack marginRight={"18px"}>{rest.icon}</Stack>,
         sx: {
-          borderRadius: "18px",
+          borderRadius: "6px",
           backgroundColor: "white",
           fontFamily: "var(--font-base)",
-          boxShadow: "0 2px 4px var(--gray-semilight) inset",
         },
       }}
       sx={{
         ".MuiOutlinedInput-root": {
           "& fieldset": {
             transition: "all 0.2s ease-out",
-            border: "1px solid var(--gray-semilight)",
+            border: "1px solid var(--neutral-300)",
           },
           "&:hover fieldset": {
-            border: "1px solid var(--gray-base)",
-            boxShadow: "0 2px 4px var(--gray-base) inset",
+            border: "1px solid var(--neutral-400)",
           },
           "&.Mui-focused fieldset": {
-            boxShadow: "0 2px 4px var(--primary-color-base) inset",
-            border: "1px solid var(--primary-color-base)",
+            boxShadow: "0 2px 4px var(--neutral-400) inset",
+            border: "1px solid var(--neutral-400)",
           },
         },
       }}
@@ -71,29 +65,23 @@ const InputSelect: React.FC<InputProps> = ({ field, rest }) => {
     <Select
       {...field}
       {...rest}
-      startAdornment={
-        <Stack marginRight={"18px"} >
-          {rest.icon}
-        </Stack>
-      }
+      startAdornment={<Stack marginRight={"18px"}>{rest.icon}</Stack>}
       sx={{
-        borderRadius: "18px",
+        borderRadius: "6px",
         backgroundColor: "white",
         fontFamily: "var(--font-base)",
-        boxShadow: "0 2px 4px var(--gray-semilight) inset",
 
         "&.MuiOutlinedInput-root": {
           "& fieldset": {
             transition: "all 0.2s ease-out",
-            border: "1px solid var(--gray-semilight)",
+            border: "1px solid var(--neutral-300)",
           },
           "&:hover fieldset": {
-            border: "1px solid var(--gray-base)",
-            boxShadow: "0 2px 4px var(--gray-base) inset",
+            border: "1px solid var(--neutral-400)",
           },
           "&.Mui-focused fieldset": {
-            boxShadow: "0 2px 4px var(--primary-color-base) inset",
-            border: "1px solid var(--primary-color-base)",
+            boxShadow: "0 2px 4px var(--neutral-400) inset",
+            border: "1px solid var(--neutral-400)",
           },
         },
       }}
@@ -101,7 +89,6 @@ const InputSelect: React.FC<InputProps> = ({ field, rest }) => {
         MenuListProps: {
           disablePadding: true,
           sx: {
-            padding: "12px",
             display: "flex",
             flexDirection: "column",
             gap: "6px",
@@ -110,28 +97,23 @@ const InputSelect: React.FC<InputProps> = ({ field, rest }) => {
         sx: {
           "& .MuiMenu-paper": {
             marginTop: "12px",
-            borderRadius: "12px",
-            backgroundColor: "var(--gray-semilight)",
+            borderRadius: "6px",
+            backgroundColor: "var(--neutral-300)",
             backdropFilter: "blur(5px)",
-            boxShadow: "0 2px 4px var(--gray-semidark)",
-            padding:"6px",
-            "::-webkit-scrollbar": {
-              width: "16px",
-            },
+            boxShadow: "0 2px 4px var(--neutral-400)",
+            padding: "12px",
             "::-webkit-scrollbar-track": {
-              background: "var(--gray-semilight)",
-              borderRadius: "12px",
-              margin:"16px 0"
-              
+              background: "transparent",
+              borderRadius: "6px",
             },
             "::-webkit-scrollbar-thumb": {
-              background: "var(--gray-semidark)",
+              background: "var(--neutral-600)",
               borderRadius: "12px",
-              border:"4px solid var(--gray-semilight)",
-              "&:hover":{
-                cursor:"pointer",
-                background: "var(--gray-dark)"
-              }
+              border: "3px solid var(--neutral-300)",
+              "&:hover": {
+                cursor: "pointer",
+                background: "var(--neutral-500)",
+              },
             },
           },
         },
@@ -145,22 +127,19 @@ const InputSelect: React.FC<InputProps> = ({ field, rest }) => {
           divider
           sx={{
             padding: "12px 24px",
-            color: "black",
+            color: "var(--neutral-800)",
             transition: "all 0.2s ease-out",
             backgroundColor: "white",
-            boxShadow: "0 2px 4px var(--gray-base)",
-            borderRadius: "12px",
+            boxShadow: "0 1px 2px var(--neutral-400)",
+            borderRadius: "6px",
             "&:hover, &.MuiMenuItem-root.Mui-selected:hover": {
-              color: "white",
-              backgroundColor: "var(--gray-dark)",
-
-              boxShadow: "0 2px 4px var(--gray-semidark)",
+              backgroundColor: "var(--blue-50)",
             },
             fontFamily: "var(--font-base)",
 
             "&.MuiMenuItem-root.Mui-selected": {
-              color: "white",
-              backgroundColor: "var(--primary-color-base)",
+              color: "var(--blue-600)",
+              backgroundColor: "white",
             },
           }}
         >
@@ -180,19 +159,16 @@ const InputRadio: React.FC<InputProps> = ({ field, rest }) => {
         span: { fontFamily: "var(--font-base)" },
       }}
     >
-      <FormLabel id="demo-controlled-radio-buttons-group">
-        {rest.label}
-      </FormLabel>
+      <FormLabel>{rest.label}</FormLabel>
       <RadioGroup
-        aria-labelledby="demo-controlled-radio-buttons-group"
-        name="controlled-radio-buttons-group"
         defaultValue={rest.options[0].optionValue}
+        sx={{ display: "flex", flexDirection: "row", gap: "12px" }}
       >
         {rest.options?.map((option: optionsInputInterface) => (
           <FormControlLabel
             key={option.optionValue}
             value={option.optionValue}
-            control={<Radio />}
+            control={<Radio disableRipple />}
             label={option.optionTitle}
           />
         ))}
