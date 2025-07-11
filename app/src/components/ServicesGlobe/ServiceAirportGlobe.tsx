@@ -1,14 +1,28 @@
 import Globe from "react-globe.gl"
 import ServiceAirportData from "./ServiceAirportData"
 import useGlobeWidth from "../../hooks/useGlobeWidth"
-import { AirportData } from "../../interfaces/airportData.interface"
+import {
+  AirportCoordsView,
+  AirportData,
+} from "../../interfaces/airportData.interface"
+import { useEffect, useState } from "react"
 
 type GlobeProps = {
   airports: AirportData[]
 }
 
 const ServiceAirportGlobe: React.FC<GlobeProps> = ({ airports }) => {
-  const { newMaterial, globeRef } = ServiceAirportData()
+  const [coordsView, setCoordsView] = useState<AirportCoordsView>({
+    lat: 0,
+    lng: 0,
+  })
+  useEffect(() => {
+    if (airports.length > 0)
+      setCoordsView({ lat: airports[0].lat, lng: airports[0].lng })
+  }, [airports])
+
+  // const coordsView = { lat: airports[0].lat || 0, lng: airports[0].lng || 0 }
+  const { newMaterial, globeRef } = ServiceAirportData(coordsView)
 
   const { globeWidth } = useGlobeWidth()
   return (

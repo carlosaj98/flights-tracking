@@ -26,12 +26,12 @@ const AirportsPage: React.FC = () => {
         <SectionMain
           setFormData={setFormData}
           setIsLoading={setIsLoading}
-          airports={exampleAirports}
+          airports={airports}
           formData={formData}
           isLoading={isLoading}
         />
-        {!isLoading && exampleAirports.length ? (
-          <SectionAirports airports={exampleAirports} isLoading={isLoading} />
+        {!isLoading && airports.length ? (
+          <SectionAirports airports={airports} isLoading={isLoading} />
         ) : (
           <Loader status={isLoading} text="Airports"/>
         )}
