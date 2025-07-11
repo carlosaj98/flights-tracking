@@ -12,6 +12,14 @@ const FlightDetailsContent: React.FC<FlightDetailsProps> = ({
   title,
 }) => {
   const isMobileScreen: boolean = useMediaQuery("(max-width:600px)")
+  const truncateNames = (name: string) => {
+    if (name === null) return "---"
+    const maxCharacters = 40
+    if (name.length > maxCharacters) {
+      return name.slice(0, maxCharacters) + "..."
+    }
+    return name
+  }
 
   return (
     <Stack
@@ -21,7 +29,9 @@ const FlightDetailsContent: React.FC<FlightDetailsProps> = ({
     >
       <Typography className="direction-title">{title}</Typography>
       <Stack className="airport-container">
-        <Typography className="airport-name">{data.airport}</Typography>
+        <Typography className="airport-name">
+          {truncateNames(data.airport || "---")}
+        </Typography>
         <Stack className="airport-code-container">
           <Typography>IATA: {data.iata || "---"}</Typography>
           <Typography>ICAO: {data.icao || "---"}</Typography>

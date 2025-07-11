@@ -24,6 +24,14 @@ const FlightDetailsHeader: React.FC<FlightDetailsProps> = ({ data }) => {
     default:
       flightStatusColor = "var(--neutral-400)"
   }
+  const truncateNames = (name: string) => {
+    if (name === null) return "---"
+    const maxCharacters = 40
+    if (name.length > maxCharacters) {
+      return name.slice(0, maxCharacters) + "..."
+    }
+    return name
+  }
   return (
     <Stack
       flexDirection={{ sm: "row", xs: "column" }}
@@ -70,11 +78,8 @@ const FlightDetailsHeader: React.FC<FlightDetailsProps> = ({ data }) => {
           >
             {data.departure.iata || "---"}
           </Typography>
-          <Typography
-            className="header-text-subtitle"
-            fontSize={"14px"}
-          >
-            {data.departure.airport || "---"}
+          <Typography className="header-text-subtitle" fontSize={"14px"}>
+            {truncateNames(data.departure.airport || "---")}
           </Typography>
         </Stack>
         <Stack
@@ -92,11 +97,8 @@ const FlightDetailsHeader: React.FC<FlightDetailsProps> = ({ data }) => {
           >
             {data.arrival.iata || "---"}
           </Typography>
-          <Typography
-            className="header-text-subtitle"
-            fontSize={"14px"}
-          >
-            {data.arrival.airport || "---"}
+          <Typography className="header-text-subtitle" fontSize={"14px"}>
+            {truncateNames(data.arrival.airport || "---")}
           </Typography>
         </Stack>
       </Stack>

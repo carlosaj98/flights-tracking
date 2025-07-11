@@ -34,8 +34,11 @@ const ServiceFlightGlobe: React.FC<GlobeProps> = ({
 
   useEffect(() => {
     if (flights.length > 0) {
+      console.log(flightsDirection)
       const airportCoords = airports.find((airport) => {
-        return airport.iata_code === airportCode.toUpperCase()
+        return !airportCode
+          ? airport.iata_code === flights[0].departure.iata
+          : airport.iata_code === airportCode.toUpperCase()
       })
       setCoordsView({
         lat: airportCoords?.lat || 0,
