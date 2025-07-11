@@ -55,6 +55,7 @@ function ServiceFlightData(
         {
           lat: coordsView.lat,
           lng: coordsView.lng,
+          altitude: 2
         },
         500
       )

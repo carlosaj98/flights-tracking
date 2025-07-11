@@ -19,6 +19,7 @@ function ServiceAirportData(coords: AirportCoordsView) {
         {
           lat: coords.lat,
           lng: coords.lng,
+          altitude: 2
         },
         500
       )

@@ -4,7 +4,7 @@ const AirportsPageContainer = styled(Stack)({
   width: "100%",
   minHeight: "100vh",
   backgroundColor: "var(--background-color)",
-  padding: " 64px 0",
+  padding: " 32px 0",
 
   p: {
     fontFamily: "var(--font-base)",
@@ -29,9 +29,9 @@ const AirportsPageContainer = styled(Stack)({
   },
 
   h2: {
-    fontSize: "1.5rem",
+    color: "var(--neutral-600)",
+    fontSize: "1.25rem",
     fontWeight: "500",
-    color: "var(--gray-semidark)",
     heigth: "100%",
     fontFamily: "var(--font-base)",
   },

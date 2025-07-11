@@ -18,9 +18,9 @@ const SingleFlightPageContainer = styled(Stack)({
   },
 
   h2: {
-    fontSize: "1.5rem",
+    color: "var(--neutral-600)",
+    fontSize: "1.25rem",
     fontWeight: "500",
-    color: "var(--gray-semidark)",
     heigth: "100%",
     fontFamily: "var(--font-base)",
   },

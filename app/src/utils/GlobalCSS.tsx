@@ -107,7 +107,7 @@ function GlobalCSS() {
         ".Toastify__toast": {
           borderRadius: "6px",
           padding: "12px",
-          marginTop: "24px",
+          margin: "24px",
           fontFamily:"var(--font-base)"
         },
       }}
