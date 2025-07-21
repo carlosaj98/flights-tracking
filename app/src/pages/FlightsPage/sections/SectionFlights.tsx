@@ -76,7 +76,7 @@ const SectionFlights: React.FC<SectionFlightsProps> = ({
             Previous
           </Button>
           <Typography id="pagination">
-            {`Page ${offset / pagination!.limit} of ${Math.round(
+            {`Page ${offset / pagination!.limit + 1} of ${Math.ceil(
               pagination!.total / pagination!.limit
             )}
             `}
@@ -87,7 +87,9 @@ const SectionFlights: React.FC<SectionFlightsProps> = ({
             variant="contained"
             sx={{ width: { md: "120px", xs: "100px" } }}
             disableElevation
-            disabled={offset >= pagination!.total}
+            disabled={
+              offset + pagination.limit >= pagination!.total || pagination.total <= pagination.limit
+            }
             onClick={() => {
               setOffset(offset + pagination!.limit), setIsLoading(true)
             }}

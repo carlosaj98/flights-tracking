@@ -37,6 +37,7 @@ function useFlight(aux: FieldValues, params: apiParams) {
             setFlight(updatedFlights)
             sessionStorage.setItem("flight", JSON.stringify(updatedFlights[0]))
             notify("success", "Flight found successfully")
+            navigate("/flight")
           }
         })
         .catch((error) => {
@@ -47,8 +48,6 @@ function useFlight(aux: FieldValues, params: apiParams) {
         })
         .finally(() => {
           setIsLoading(false)
-          flight.length > 0 && navigate("/flight")
-          console.log(flight)
         })
     }
   }, [aux, params])
@@ -83,7 +82,10 @@ function useFlights(aux: FieldValues, params: apiParams) {
           setFlights(updatedFlights)
           setPagination(data.pagination)
           !data.data.length
-            ? notify("error", "No flights found. Please check your search settings")
+            ? notify(
+                "error",
+                "No flights found. Please check your search settings"
+              )
             : notify("success", "Flights found successfully")
         })
         .catch((error) => {

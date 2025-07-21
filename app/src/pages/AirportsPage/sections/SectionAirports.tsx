@@ -91,7 +91,7 @@ const SectionAirports: React.FC<SectionAirportsProps> = ({
           {`Page ${page} of ${
             airports.length < maxPerPage
               ? 1
-              : Math.round(airports.length / maxPerPage)
+              : Math.ceil(airports.length / maxPerPage)
           }`}
         </Typography>
         <Button
